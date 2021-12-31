@@ -1,0 +1,13 @@
+id,name,color,keycode,parent_id:id
+res_cat_seller,Vendedor,2,,
+res_cat_business_partner,Socio de Negocio,1,socio,
+res_cat_users,Usuarios,3,,
+res_cat_employee,Empleados,4,,
+res_cat_consultant,Servicios de Consultoría,5,,
+res_cat_services,Servicios,7,,
+res_cat_office_material,Material de oficina,8,,res_cat_seller
+res_cat_Corresponsal,Corresponsal,11,correspondent,
+res_cat_Fabricantes,Fabricantes de escritorio,10,,res_cat_seller
+res_cat_Local,Local,4,,
+res_cat_Agencia,Agencia,4,,res_cat_Local
+res_cat_Agente,Agente,4,,res_cat_Local

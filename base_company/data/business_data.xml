@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Data to load business.channel-->
+        <record id="business_channel_001" model="business.channel">
+            <field name="name">Agencia</field>
+            <field name="channel_type">sale</field>
+            <field name="foreign_code">chnl001</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_channel_002" model="business.channel">
+            <field name="name">Teléfono</field>
+            <field name="channel_type">sale</field>
+            <field name="foreign_code">chnl002</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_channel_003" model="business.channel">
+            <field name="name">Web</field>
+            <field name="channel_type">sale</field>
+            <field name="foreign_code">chnl003</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_channel_004" model="business.channel">
+            <field name="name">Agencia</field>
+            <field name="channel_type">payment</field>
+            <field name="foreign_code">chnl004</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_channel_005" model="business.channel">
+            <field name="name">Banco</field>
+            <field name="channel_type">payment</field>
+            <field name="foreign_code">chnl005</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_channel_006" model="business.channel">
+            <field name="name">Administrativo</field>
+            <field name="channel_type">administrative</field>
+            <field name="foreign_code">chnl006</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_channel_007" model="business.channel">
+            <field name="name">Entrega Domiciliaria</field>
+            <field name="channel_type">delivery</field>
+            <field name="foreign_code">chnl007</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_channel_008" model="business.channel">
+            <field name="name">Email</field>
+            <field name="channel_type">sale</field>
+            <field name="foreign_code">chnl008</field>
+            <field name="active" eval="True"/>
+        </record>
+
+
+        <!-- Data to load business.event-->
+        <record id="rec_event_1" model="business.event">
+            <field name="name">Contesto Cliente</field>
+            <field name="foreign_code">evnt001</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_event_2" model="business.event">
+            <field name="name">Contesto Familiar</field>
+            <field name="foreign_code">evnt002</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_event_3" model="business.event">
+            <field name="name">Cliente Vendrá El Dia</field>
+            <field name="foreign_code">evnt003</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_event_4" model="business.event">
+            <field name="name">Llamo El Cliente</field>
+            <field name="foreign_code">evnt004</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_event_5" model="business.event">
+            <field name="name">Se Solicita Copia Doc.</field>
+            <field name="foreign_code">evnt005</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_event_6" model="business.event">
+            <field name="name">Avisado</field>
+            <field name="foreign_code">evnt006</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_event_7" model="business.event">
+            <field name="name">Se Deposita El</field>
+            <field name="foreign_code">evnt007</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <!-- Data to load business.event-->
+        <record id="business_line_001" model="business.line">
+            <field name="name">Cambio de Divisas</field>
+            <field name="foreign_code">bsln001</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_line_002" model="business.line">
+            <field name="name">Transferencia de Fondos</field>
+            <field name="foreign_code">bsln002</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_line_003" model="business.line">
+            <field name="name">Servicios Públicos</field>
+            <field name="foreign_code">bsln003</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_line_004" model="business.line">
+            <field name="name">Negocio Administrativo</field>
+            <field name="foreign_code">bsln004</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_line_005" model="business.line">
+            <field name="name">Pago de Remesas</field>
+            <field name="foreign_code">bsln005</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="business_line_006" model="business.line">
+            <field name="name">Envio de Remesas</field>
+            <field name="foreign_code">bsln006</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

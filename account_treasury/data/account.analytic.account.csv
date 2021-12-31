@@ -1,0 +1,71 @@
+id,code,name,group_id:id,company_id:id,partner_id:id
+cost_admin_0001,0001,GERENCIA GENERAL,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0002,0002,GERENCIA FINANCIERA,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0003,0003,TESORERIA,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0004,0004,CONTABILIDAD,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0005,0005,ADMINISTRACION,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0006,0006,LOGISTICA,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0007,0007,RECURSOS HUMANOS,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0008,0008,SISTEMAS,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0009,0009,CUMPLIMIENTO LEGAL,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0010,0010,CALL CENTER,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0011,0011,SEGURIDAD,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0012,0012,AUDITORIA INTERNA,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0013,0013,OPERACIONES,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0014,0014,CORRESPONSALES Y AGENTES,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0015,0015,CORPORACIÓN JET PERÚ S.A,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0016,0016,EDPYME CREDIJET DEL PERÚ S.A,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0017,0017,MANTENIMIENTO,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0018,0018,GERENCIA ADJUNTA,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0019,0019,RIESGOS,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0020,0020,CUMPLIMIENTO NORMATIVO,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0022,0022,INCIDENCIAS,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0023,0023,ALMACEN GENERAL,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0024,0024,JET SAFE,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0025,0025,UNIDAD DE NEGOCIOS Y MARKETING,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_admin_0098,0098,OFICINAS ADMINISTRATIVAS,account_treasury.cost_admin,base.main_company,base.main_partner
+cost_agency_0001,0001,LINCE,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0002,0002,MIRAFLORES,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0003,0003,SAN JUAN DE LURIGANCHO,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0004,0004,SURCO,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0005,0005,SAN JUAN DE MIRAFLORES,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0006,0006,CHIMBOTE,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0007,0007,AREQUIPA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0008,0008,CHICLAYO,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0009,0009,PIURA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0010,0010,CHOSICA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0011,0011,HUANCAYO,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0012,0012,ICA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0013,0013,CUSCO,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0014,0014,IQUITOS,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0015,0015,HUARAL,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0016,0016,HUACHO,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0017,0017,BARRANCA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0018,0018,SAN ISIDRO,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0019,0019,SAN MIGUEL,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0020,0020,CALLAO MINKA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0021,0021,PRINCIPAL,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0022,0022,TRUJILLO,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0023,0023,CANAVAL Y MOREYRA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0024,0024,WILSON,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0025,0025,LOS OLIVOS,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0026,0026,GAMARRA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0027,0027,MINKA MODULO,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0029,0029,WONG ATE,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0030,0030,METRO OVALO PAPAL,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0031,0031,METRO COMAS,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0032,0032,CAPON,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0033,0033,REAL PLAZA SANTA CLARA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0034,0034,PLAZA LIMA NORTE,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0035,0035,TERMINAL TERRESTRE,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0036,0036,METRO CHORRILLOS,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0037,0037,METRO INDEPENDENCIA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0038,0038,METRO BRENA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0039,0039,METRO PROCERES,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0040,0040,METRO CAJAMARCA,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0041,0041,MINKA CALLAO,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0042,0042,METRO SAN MIGUEL,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0043,0043,ALMACEN,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0044,0044,VIRTUAL BANCOS,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0045,0045,CONTROL AGENTES,account_treasury.cost_agency,base.main_company,base.main_partner
+cost_agency_0099,0099,AGENCIAS VARIAS,account_treasury.cost_agency,base.main_company,base.main_partner

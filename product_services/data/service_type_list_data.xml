@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="service_type_list_st01" model="service.type.list">
+            <field name="name">NORMAL</field>
+        </record>
+        <record id="service_type_list_st02" model="service.type.list">
+            <field name="name">DOMICILIO</field>
+        </record>
+        <record id="service_type_list_st03" model="service.type.list">
+            <field name="name">INMEDIATO</field>
+        </record>
+    </data>
+</odoo>

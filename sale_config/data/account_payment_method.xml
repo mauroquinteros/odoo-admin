@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="rec_paymentmethod_1" model="account.payment.method">
+            <field name="name">Depósito Bancario</field>
+            <field name="channel_id" ref="base_company.business_channel_005"/>
+            <field name="business_line_ids" eval="[(6, 0, [ref('base_company.business_line_001'),ref('base_company.business_line_006')])]"/>
+            <field name="code">14789</field>
+            <field name="payment_type">outbound</field>
+            <field name="description" type="html">
+                <p>
+                    Es un instrumento financiero de ahorro con el que se asume escaso riesgo.
+                </p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-check"/>Se obtiene rentabilidad del dinero conocida de antemano</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>Son productos financieros supervisados</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>No exige un seguimiento de la inversión</li>
+                </ul>
+            </field>
+            <field name="active" eval="True"/>
+            <field name="plaftrisk_id" ref="legal_plaft.plaft_risk_001"/>
+        </record>
+        <record id="rec_paymentmethod_2" model="account.payment.method">
+            <field name="name">Transferencia Bancaria</field>
+            <field name="channel_id" ref="base_company.business_channel_005"/>
+            <field name="business_line_ids" eval="[(6, 0, [ref('base_company.business_line_001'),ref('base_company.business_line_006')])]"/>
+            <field name="code">54725</field>
+            <field name="payment_type">outbound</field>
+            <field name="description" type="html">
+                <p>
+                    Proporcione instrucciones a los clientes para que puedan pagar sus pedidos manualmente.
+                </p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-check"/>Bajo Costos</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>Sin Comisiones</li>
+                </ul>
+            </field>
+            <field name="active" eval="True"/>
+            <field name="plaftrisk_id" ref="legal_plaft.plaft_risk_001"/>
+        </record>
+        <record id="rec_paymentmethod_3" model="account.payment.method">
+            <field name="name">Efectivo</field>
+            <field name="channel_id" ref="base_company.business_channel_004"/>
+            <field name="business_line_ids" eval="[(6, 0, [ref('base_company.business_line_001'),ref('base_company.business_line_006')])]"/>
+            <field name="code">36475</field>
+            <field name="payment_type">outbound</field>
+            <field name="description" type="html">
+                <p>
+                    Haga sus pagos o depósitos haciendo uso de efectivo físico.
+                </p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-check"/>Facilidad y disponibilidad</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>Ahorro en tarifas bancarias</li>
+                </ul>
+            </field>
+            <field name="active" eval="True"/>
+            <field name="plaftrisk_id" ref="legal_plaft.plaft_risk_001"/>
+        </record>
+        <record id="account_check_printing.account_payment_method_check" model="account.payment.method">
+            <field name="channel_id" ref="base_company.business_channel_004"/>
+            <field name="business_line_ids" eval="[(6, 0, [ref('base_company.business_line_001'),ref('base_company.business_line_006')])]"/>
+            <field name="code">98653</field>
+            <field name="description" type="html">
+                <p>
+                    Un cheque es un documento bancario que se utiliza como una forma de pago.
+                </p>
+                <p>
+                    Al llenar el cheque usted le está indicando al banco que le entregue a la persona autorizada la cantidad de dinero que usted especifica en el documento
+                </p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-check"/>No tendrá que cargar con dinero en efectivo</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>Sin firma el cheque no es válido</li>
+                    <li class="list-inline-item"><i class="fa fa-check"/>Permite controlar los gastos</li>
+                </ul>
+            </field>
+            <field name="active" eval="True"/>
+            <field name="plaftrisk_id" ref="legal_plaft.plaft_risk_001"/>
+        </record>
+        <record id="rec_paymentmethod_5" model="account.payment.method">
+            <field name="name">Transferencia InterBancaria</field>
+            <field name="channel_id" ref="base_company.business_channel_005"/>
+            <field name="business_line_ids" eval="[(6, 0, [ref('base_company.business_line_001'),ref('base_company.business_line_006')])]"/>
+            <field name="code">75395</field>
+            <field name="payment_type">outbound</field>
+            <field name="description" type="html">
+                <p>
+                    Envío de dinero usando identificaciones para el rastreo de cuentas nacionales o extranjeras.
+                </p>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fa fa-check"/>Bajo Costos</li>
+                </ul>
+            </field>
+            <field name="active" eval="True"/>
+            <field name="plaftrisk_id" ref="legal_plaft.plaft_risk_001"/>
+        </record>
+    </data>
+</odoo>

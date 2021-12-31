@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- plaft.control.list tree view -->
+        <record id="plaft_control_list_view_tree" model="ir.ui.view">
+            <field name="name">plaft.control.list.view.tree</field>
+            <field name="model">plaft.control.list</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="id_number"/>
+                    <field name="category_ids" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- plaft.control.list search view -->
+        <record id="plaft_control_list_view_search" model="ir.ui.view">
+            <field name="name">plaft.control.list.view.search</field>
+            <field name="model">plaft.control.list</field>
+            <field name="arch" type="xml">
+                <search string="Búsqueda en listas de control">
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="category_ids"/>
+                    <field name="id_number"/>
+                    <filter name="filter_family_relationship" string="Miembros de Listas" domain="[('family_relationship','=','principal')]"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- plaft.control.list form view -->
+        <record id="plaft_control_list_view_form" model="ir.ui.view">
+            <field name="name">plaft.control.list.view.form</field>
+            <field name="model">plaft.control.list</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h2>
+                                <field name="name"/>
+                            </h2>
+                        </div>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="firstname" style="text-transform: uppercase"/>
+                                <field name="lastname" style="text-transform: uppercase"/>
+                                <field name="motherlastname" style="text-transform: uppercase"/>
+                                <separator/>
+                                <field name="category_ids" widget="many2many_tags"/>
+                                <p style="text-decoration: underline; font-size: 1em; color: rgb(106, 90, 205);">
+                                    <strong>Parentesco</strong>
+                                </p>
+                                <field name="parent_id"/>
+                                <field name="family_relationship"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="documentcatalog_id" widget="selection"/>
+                                <field name="id_number"/>
+                                <!-- <separator string="Obligatorio para PEPs"/> -->
+                                <p style="text-decoration: underline; font-size: 1em; color: rgb(106, 90, 205);">
+                                    <strong>Datos obligatorios para PEPS</strong>
+                                </p>
+                                <field name="public_office"/>
+                                <field name="title"/>
+                                <!-- <separator string="Obligatorio para OFAC"/> -->
+                                <p style="text-decoration: underline; font-size: 1em; color: rgb(106, 90, 205);">
+                                    <strong>Datos Obligatorios para OFAC</strong>
+                                </p>
+                                <field name="ofac_code"/>
+                                <field name="ofac_program"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Razones para el bloqueo de la cuenta" name="lock">
+                                <field name="lock_description"/>
+                            </page>
+                            <page string="Razones para el desbloqueo de la cuenta" name="unlock">
+                                <field name="unlock_description"/>
+                            </page>
+                            <page string="Observaciones" name="observaciones">
+                                <field name="remark"/>
+                            </page>
+                            <page string="Familiares">
+                                <field name="child_ids" nolabel="1">
+                                    <tree create="false" delete="false">
+                                        <field name="name"/>
+                                        <field name="family_relationship"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- plaft.control.list action window -->
+        <record id="plaft_control_list_action" model="ir.actions.act_window">
+            <field name="name">Listas de Control</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">plaft.control.list</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_filter_family_relationship': True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create the first member of Control List
+                </p>
+                <p>
+                    Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                    en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="controllist_menu" name="Listas de Control" parent="control_menu" action="plaft_control_list_action" sequence="1"/>
+    </data>
+</odoo>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="tax_group_itf" model="account.tax.group">
+            <field name="name">ITF</field>
+            <field name="sequence">10</field>
+        </record>
+       <record id="sale_tax_itf_0050" model="account.tax">
+            <field name="name">ITF</field>
+            <field name="amount_type">percent</field>
+            <field name="active" eval="True"/>
+            <field name="l10n_pe_edi_tax_code">9999</field>
+            <field name="type_tax_use">sale</field>
+            <field name="amount" eval="0.0050"/>
+            <field name="description">ITF%</field>
+            <field name="tax_group_id" ref="tax_group_itf"/>
+            <field name="price_include" eval="False"/>
+            <field name="include_base_amount" eval="False"/>
+            <field name="analytic" eval="False"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="moex_auto_approvement_view_tree" model="ir.ui.view">
+        <field name="name">res.currency.moex.auto.approvement.view.tree</field>
+        <field name="model">res.currency.moex.auto.approvement</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="business_line_id"/>
+                <field name="sale_channel_ids" widget="many2many_tags"/>
+                <field name="remark"/>
+                <field name="line_ids"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="moex_auto_approvement_view_form" model="ir.ui.view">
+        <field name="name">res.currency.moex.auto.approvement.view.form</field>
+        <field name="model">res.currency.moex.auto.approvement</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="business_line_id"/>
+                        <field name="sale_channel_ids" widget="many2many_tags"/>
+                        <field name="remark"/>
+                        <field name="active"/>
+                    </group>
+                    <group>
+                        <field name="line_ids" nolabel="1">
+                            <tree editable="top">
+                                <field name="agency_id"/>
+                                <field name="origin_currency_id"/>
+                                <field name="destination_currency_id"/>
+                                <field name="min_amount"/>
+                                <field name="max_amount"/>
+                                <field name="operator"/>
+                                <field name="i_value"/>
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- res.currency.moex.auto.approvement action window -->
+    <record id="moex_auto_approvement_action" model="ir.actions.act_window">
+        <field name="name">Aprobaciones del TC</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.currency.moex.auto.approvement</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html"><p class="o_view_nocontent_empty_folder">No hay Registros!</p></field>
+        <field name="context">{'tree_view_ref':'moex_auto_approvement_view_tree','form_view_ref':'moex_auto_approvement_view_form'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),(0, 0, {'view_mode': 'tree', 'view_id': ref('moex_auto_approvement_view_tree')}),(0, 0, {'view_mode': 'form', 'view_id': ref('moex_auto_approvement_view_form')})]"/>
+    </record>
+
+    <menuitem id="l10n_pe_moneys_config" name="Divisas"  parent="account_treasury.treasury_root_menu" sequence="2"/>
+
+    <menuitem id="moex_auto_approvement_menu" 
+            name="Aprobaciones Automáticas" 
+            parent="account_treasury.auth_section_menu"
+            groups="account_treasury.group_financial_treasury_assistant"
+            action="moex_auto_approvement_action"/>
+
+    <!-- <menuitem id="moex_auto_approvement_menu" 
+            name="Aprob. Automáticas" 
+            parent="sale.menu_sale_config" 
+            action="moex_auto_approvement_action"/> -->
+</odoo>

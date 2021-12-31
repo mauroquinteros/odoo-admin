@@ -1,0 +1,44 @@
+id,name,department_id:id,company_id:id
+job_001,"Miembro de Comité Auditoría",data_migration.depart_002,base.main_company
+job_002,"Miembro de Comité Riesgos",data_migration.depart_002,base.main_company
+job_003,"Miembro de Comité Directorio",data_migration.depart_002,base.main_company
+job_004,"Miembro de Comité SST",data_migration.depart_002,base.main_company
+job_005,"Gerente General",data_migration.depart_003,base.main_company
+job_006,"Auditor",data_migration.depart_006,base.main_company
+job_007,"Riesgos",data_migration.depart_008,base.main_company
+job_008,"Cumplimiento Legal",data_migration.depart_007,base.main_company
+job_009,"Cumplimiento de Normativas",data_migration.depart_009,base.main_company
+job_0010,"Asistencia Auditoría",data_migration.depart_006,base.main_company
+job_0011,"Asistente Cumplimiento Legal",data_migration.depart_007,base.main_company
+job_0012,"Asistente Riesgos",data_migration.depart_008,base.main_company
+job_0013,"Asistente Gerencia",data_migration.depart_003,base.main_company
+job_0014,"Asesor Legal",data_migration.depart_010,base.main_company
+job_0015,"Gerente Financiero",data_migration.depart_004,base.main_company
+job_0016,"Asistente de Gerente Financiero",data_migration.depart_004,base.main_company
+job_0017,"Jefatura de Tesorería",data_migration.depart_011,base.main_company
+job_0018,"Jefatura de Contabilidad",data_migration.depart_012,base.main_company
+job_0019,"Jefatura de Corresponsales y Agentes",data_migration.depart_013,base.main_company
+job_0020,"Jefatura de Administración",data_migration.depart_016,base.main_company
+job_0021,"Jefatura de Sistemas",data_migration.depart_018,base.main_company
+job_0022,"Jefatura de Negocios y Marketing",data_migration.depart_019,base.main_company
+job_0023,"Asistencia de Jefatura de Administración",data_migration.depart_016,base.main_company
+job_0024,"Operaciones de punto de venta",data_migration.depart_028,base.main_company
+job_0025,"Logistica y Soporte infraestructural",data_migration.depart_027,base.main_company
+job_0026,"Archivos, Limpieza y Mantenimiento",data_migration.depart_020,base.main_company
+job_0027,"Jefatura de Recursos Humanos",data_migration.depart_021,base.main_company
+job_0028,"Medico ocupacional",data_migration.depart_022,base.main_company
+job_0029,"Asistente Social",data_migration.depart_022,base.main_company
+job_0030,"Asistente de Contabilidad",data_migration.depart_012,base.main_company
+job_0031,"Jefe de Operaciones",data_migration.depart_028,base.main_company
+job_0032,"Soporte Técnico",data_migration.depart_027,base.main_company
+job_0033,"Analista Programador",data_migration.depart_018,base.main_company
+job_0034,"Analista de Sistemas",data_migration.depart_018,base.main_company
+job_0035,"Asistente de Sistemas",data_migration.depart_018,base.main_company
+job_0036,"Auditor de Sistemas",data_migration.depart_018,base.main_company
+job_0037,"Operador de Sistemas",data_migration.depart_018,base.main_company
+job_0038,"Programador de Software",data_migration.depart_018,base.main_company
+job_0039,"Web Master",data_migration.depart_018,base.main_company
+job_0040,"Practicante de Sistemas",data_migration.depart_018,base.main_company
+job_0041,"Tester de Sistemas",data_migration.depart_018,base.main_company
+job_0042,"Administrador de Base de Datos",data_migration.depart_018,base.main_company
+job_0043,"Técnico de Infraestructura de Sistemas",data_migration.depart_018,base.main_company

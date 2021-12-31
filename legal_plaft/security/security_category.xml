@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="category_plaft">
+            <field name="name">Plaft Legal</field>
+            <field name="description">Helps you handle your helpdesk security.</field>
+            <field name="sequence">20</field>
+            <field name="parent_id" ref="l10n_pe_sunat.module_category_prosecution"/>
+        </record>
+    </data>
+</odoo>

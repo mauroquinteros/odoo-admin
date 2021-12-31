@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="hermes_partner_provider" model="res.partner" context="{'default_is_company': True, 'default_company_type': 'company'}">
+            <field name="name">HERMES Transportes Blindados S.A.</field>
+            <field name="display_name">20100077044 - HERMES Transportes Blindados S.A.</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">https://www.hermes.com.pe/</field>
+            <field name="active" eval="True"/>
+            <field name="type">enterprise</field>
+            <field name="color">2</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150108"/>
+            <field name="image_1920" type="base64" file="base_config/static/img/logos/hermes_logo_2.png"/>
+            <field name="l10n_latam_identification_type_id" ref="l10n_pe.it_RUC"/>
+            <field name="vat">20100077044</field>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="customer_rank" eval="0"/>
+        </record>
+        <record id="prosegur_partner_provider" model="res.partner" context="{'default_is_company': True, 'default_company_type': 'company'}">
+            <field name="name">PROSEGUR Transportes Blindados S.A.</field>
+            <field name="display_name">20547704640 - PROSEGUR Transportes Blindados S.A.</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">https://www.prosegur.com.pe/empresas-instituciones/cash/logistica-de-valores</field>
+            <field name="active" eval="True"/>
+            <field name="type">enterprise</field>
+            <field name="color">2</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150108"/>
+            <field name="image_1920" type="base64" file="base_config/static/img/logos/prosegur_logo_2.jpg"/>
+            <field name="l10n_latam_identification_type_id" ref="l10n_pe.it_RUC"/>
+            <field name="vat">20547704640</field>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="customer_rank" eval="0"/>
+        </record>
+        <record id="bbva_partner" model="res.partner" context="{'default_is_company': True, 'default_company_type': 'company'}">
+            <field name="name">BBVA Continental</field>
+            <field name="display_name">20100130204 - BBVA Continental</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">https://www.bbva.pe/</field>
+            <field name="active" eval="True"/>
+            <field name="type">enterprise</field>
+            <field name="color">2</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150131"/>
+            <field name="image_1920" type="base64" file="base_config/static/img/logos/bbva_logo_2.jpg"/>
+            <field name="l10n_latam_identification_type_id" ref="l10n_pe.it_RUC"/>
+            <field name="vat">20100130204</field>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="customer_rank" eval="0"/>
+        </record>
+        <record id="bcp_partner" model="res.partner" context="{'default_is_company': True, 'default_company_type': 'company'}">
+            <field name="name">Banco de Crédito BCP</field>
+            <field name="display_name">20100047218 - Banco de Crédito del Perú</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">https://www.bcp.pe/</field>
+            <field name="active" eval="True"/>
+            <field name="type">enterprise</field>
+            <field name="color">2</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150114"/>
+            <field name="image_1920" type="base64" file="base_config/static/img/logos/bcp_logo.jpg"/>
+            <field name="l10n_latam_identification_type_id" ref="l10n_pe.it_RUC"/>
+            <field name="vat">20100047218</field>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="customer_rank" eval="0"/>
+        </record>
+        <record id="interbank_partner" model="res.partner" context="{'default_is_company': True, 'default_company_type': 'company'}">
+            <field name="name">Banco InterBank</field>
+            <field name="display_name">20100053455 - Banco InterBank</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">https://interbank.pe/</field>
+            <field name="active" eval="True"/>
+            <field name="type">enterprise</field>
+            <field name="color">2</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150122"/>
+            <field name="image_1920" type="base64" file="base_config/static/img/logos/interbank_logo_2.png"/>
+            <field name="l10n_latam_identification_type_id" ref="l10n_pe.it_RUC"/>
+            <field name="vat">20100053455</field>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="customer_rank" eval="0"/>
+        </record>
+        <record id="gnb_partner" model="res.partner" context="{'default_is_company': True, 'default_company_type': 'company'}">
+            <field name="name">BANCO GNB PERU S.A.</field>
+            <field name="display_name">20513074370 - BANCO GNB PERU S.A.</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">https://www.bancognb.com.pe/</field>
+            <field name="active" eval="True"/>
+            <field name="type">enterprise</field>
+            <field name="color">2</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150122"/>
+            <field name="image_1920" type="base64" file="base_config/static/img/logos/gnb_logo_1.png"/>
+            <field name="l10n_latam_identification_type_id" ref="l10n_pe.it_RUC"/>
+            <field name="vat">20513074370</field>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="customer_rank" eval="0"/>
+        </record>
+        <record id="pichincha_partner" model="res.partner" context="{'default_is_company': True, 'default_company_type': 'company'}">
+            <field name="name">Banco PICHINCHA</field>
+            <field name="display_name">20100105862 - BANCO PICHINCHA</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">https://www.pichincha.pe/</field>
+            <field name="active" eval="True"/>
+            <field name="type">enterprise</field>
+            <field name="color">2</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150122"/>
+            <field name="image_1920" type="base64" file="base_config/static/img/logos/pichincha_logo_2.png"/>
+            <field name="l10n_latam_identification_type_id" ref="l10n_pe.it_RUC"/>
+            <field name="vat">20100105862</field>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="customer_rank" eval="0"/>
+        </record>
+        <record id="ripley_partner" model="res.partner" context="{'default_is_company': True, 'default_company_type': 'company'}">
+            <field name="name">Banco Ripley Peru S.A.</field>
+            <field name="display_name">20259702411 - Banco Ripley Peru S.A.</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">https://www.bancoripley.com.pe/</field>
+            <field name="active" eval="True"/>
+            <field name="type">enterprise</field>
+            <field name="color">2</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150131"/>
+            <field name="image_1920" type="base64" file="base_config/static/img/logos/ripley_logo_1.jpg"/>
+            <field name="l10n_latam_identification_type_id" ref="l10n_pe.it_RUC"/>
+            <field name="vat">20259702411</field>
+            <field name="phone">611-5700</field>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="customer_rank" eval="0"/>
+        </record>
+        <record id="jetcash_partner" model="res.partner" context="{'default_is_company': True, 'default_company_type': 'company'}">
+            <field name="name">JET CASH S.A.</field>
+            <field name="display_name">20462526164 - JET CASH S.A.</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">www.jetcash.com.pe</field>
+            <field name="active" eval="True"/>
+            <field name="type">enterprise</field>
+            <field name="color">2</field>
+            <field name="street">Av. Camino Real 395</field>
+            <field name='country_id' ref='base.pe'/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="image_1920" type="base64" file="base_config/static/img/logos/jetcash_logo_1.png"/>
+            <field name="l10n_latam_identification_type_id" ref="l10n_pe.it_RUC"/>
+            <field name="phone">611-5050</field>
+            <field name="mobile">+511 611 5050</field>
+            <field name="email">gerenciageneral@jetcash.com.pe</field>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_business_partner'),ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="customer_rank" eval="0"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,79 @@
+<odoo>
+    <!-- res.currency.rate.oer tree view -->
+    <record id="res_currency_rate_oer_view_tree" model="ir.ui.view">
+        <field name="name">res.currency.rate.oer.view.tree</field>
+        <field name="model">res.currency.rate.oer</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="business_partner_id"/>
+                <field name="agency_id"/>
+                <field name="date_validity_period_start"/>
+                <field name="origin_currency_id"/>
+                <field name="destination_currency_id"/>
+                <field name="price_orp"/>
+                <field name="price_drs"/>
+                <field name="currentactive"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- res.currency.rate.oer search view -->
+    <record id="res_currency_rate_oer_view_search" model="ir.ui.view">
+        <field name="name">res.currency.rate.oer.view.search</field>
+        <field name="model">res.currency.rate.oer</field>
+        <field name="arch" type="xml">
+            <search string="Busquedas Personalizadas">
+                <filter name="currentactive" string="Cambio Activos" icon="terp-partner" domain="[('currentactive','=',True)]"/>
+                <filter name="group_agency_id" string="Por Agencia" icon="terp-partner" context="{'group_by':'agency_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- res.currency.rate.oer form view -->
+    <record id="res_currency_rate_oer_view_form" model="ir.ui.view">
+        <field name="name">res.currency.rate.oer.view.form</field>
+        <field name="model">res.currency.rate.oer</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="business_partner_id"/>
+                    <field name="agency_id"/>
+                    <field name="date_validity_period_start"/>
+                    <field name="origin_currency_id"/>
+                    <field name="destination_currency_id"/>
+                    <field name="price_orp"/>
+                    <field name="price_drs"/>
+                    <field name="currentactive"/>
+                    <field name="active"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- res.currency.rate.oer action window -->
+    <record id="res_currency_rate_oer_action" model="ir.actions.act_window">
+        <field name="name">T.C. Operativos</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.currency.rate.oer</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="res_currency_rate_oer_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No hay registros de Tipo de Cambio Operativos
+            </p>
+        </field>
+        <field name="context">{'search_default_currentactive':1,'search_default_group_agency_id':1,'tree_view_ref':'res_currency_rate_oer_view_tree','form_view_ref':'res_currency_rate_oer_view_form'}</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('res_currency_rate_oer_view_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('res_currency_rate_oer_view_form')}),
+            ]"/>
+    </record>
+
+    <menuitem id="res_currency_rate_oer_menu" 
+        name="Tipo de Cambio Operativo" 
+        parent="l10n_pe_currency.l10n_pe_moneys_config" 
+        action="res_currency_rate_oer_action"
+        groups="account_treasury.group_financial_treasury_assistant"
+        sequence="1"/>
+</odoo>

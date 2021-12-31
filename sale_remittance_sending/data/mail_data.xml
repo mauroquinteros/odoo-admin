@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="email_template_notify_remsend" model="mail.template">
+            <field name="name">Cotización: Remesas Online</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="email_from">${(object.user_id.email_formatted) | safe}</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="subject">${object.company_id.name} - ${object.state in ('draft', 'sent', 'valid') and 'Cotización' or 'Orden'} de Remesa (Ref ${object.name})</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 13px;">
+                        % set doc_name = 'cotización' if object.state in ('draft', 'sent', 'valid') else 'orden'
+                        Estimado(a) <strong>${object.partner_id.name}</strong>
+                        <br/>
+                        <br/>
+                        La
+                        % if ctx.get('proforma'):
+                            ${doc_name}
+                        % else:
+                            ${doc_name}
+                        % endif
+                        <strong>${object.name}</strong>
+                        por el monto <strong>${format_amount(object.origin_amount, object.origin_currency_id)}</strong> está lista para su revisión.
+                        <br/>
+                        El costo de envío de la Remesa es de <strong>${format_amount(object.total_service_amount, object.local_currency_id)}</strong>.
+                        <br/>
+                        <br/>
+                    </p>
+                    <p style="font-size: 13px;margin: 0px; padding: 0px; ">
+                        <strong>Observaciones:</strong>
+                    </p>
+                    <ul style="font-size: 13px;margin: 0px;">
+                        <li>No podemos realizar operaciones a terceros. Es decir el remitente debe ser el titular de la cuenta cuando realice el abono.</li>
+                        <li>No realizamos operaciones de terceros – Es el mismo remitente que debe de realizar el abono.</li>
+                        <li>Bancos directos BCP, GBN y Pichincha</li>
+                        <li>
+                            Pagos Diferidos - BBVA, INTERBANK, SCOTIABANK, y otros (48 a 72 horas hábiles)
+                            <ul>
+                                <li style="list-style-type: initial!important;font-size: 11px!important;">
+                                    <strong>De lunes a jueves de 9am a 1pm:</strong> Si el cliente hace un depósito o transferencia interbancaria en este horario. El monto aparecería en las cuentas de Jet Peru durante a partir de las 5.30pm del mismo día. Al siguiente día Jet Peru, confirma el ordenante con el banco y hace el depósito a partir de las 10.00 am a la cuenta que indicó el cliente.
+                                </li>
+                                <li style="list-style-type: initial!important;font-size: 11px!important;">
+                                    <strong>De lunes a jueves de 1pm a 4pm:</strong> Si el cliente realiza el depósito o transferencia interbancaria en este horario. El monto aparecería en las cuentas de Jet Peru a partir de las 10.30 am del siguiente día. El banco confirma a JET PERU el ordenante recién al tercer día. Y recién JET PERU realiza el depósito al cliente a partir de las 10.00 am a la cuenta que indicó el cliente.
+                                </li>
+                                <li style="list-style-type: initial!important;font-size: 11px!important;">
+                                    <strong>Viernes desde 1pm:</strong> Si el cliente realiza un depósito o transferencia en este horario. El monto depositado aparecerá en la cuenta de Jet Peru el lunes a las 10:30am. El banco confirma a JET PERU “el ordenante” recién el martes. En ese momento JET PERU puede realizar el depósito a partir de las 10.00 am a la cuenta que indicó el cliente.
+                                </li>
+                                <li style="list-style-type: initial!important;font-size: 11px!important;">
+                                    <strong>Sábados y domingos:</strong> Si el cliente realiza un depósito o transferencia interbancaria en estos días, el monto depositado aparecería en la cuenta de Jet Peru el lunes hasta las 5:30pm. El banco confirma a JET PERU “el ordenante” recién el martes. En ese momento JET PERU puede realizar el depósito a partir de las 10.00 am a la cuenta que indicó el cliente.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br/>
+                    <span>
+                        No dude en ponerse en contacto con nosotros si tiene alguna pregunta.
+                    </span>
+                    <br/>
+                    <span>
+                        Jet Peru queda atento a su amable respuesta. Que tenga un buen día.
+                    </span>
+                    <br/>
+                    <br/>
+                    <p style="font-size:11px;font-weight:700;">Términos y Condiciones – Remesas Online</p>
+                    <ol style="font-size:11px;">
+                        <li>La operación solicitada se efectuará por cuenta, cargo y riesgo del cliente ordenante, quién libera a Jet Perú S.A. de cualquier responsabilidad derivada de errores u omisiones en la solicitud de envío de remesa, registro, o cualquier operación de remesa. Estos errores u omisiones serán de responsabilidad del Cliente.</li>
+                        <li>El NO pago al beneficiario por causa ajenas al Jet Perú S.A. No dará lugar a devolución de la comisión cobrada y gastos incurridos.</li>
+                        <li>El Cliente ordenante declara conocer que los bancos intervinientes en sus pagos deducirán sus respectivas comisiones y gastos de los importes remitidos.</li>
+                        <li>La solicitud de transferencia será atendida por Jet Perú S.A. en los plazos asignados por la Empresa.</li>
+                        <li>El Cliente, al enviar el comprobante de depósito del banco al correo remesasonline@jetperu.com.pe. Declara conocer y acepta los términos y condiciones del servicio de envío de remesa.</li>
+                        <li>
+                            Sin perjuicio de lo señalado en el numeral, 1. Jet Perú S.A. y las Empresas pagadoras intervinientes no asumirán obligación, ni responsabilidad alguna por:
+                            <ul>
+                                <li style="list-style-type: initial!important;">
+                                    La demora, ni mutilación y cualquier error que surja en la transmisión.
+                                </li>
+                                <li style="list-style-type: initial!important;">
+                                    La interrupción de sus actividades originadas por motivos fortuito o fuerza mayor, motines, perturbaciones civiles, guerras, huelgas, paros y cualquier otra causa fuera de control.
+                                </li>
+                                <li style="list-style-type: initial!important;">
+                                    La consignación parte del remitente, en forma incompleta o equivocada, de los nombres, destinos, bancos, cuantas bancarias u otros datos del beneficiario.
+                                </li>
+                                <li style="list-style-type: initial!important;">
+                                    Jet Perú no devolverá el monto del servicio cobrado por aquellas órdenes devueltas, debido a que el beneficiario ya superó el límite de dinero en efectivo permitido por ese país y que debe saberlo por tratarse de leyes del país en que reside o transita.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>En el caso de remesas devueltas, estas serán depositadas en una cuenta bancaria proporcionada por el cliente.</li>
+                        <li>El Cliente da fe que toda la información escrita en este formato es verídica y no contiene datos falsos. El Cliente autoriza a Jet Peru S.A. a comunicarse con él, para terminar con la solicitud de envío de dinero, registro, u otro tipo de operación de remesas, así como recibir información de los servicios que brinda Jet Peru S.A.</li>
+                    </ol>
+                    <br/>
+                </div>
+            </field>
+            <field name="report_template" ref="sale.action_report_saleorder"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}</field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

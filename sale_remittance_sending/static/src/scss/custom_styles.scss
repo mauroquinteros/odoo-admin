@@ -1,0 +1,78 @@
+/* assistant.remittance.price styles */
+tbody tr > td:first-of-type:not([class]) {
+    width: auto!important;
+}
+div#form_label {
+    margin-bottom: 1rem!important;
+    font-weight: bold!important;
+    font-size: 1.083rem!important;
+}
+
+/* sale.customer styles */
+div#full-width div{
+    width: 100%!important;
+}
+
+/* sale.remittance styles */
+table.sale_fields_group td.o_td_label {
+    min-width: auto!important;
+}
+table.service_amount_group > tbody tr:last-of-type{
+    & label.o_form_label, & span {
+        font-size: 1.5rem!important;
+        font-weight: 700!important;
+    }
+}
+
+/* summary.operative.sale.remittance styles */
+.summary_title_group {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+div.summary_input_group {
+    font-size: 1.2rem;
+    padding: 0.3rem 0;
+}
+span.summary_label {
+    display: inline-block;
+    min-width: 8rem;
+    margin-right: 1rem;
+}
+div.summary_input_main_group {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* detail.operative.sale.remittance styles */
+.detail_group {
+    display: flex;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    &.separator_group {
+        border-bottom: 1px solid var(--primary)!important;
+        margin-bottom: 0.6rem;
+    }
+    p {
+        min-width: 8rem;
+        text-align: center;
+    }
+}
+.detail_submain_group {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+.detail_main_group {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Por definir */
+span[name^="sended"], span.sended_amount{
+    width: 100%!important;
+    padding: 0.1rem 0.3rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+table.pricelist_amount {
+    margin: 10px 36px 10px 0!important;
+}

@@ -1,0 +1,12 @@
+"id","value","name","foreign_code","type","description","company_id:id","active"
+acc_ctarem,ctarem,Operaciones de Remesas,fcrd001,operative,"Para operaciones de la empresa, solo remesas",base.main_company,1
+acc_ctacom,ctacom,Comisiones de Corresponsales,fcrd002,operative,"Para recibir las comisiones cuando se hace una operacion con una empresa.",base.main_company,1
+acc_ctaser,ctaser,Servicios Públicos,fcrd003,operative,"Para hacer pagos a recibos públicos, eg: luz, agua, teléfono etc..",base.main_company,1
+acc_ctadet,ctadet,Detracciones,fcrd004,operative,"Pagos a proveedores, referencia banco de la nación",base.main_company,1
+acc_ctamul,ctamul,Múltipes Servicios,fcrd005,operative,"Pagos a cualquier documento comercial.",base.main_company,1
+acc_ctarec,ctarec,Recaudadora,fcrd006,operative,"Para otros usos que la empresa crea conveniente.",base.main_company,1
+acc_ctamoex,ctamoex,Servicio de Cambios On-line,fcrd007,operative,"Para usos de Cambio de divisas via web.",base.main_company,1
+acc_ctapaycust,ctapaycust,Servicio de Pagos: Cliente,fcrd007,operative,"Para realizar pagos a cuentas bancarias de clientes Naturales o Judíricos.",base.main_company,1
+acc_ctaper,acc_saving,Cta Ahorros,fcrd008,personal,"Tipo de Cuenta que el cliente eligió en su banco",base.main_company,1
+acc_ctacor,acc_current,Cta Corriente,fcrd009,personal,"Tipo de Cuenta que el cliente eligió en su banco",base.main_company,1
+acc_ctaremon,ctaremon,Servicio de Remesas Online,fcrd010,operative,"Para usos de Envio de Remesas via web.",base.main_company,1

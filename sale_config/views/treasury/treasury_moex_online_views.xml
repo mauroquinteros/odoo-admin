@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="treasury_moex_sale_order_view_tree" model="ir.ui.view">
+        <field name="name">treasury.moex.online.order.view.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="import">false</attribute>
+                <attribute name="export_xlsx">false</attribute>
+                <attribute name="create">false</attribute>
+                <attribute name="edit">false</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="treasury_moex_sale_order_view_search" model="ir.ui.view">
+        <field name="name">treasury.moex.online.order.view.search.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_create_date']" position="after">
+                <filter string="Por Autorizar" name="auth" domain="[('state','=','auth')]"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="treasury_moex_sale_order_view_form" model="ir.ui.view">
+        <field name="name">treasury.moex.online.order.view.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="attributes">
+                <attribute name="create">false</attribute>
+                <attribute name="edit">false</attribute>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="before">
+                <button name="action_multi_step" string="Aprobar" type="object" states="auth" context="{'state': 'valid', }" class="oe_read_only btn-primary" groups="account_treasury.group_financial_treasury_assistant" confirm="¿Está seguro de Aprobar esta cotización para su salida? Esta acción no se podrá deshacer."/>
+                <button name="utr_action_cancel" states="auth" type="object" string="Cancel" groups="account_treasury.group_financial_treasury_assistant"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="treasury_moex_quote_tc_online_action" model="ir.actions.act_window">
+        <field name="name">Cotizaciones por Aprobar</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,kanban,form,activity</field>
+        <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Buen Trabajo!
+              </p><p>
+                Su bandeja de autorizaciones está vacía, puede cambiar los filtros para hacer otras búsquedas opcionales
+              </p>
+        </field>
+        <field name="domain">[('state', 'in', ['auth'])]</field>
+        <field name="context">{'no_breadcrumbs': True,'search_default_salesperson': True,'search_default_customer': False}</field>
+        <field name="search_view_id" ref="treasury_moex_sale_order_view_search"/>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('treasury_moex_sale_order_view_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('treasury_moex_sale_order_view_form')}),
+            ]"/>
+    </record>
+
+    <menuitem id="treasury_sale_order_moex_menu" 
+        name="Ventas por Aprobar" 
+        parent="account_treasury.auth_section_menu" 
+        action="treasury_moex_quote_tc_online_action" 
+        groups="account_treasury.group_financial_treasury_assistant"
+        sequence="2"/>
+</odoo>
+

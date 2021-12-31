@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_data_migration_lote_user_raw,data_migration.lote.user.raw,model_lote_user_raw,base.group_erp_manager,1,1,1,1
+access_data_migration_agent_agency_external_raw,data_migration.agent.agency.external.raw,model_agent_agency_external_raw,base.group_erp_manager,1,1,1,1
+access_data_migration_ir_glossary,data_migration.ir.glossary,model_ir_glossary,base.group_erp_manager,1,1,1,1
+access_data_migration_ir_glossary_homologant,data_migration.ir.glossary.homologant,model_ir_glossary_homologant,base.group_erp_manager,1,1,1,1

@@ -1,0 +1,100 @@
+<odoo>
+    <data>
+        <template id="sale_ope_moex_report_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <t t-foreach="docs" t-as="doc">
+                            <div class="row" id="sale_customer_header">
+                                <div class="col-12 text-center"><h2>Reporte de Cambios Online</h2></div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-6" id="sale_config_review_left">
+                                    <p><b>Usuario:</b> <span t-field="user.name"/></p>
+                                    <p><b>Fechas:</b> <span t-field="doc.start_date"/> - <span t-field="doc.end_date"/></p>
+                                </div>
+                                <br/>
+                                <div class="col-6" id="sale_config_review_right">
+                                    <p><b>Agencia:</b> <span t-field="doc.agency_id.name"/></p>
+                                    <p><b>Punto de Venta:</b> <span t-field="user.pos_ids.name"/></p>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered" style="table-layout: fixed" id="sale_customer_config_table">
+                                        <thead style="display: table-row-group">
+                                            <tr>
+                                                <th class="text-center" style="width: 0.03%" scope="col">Ref#</th>
+                                                <th class="text-center" style="width: 0.04%" scope="col">Fecha Operación</th>
+                                                <th class="text-center" style="width: 0.05%" scope="col">Cliente</th>
+                                                <th class="text-center" style="width: 0.04%" scope="col">Monto Origen (U$D)</th>
+                                                <th class="text-center" style="width: 0.04%" scope="col">Monto Origen (PEN)</th>
+                                                <th class="text-center" style="width: 0.03%" scope="col">Tipo de Cambio</th>
+                                                <th class="text-center" style="width: 0.04%" scope="col">Monto Destino (U$D)</th>
+                                                <th class="text-center" style="width: 0.04%" scope="col">Monto Destino (PEN)</th>
+                                                <th class="text-center" style="width: 0.05%" scope="col">Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="results" t-as="result">
+                                                <tr>
+                                                    <td class="text-center"><span t-esc="result['name']"/></td>
+                                                    <td class="text-center"><span t-esc="result['date_order']" t-options='{"widget": "date"}'/></td>
+                                                    <td class="text-center"><span t-esc="result['partner_id'].name"/></td>
+                                                    <td class="text-center"><t t-if="result['origin_currency_id'].name == 'USD'"><span t-esc="result['origin_import']" t-options="{'widget': 'monetary', 'display_currency': result['origin_currency_id']}"/></t></td>
+                                                    <td class="text-center"><t t-if="result['origin_currency_id'].name == 'PEN'"><span t-esc="result['origin_import']" t-options="{'widget': 'monetary', 'display_currency': result['origin_currency_id']}"/></t></td>
+                                                    <td class="text-center"><span t-esc="result['approved_rate']"/></td>
+                                                    <td class="text-center"><t t-if="result['destination_currency_id'].name == 'USD'"><span t-esc="result['destination_import']" t-options="{'widget': 'monetary', 'display_currency': result['destination_currency_id']}"/></t></td>
+                                                    <td class="text-center"><t t-if="result['destination_currency_id'].name == 'PEN'"><span t-esc="result['destination_import']" t-options="{'widget': 'monetary', 'display_currency': result['destination_currency_id']}"/></t></td>
+                                                    <td class="text-center"><t t-if="result['state'] == 'draft'"><span>Cotización</span></t><t t-if="result['state'] == 'auth'"><span>Autorizar Tasas</span></t><t t-if="result['state'] == 'valid'"><span>Validado</span></t><t t-if="result['state'] == 'sent'"><span>Presupuesto Enviado</span></t><t t-if="result['state'] == 'deposit'"><span>Depósito Adjuntado</span></t><t t-if="result['state'] == 'sale'"><span>Orden de Venta</span></t><t t-if="result['state'] == 'done'"><span>Bloqueado</span></t><t t-if="result['state'] == 'cancel'"><span>Cancelado</span></t></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- <br/>
+                            <div class="row">
+                                <div class="col-6"><h4>Valor Dólares</h4></div>
+                                <div class="col-6"><h4>Valor Soles</h4></div>
+                            </div>
+                            <br/> -->
+                            <!-- <div class="row">
+                                <div class="col-6">
+                                    <p>Ingresos: <span t-esc="ingresos_dol" t-options="{'widget': 'monetary', 'display_currency': Money_USD}"/></p>
+                                    <p>Egresos: <span t-esc="egresos_dol" t-options="{'widget': 'monetary', 'display_currency': Money_USD}"/></p>
+                                </div>
+                                <div class="col-6">
+                                    <p>Ingresos: <span t-esc="ingresos_sol" t-options="{'widget': 'monetary', 'display_currency': Money_PEN}"/></p>
+                                    <p>Egresos: <span t-esc="egresos_sol" t-options="{'widget': 'monetary', 'display_currency': Money_PEN}"/></p>
+                                </div>
+                            </div> -->
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <report
+            id="report_somoex_html"
+            model="so.detail.wizard"
+            string="Reporte de Cambios Online"
+            report_type="qweb-html"
+            name="sale_money_exchange.sale_ope_moex_report_template"
+            file="sale_money_exchange.sale_ope_moex_report_template"
+
+            menu="False"/>
+
+        <report
+            id="report_somoex_pdf"
+            model="so.detail.wizard"
+            string="Reporte de Cambios Online"
+            report_type="qweb-pdf"
+            name="sale_money_exchange.sale_ope_moex_report_template"
+            file="sale_money_exchange.sale_ope_moex_report_template"
+
+            menu="False"/>
+    </data>
+</odoo>

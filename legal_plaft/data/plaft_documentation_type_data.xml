@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="rec_documentation_1" model="plaft.documentation.type">
+            <field name="name">Completa</field>
+            <field name="plaftrisk_id" ref="plaft_risk_002"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_documentation_2" model="plaft.documentation.type">
+            <field name="name">Incompleta</field>
+            <field name="plaftrisk_id" ref="plaft_risk_003"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_documentation_3" model="plaft.documentation.type">
+            <field name="name">Falsa</field>
+            <field name="plaftrisk_id" ref="plaft_risk_004"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

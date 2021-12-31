@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- plaft.controlthreshold tree view -->
+        <record id="plaft_control_threshold_view_tree" model="ir.ui.view">
+            <field name="name">plaft.control.threshold.view.tree</field>
+            <field name="model">plaft.control.threshold</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="business_line_id"/>
+                    <field name="origin_country_id"/>
+                    <field name="origin_partner_id"/>
+                    <field name="destination_country_id"/>
+                    <field name="destination_partner_id"/>
+                    <field name="threshold_type"/>
+                    <field name="date_validity_period_start"/>
+                    <field name="control_type"/>
+                    <field name="currency_id"/>
+                    <field name="amount_min"/>
+                    <field name="amount_max"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- plaft.controlthreshold search view -->
+        <record id="plaft_control_threshold_view_search" model="ir.ui.view">
+            <field name="name">plaft.control.threshold.view.search</field>
+            <field name="model">plaft.control.threshold</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="business_line_id"/>
+                    <field name="origin_country_id"/>
+                    <field name="origin_partner_id"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- plaft.controlthreshold form view -->
+        <record id="plaft_control_threshold_view_form" model="ir.ui.view">
+            <field name="name">plaft.control.threshold.view.form</field>
+            <field name="model">plaft.control.threshold</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <field name="business_line_id"/>
+                                <field name="origin_country_id"/>
+                                <field name="origin_partner_id"/>
+                                <field name="destination_country_id"/>
+                                <field name="destination_partner_id"/>
+                                <field name="threshold_type"/>
+                                <field name="date_validity_period_start"/>
+                            </group>
+                            <group name="group_right">
+                                <field name="control_type"/>
+                                <field name="currency_id"/>
+                                <field name="amount_min" string="M.Mínimo"/>
+                                <field name="amount_max" string="M.Máximo"/>
+                                <field name="i_time_frame" string="Periodo en días" attrs="{'invisible':[('control_type','=','ope')]}"/>
+                                <field name="time_frame_type" attrs="{'invisible':[('control_type','=','ope')]}"/>
+                                <field name="authorization"/>
+                                <field name="threshold_req_ids" widget="many2many_tags"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Observaciones" name="remark">
+                                <group>
+                                    <field name="remark"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- plaft.controlthreshold action window -->
+        <record id="plaft_control_threshold_action" model="ir.actions.act_window">
+            <field name="name">Umbrales de Control</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">plaft.control.threshold</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                Crear Nuevos Umbrales!
+                </p>
+                <p>
+                Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="plaft_control_threshold_menu" name="Umbrales de control" parent="control_menu" action="plaft_control_threshold_action" sequence="3"/>
+    </data>
+</odoo>

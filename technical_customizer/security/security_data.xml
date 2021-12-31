@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="compose_email_features_access" model="res.groups">
+            <field name="name">Ver Campos del Compositor de E-Mail</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="make_visible_contacts" model="res.groups">
+            <field name="category_id" ref="category_visibility"/>
+            <field name="name">Visible Menú Contactos</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="make_visible_employee" model="res.groups">
+            <field name="category_id" ref="category_visibility"/>
+            <field name="name">Visible Menú Empleado</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="make_visible_website" model="res.groups">
+            <field name="category_id" ref="category_visibility"/>
+            <field name="name">Visible Menú WebSite</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <!-- <record id="make_visible_calendar" model="res.groups">
+            <field name="category_id" ref="category_visibility"/>
+            <field name="name">Visible Menú Calendar</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="make_visible_holidays" model="res.groups">
+            <field name="category_id" ref="category_visibility"/>
+            <field name="name">Visible Menú Ausencias</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="make_visible_expense" model="res.groups">
+            <field name="category_id" ref="category_visibility"/>
+            <field name="name">Visible Menú Gastos</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="make_visible_maintenance" model="res.groups">
+            <field name="category_id" ref="category_visibility"/>
+            <field name="name">Visible Menú Mantenimiento</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record id="make_visible_crm" model="res.groups">
+            <field name="category_id" ref="category_visibility"/>
+            <field name="name">Visible CRM</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record> -->
+        <!-- <record id="make_visible_sales" model="res.groups">
+            <field name="category_id" ref="category_visibility"/>
+            <field name="name">Visible Ventas</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record> -->
+        <record id="make_visible_invoices" model="res.groups">
+            <field name="category_id" ref="category_visibility"/>
+            <field name="name">Visible Facturación</field>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+        <record model="ir.ui.menu" id="contacts.menu_contacts">
+            <field name="groups_id" eval="[(6, 0, [ref('make_visible_contacts')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="hr.menu_hr_root">
+            <field name="groups_id" eval="[(6, 0, [ref('make_visible_employee')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="website.menu_website_configuration">
+            <field name="groups_id" eval="[(6, 0, [ref('make_visible_website')])]"/>
+        </record>
+        <!-- <record model="ir.ui.menu" id="calendar.mail_menu_calendar">
+            <field name="groups_id" eval="[(6, 0, [ref('make_visible_calendar')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="hr_holidays.menu_hr_holidays_root">
+            <field name="groups_id" eval="[(6, 0, [ref('make_visible_holidays')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="hr_expense.menu_hr_expense_root">
+            <field name="groups_id" eval="[(6, 0, [ref('make_visible_expense')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="maintenance.menu_maintenance_title">
+            <field name="groups_id" eval="[(6, 0, [ref('make_visible_maintenance')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="crm.crm_menu_root">
+            <field name="groups_id" eval="[(6, 0, [ref('make_visible_crm')])]"/>
+        </record> -->
+        <!-- <record model="ir.ui.menu" id="sale.sale_menu_root">
+            <field name="groups_id" eval="[(6, 0, [ref('make_visible_sales')])]"/>
+        </record> -->
+        <record model="ir.ui.menu" id="account.menu_finance">
+            <field name="groups_id" eval="[(6, 0, [ref('make_visible_invoices')])]"/>
+        </record>
+        <record model="ir.ui.menu" id="base_company.root_setting_management">
+            <field name="groups_id" eval="[(6,0,[ref('account_treasury.group_treasury_manager')])]"/>
+        </record>
+
+        <record model="ir.ui.menu" id="base_company.root_setting_management">
+            <field name="groups_id" eval="[(6,0,[ref('account_treasury.group_treasury_manager')])]"/>
+        </record>
+    </data>
+</odoo>

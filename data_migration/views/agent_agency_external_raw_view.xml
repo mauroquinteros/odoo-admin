@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="agent_agency_external_raw_view_tree" model="ir.ui.view">
+        <field name="name">agent.agency.external.raw.view.tree</field>
+        <field name="model">agent.agency.external.raw</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" optional="hide"/>
+                <field name="code_agency" optional="show"/>
+                <field name="name" optional="show"/>
+                <field name="street" optional="show"/>
+                <field name="phone" optional="hide"/>
+                <field name="schedule" optional="hide"/>
+                <field name="country" optional="show"/>
+                <field name="department" optional="hide"/>
+                <field name="province" optional="hide"/>
+                <field name="district" optional="hide"/>
+                <field name="latitude" optional="hide"/>
+                <field name="longitude" optional="hide"/>
+                <field name="type_brand" optional="show"/>
+                <field name="send_currency" optional="hide"/>
+                <field name="tc" optional="show"/>
+                <field name="pay_currency" optional="hide"/>
+                <field name="payer_name" optional="hide"/>
+                <field name="payer_code" optional="hide"/>
+                <field name="reference" optional="show"/>
+                <field name="active" optional="hide"/>
+                <field name="state" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="agent_agency_external_raw_view_form" model="ir.ui.view">
+        <field name="name">agent.agency.external.raw.view.form</field>
+        <field name="model">agent.agency.external.raw</field>
+        <field name="arch" type="xml">
+            <form>
+            </form>
+        </field>
+    </record>
+
+    <record id="agent_agency_external_raw_action" model="ir.actions.act_window">
+        <field name="name">Lote de Agentes/Agencias Externas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">agent.agency.external.raw</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="submenu_agent_agency_ext_raw" name="Carga de Agentes/Agencias" parent="submenu_warehouse" action="agent_agency_external_raw_action"/>
+</odoo>

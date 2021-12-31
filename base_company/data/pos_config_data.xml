@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="pos_moex" model="pos.config">
+            <!-- <field name="name">Pto Cambio de Divisas</field> -->
+            <field name="agency_id" ref="agency_virtual_009"/>
+            <!-- <field name="pc_id" ref="rec_pc_1"/> -->
+            <!-- <field name="type_pt_use">Pto</field> -->
+            <field name="profile_id" ref="op_profile_005"/>
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+            <!-- <field name="active" eval="True"/> -->
+        </record>
+        <record id="pos_corr" model="pos.config">
+            <!-- <field name="name">Pto Corresponsales</field> -->
+            <field name="agency_id" ref="agency_principal_009"/>
+            <!-- <field name="pc_id" ref="rec_pc_13"/> -->
+            <!-- <field name="type_pt_use">Pto</field> -->
+            <field name="profile_id" ref="op_profile_006"/>
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+            <!-- <field name="active" eval="True"/> -->
+        </record>
+
+
+        <record id="pos_isidro_001" model="pos.config">
+            <!-- <field name="name">Ptvsi Cajero 001</field> -->
+            <field name="agency_id" ref="agency_SanIsidro_009"/>
+            <!-- <field name="pc_id" ref="rec_pc_5"/> -->
+            <!-- <field name="type_pt_use">Ptv</field> -->
+            <field name="profile_id" ref="op_profile_004"/>
+            <!-- <field name="vault_id" ref="pos_isidro_vltag"/> -->
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+            <!-- <field name="active" eval="True"/> -->
+        </record>
+        <record id="pos_isidro_002" model="pos.config">
+            <!-- <field name="name">Ptvsi Cajero 002</field> -->
+            <field name="agency_id" ref="agency_SanIsidro_009"/>
+            <!-- <field name="pc_id" ref="rec_pc_6"/> -->
+            <!-- <field name="type_pt_use">Ptv</field> -->
+            <field name="profile_id" ref="op_profile_004"/>
+            <!-- <field name="vault_id" ref="pos_isidro_vltag"/> -->
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+            <!-- <field name="active" eval="True"/> -->
+        </record>
+        <record id="pos_isidro_003" model="pos.config">
+            <!-- <field name="name">Ptvsi Cajero 003</field> -->
+            <field name="agency_id" ref="agency_SanIsidro_009"/>
+            <!-- <field name="pc_id" ref="rec_pc_7"/> -->
+            <!-- <field name="type_pt_use">Ptv</field> -->
+            <field name="profile_id" ref="op_profile_004"/>
+            <!-- <field name="vault_id" ref="pos_isidro_vltag"/> -->
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+            <!-- <field name="active" eval="True"/> -->
+        </record>
+
+
+        <record id="pos_linc_001" model="pos.config">
+            <!-- <field name="name">Ptvli Cajero 001</field> -->
+            <field name="agency_id" ref="agency_Lince_010"/>
+            <!-- <field name="pc_id" ref="rec_pc_9"/> -->
+            <!-- <field name="type_pt_use">Ptv</field> -->
+            <field name="profile_id" ref="op_profile_004"/>
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+            <!-- <field name="active" eval="True"/> -->
+        </record>
+        <record id="pos_linc_002" model="pos.config">
+            <!-- <field name="name">Ptvli Cajero 002</field> -->
+            <field name="agency_id" ref="agency_Lince_010"/>
+            <!-- <field name="pc_id" ref="rec_pc_10"/> -->
+            <!-- <field name="type_pt_use">Ptv</field> -->
+            <field name="profile_id" ref="op_profile_004"/>
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+            <!-- <field name="active" eval="True"/> -->
+        </record>
+        <record id="pos_linc_003" model="pos.config">
+            <!-- <field name="name">Ptvli Cajero 003</field> -->
+            <field name="agency_id" ref="agency_Lince_010"/>
+            <!-- <field name="pc_id" ref="rec_pc_11"/> -->
+            <!-- <field name="type_pt_use">Ptv</field> -->
+            <field name="profile_id" ref="op_profile_004"/>
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+            <!-- <field name="active" eval="True"/> -->
+        </record>
+        <record id="pos_linc_004" model="pos.config">
+            <!-- <field name="name">Ptvli Cajero 004</field> -->
+            <field name="agency_id" ref="agency_Lince_010"/>
+            <!-- <field name="pc_id" ref="rec_pc_12"/> -->
+            <!-- <field name="type_pt_use">Ptv</field> -->
+            <field name="profile_id" ref="op_profile_004"/>
+            <!-- <field name="company_id" ref="base.main_company"/> -->
+            <!-- <field name="active" eval="True"/> -->
+        </record>
+    </data>
+</odoo>

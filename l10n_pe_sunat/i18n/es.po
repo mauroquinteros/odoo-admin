@@ -1,0 +1,272 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_pe_sunat
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-06 16:50+0000\n"
+"PO-Revision-Date: 2021-01-06 16:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_03__active
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_25__active
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_tmpl__active
+msgid "Active"
+msgstr "Activo"
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_sunat_03_menu
+msgid "Catalog 03 - Tipo de Unidad de Medida Comercial"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_06_menu
+msgid "Catalog 06 - Tipos de documento de Identidad"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_07_menu
+msgid "Catalog 07 - Tipo de Afectación del IGV"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_08_menu
+msgid "Catalog 08 - Tipos de Sistema de Cálculo del ISC"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_09_menu
+msgid "Catalog 09 - Tipo Nota de Credito"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,help:l10n_pe_sunat.field_account_move__l10n_pe_edi_reversal_type_id
+#: model:ir.model.fields,help:l10n_pe_sunat.field_account_move_reversal__l10n_pe_edi_reversal_type_id
+msgid "Catalog 09: Type of Credit note"
+msgstr "Catálogo 09: Tipo de nota de crédito"
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_10_menu
+msgid "Catalog 10 - Tipo Nota de Debito"
+msgstr "Catálogo 10 - Tipo Nota de Debito"
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,help:l10n_pe_sunat.field_account_debit_note__l10n_pe_edi_debit_type_id
+#: model:ir.model.fields,help:l10n_pe_sunat.field_account_move__l10n_pe_edi_debit_type_id
+msgid "Catalog 10: Type of Debit note"
+msgstr "Catálogo 10: Tipo de nota de débito"
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_11_menu
+msgid "Catalog 11 - Tipo de Valor de Venta"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_12_menu
+msgid "Catalog 12 - Documentos Relacionados Tributarios"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_14_menu
+msgid "Catalog 14 - Otros Conceptos Tributarios"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_15_menu
+msgid "Catalog 15 - Elementos Adicionales en la Factura Electrónica"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_16_menu
+msgid "Catalog 16 - Tipo de Precio de Venta Unitario"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_17_menu
+msgid "Catalog 17 - Tipo de Operacion"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_18_menu
+msgid "Catalog 18 - Codigos - Modalidad de  Traslado"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_19_menu
+msgid "Catalog 19 - Codigos de Estado de Item"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_20_menu
+msgid "Catalog 20 - Codigos - Motivo de Traslado"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_21_menu
+msgid "Catalog 21 - Documentos Relacionados"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_22_menu
+msgid "Catalog 22 - Codigos- Regimenes de Percepcion"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_23_menu
+msgid "Catalog 23 - Codigos- Regimenes de Retencion"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_24_menu
+msgid "Catalog 24 - Codigos- Recibo Electronico por Servicios Publicos"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_25_menu
+msgid "Catalog 25 - Codigos de Producto SUNAT"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_51_menu
+msgid "Catalog 51 - Tipo de Factura"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_52_menu
+msgid "Catalog 52 - Codigos de Leyendas"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_53_menu
+msgid "Catalog 53 - Codigos de Cargos o Descuentos"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_54_menu
+msgid "Catalog 54 - Codigos de Bienes y Servicio Sujetos a Detraccion"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_55_menu
+msgid "Catalog 55 - Codigo de identificacion del Item"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_56_menu
+msgid "Catalog 56 - Codigo de Tipo de Servicio Publico"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_57_menu
+msgid "Catalog 57 - Tipo de Servicio Publicos-Telecomunicaciones"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_edi_catalog_58_menu
+msgid "Catalog 58 - Tipo de Medidor-Recibo de Luz"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model,name:l10n_pe_sunat.model_l10n_pe_sunat_tmpl
+msgid "Catalog Template"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_03__code
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_25__code
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_tmpl__code
+msgid "Code"
+msgstr "Código"
+
+#. module: l10n_pe_sunat
+#: model:ir.actions.act_window,name:l10n_pe_sunat.catalog_25_action
+#: model:ir.model,name:l10n_pe_sunat.model_l10n_pe_sunat_25
+#: model_terms:ir.ui.view,arch_db:l10n_pe_sunat.view_catalog_25_form
+#: model_terms:ir.ui.view,arch_db:l10n_pe_sunat.view_catalog_25_tree
+msgid "Codigos - Producto SUNAT"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model,name:l10n_pe_sunat.model_l10n_pe_sunat_03
+msgid "Codigos - Tipo de Unidad de Medida Comercial"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_03__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_25__create_uid
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_tmpl__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_03__create_date
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_25__create_date
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_tmpl__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_03__name
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_25__name
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_tmpl__name
+msgid "Description"
+msgstr "Descripción"
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_03__display_name
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_25__display_name
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_tmpl__display_name
+msgid "Display Name"
+msgstr "Nombre a Mostrar"
+
+#. module: l10n_pe_sunat
+#: model:ir.ui.menu,name:l10n_pe_sunat.l10n_pe_jet_configuration_menu
+msgid "Factura Electronica"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_03__id
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_25__id
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_tmpl__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_03____last_update
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_25____last_update
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_tmpl____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_03__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_25__write_uid
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_tmpl__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_03__write_date
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_25__write_date
+#: model:ir.model.fields,field_description:l10n_pe_sunat.field_l10n_pe_sunat_tmpl__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model:ir.actions.act_window,name:l10n_pe_sunat.catalog_03_action
+#: model_terms:ir.ui.view,arch_db:l10n_pe_sunat.view_catalog_03_form
+msgid "Tipo de Unidad de Medida Comercial"
+msgstr ""
+
+#. module: l10n_pe_sunat
+#: model_terms:ir.ui.view,arch_db:l10n_pe_sunat.view_catalog_03_tree
+msgid "Tipos de Unidad de Medida Comercial"
+msgstr ""

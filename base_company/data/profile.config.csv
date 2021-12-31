@@ -1,0 +1,7 @@
+"id","name","module","module_type","foreign_code","type_pt_use","company_id:id","active"
+op_profile_001,Tesorero,Tes,T,ope001,Pto,base.main_company,1
+op_profile_002,Bóveda Principal,Ofi,BvP,ope002,Pto,base.main_company,1
+op_profile_003,Bóveda,Age,Bv,ope003,Pto,base.main_company,1
+op_profile_004,Cajero,Age,Caja,ope004,Ptv,base.main_company,1
+op_profile_005,Cambista On-Line,Age,MoEx,ope005,Ptv,base.main_company,1
+op_profile_006,Corresponsal,Age,Corr,ope006,Ptv,base.main_company,1

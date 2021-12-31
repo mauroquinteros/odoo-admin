@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="rec_moex_auto_approvement_1" model="res.currency.moex.auto.approvement">
+            <field name="business_line_id" ref="base_company.business_line_001"/>
+            <field name="sale_channel_ids" eval="[(6, 0, [ ref('base_company.business_channel_002')])]"/>
+            <field name="remark">Para efectos de aprobaciones automáticas, se detalla a continuación las monedas y las milésimas máximas permitidas.</field>
+        </record>
+
+        <record id="rec_moex_auto_approvement_line_1" model="res.currency.moex.auto.approvement.line">
+            <field name="agency_id" ref="base_company.agency_virtual_009"/>
+            <field name="origin_currency_id" ref="base.USD"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="min_amount">1</field>
+            <field name="max_amount">999.99</field>
+            <field name="operator">+</field>
+            <field name="i_value">0.001</field>
+            <field name="autoapprovement_id" ref="rec_moex_auto_approvement_1"/>
+        </record>
+        <record id="rec_moex_auto_approvement_line_2" model="res.currency.moex.auto.approvement.line">
+            <field name="agency_id" ref="base_company.agency_virtual_009"/>
+            <field name="origin_currency_id" ref="base.USD"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="min_amount">1000.00</field>
+            <field name="max_amount">99999999.00</field>
+            <field name="operator">+</field>
+            <field name="i_value">0.002</field>
+            <field name="autoapprovement_id" ref="rec_moex_auto_approvement_1"/>
+        </record>
+        <record id="rec_moex_auto_approvement_line_3" model="res.currency.moex.auto.approvement.line">
+            <field name="agency_id" ref="base_company.agency_virtual_009"/>
+            <field name="origin_currency_id" ref="base.PEN"/>
+            <field name="destination_currency_id" ref="base.USD"/>
+            <field name="min_amount">1.00</field>
+            <field name="max_amount">3500.96</field>
+            <field name="operator">-</field>
+            <field name="i_value">0.003</field>
+            <field name="autoapprovement_id" ref="rec_moex_auto_approvement_1"/>
+        </record>
+        <record id="rec_moex_auto_approvement_line_4" model="res.currency.moex.auto.approvement.line">
+            <field name="agency_id" ref="base_company.agency_virtual_009"/>
+            <field name="origin_currency_id" ref="base.PEN"/>
+            <field name="destination_currency_id" ref="base.USD"/>
+            <field name="min_amount">3501.00</field>
+            <field name="max_amount">9999999.00</field>
+            <field name="operator">-</field>
+            <field name="i_value">0.002</field>
+            <field name="autoapprovement_id" ref="rec_moex_auto_approvement_1"/>
+        </record>
+        <record id="rec_moex_auto_approvement_line_5" model="res.currency.moex.auto.approvement.line">
+            <field name="agency_id" ref="base_company.agency_principal_009"/>
+            <field name="origin_currency_id" ref="base.USD"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="min_amount">1</field>
+            <field name="max_amount">999.99</field>
+            <field name="operator">+</field>
+            <field name="i_value">0.001</field>
+            <field name="autoapprovement_id" ref="rec_moex_auto_approvement_1"/>
+        </record>
+        <record id="rec_moex_auto_approvement_line_6" model="res.currency.moex.auto.approvement.line">
+            <field name="agency_id" ref="base_company.agency_principal_009"/>
+            <field name="origin_currency_id" ref="base.USD"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="min_amount">1000.00</field>
+            <field name="max_amount">99999999.00</field>
+            <field name="operator">+</field>
+            <field name="i_value">0.002</field>
+            <field name="autoapprovement_id" ref="rec_moex_auto_approvement_1"/>
+        </record>
+        <record id="rec_moex_auto_approvement_line_7" model="res.currency.moex.auto.approvement.line">
+            <field name="agency_id" ref="base_company.agency_principal_009"/>
+            <field name="origin_currency_id" ref="base.PEN"/>
+            <field name="destination_currency_id" ref="base.USD"/>
+            <field name="min_amount">1.00</field>
+            <field name="max_amount">3500.96</field>
+            <field name="operator">-</field>
+            <field name="i_value">0.003</field>
+            <field name="autoapprovement_id" ref="rec_moex_auto_approvement_1"/>
+        </record>
+        <record id="rec_moex_auto_approvement_line_8" model="res.currency.moex.auto.approvement.line">
+            <field name="agency_id" ref="base_company.agency_principal_009"/>
+            <field name="origin_currency_id" ref="base.PEN"/>
+            <field name="destination_currency_id" ref="base.USD"/>
+            <field name="min_amount">3501.00</field>
+            <field name="max_amount">9999999.00</field>
+            <field name="operator">-</field>
+            <field name="i_value">0.002</field>
+            <field name="autoapprovement_id" ref="rec_moex_auto_approvement_1"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="cashbox_res_users_view_id_form">
+            <field name="name">res.users.agency.pos.fields.inherit.view.form</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//sheet//notebook" position="inside">
+                    <page string="Parámetro Operacional">
+                        <group>
+                            <group col="6" colspan="2">
+                                <field name="agency_id"/>
+                                <field name="profile_id"/>
+                            </group>
+                            <group col="6" colspan="2">
+                                <field name="function" widget="radio"/>
+                                <field name="pos_ids" widget="many2many_tags" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xpath_custom_category_tree_view_id">
+            <field name="name">res.partner.category.inherit.view.tree</field>
+            <field name="model">res.partner.category</field>
+            <field name="inherit_id" ref="base.view_partner_category_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="keycode"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="xpath_custom_category_form_view_id">
+            <field name="name">res.partner.category.inherit.view.form</field>
+            <field name="model">res.partner.category</field>
+            <field name="inherit_id" ref="base.view_partner_category_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//group//field[@name='parent_id']" position="after">
+                    <field name="keycode" attrs="{'readonly': [('keycode','!=',False)]}" force_save="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_country_state_inherit" model="ir.ui.view">
+            <field name="name">res.country.state.inherit.view.form</field>
+            <field name="model">res.country.state</field>
+            <field name="inherit_id" ref="base.view_country_state_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='country_id']" position="after">
+                    <field name="code_reference"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="pe_res_partner_view_id_form_inherit">
+            <field name="name">pe.res.partner.inherit.view.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="l10n_pe.pe_partner_address_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='city_id']" position="attributes">
+                    <attribute name="context">{'state_id': state_id}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='l10n_pe_district']" position="attributes">
+                    <attribute name="context">{'city_id': city_id}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+
+</odoo>

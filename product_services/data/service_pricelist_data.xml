@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="service_pricelist_tar01_ar" model="service.pricelist">
+            <field name="country_id" ref="base.ar"/>
+            <field name="register_date" eval="time.strftime('%Y-%m-%d')"/>
+        </record>
+        <record id="service_pricelist_tar02_ar" model="service.pricelist">
+            <field name="country_id" ref="base.ar"/>
+            <field name="register_date" eval="time.strftime('%Y-%m-%d')"/>
+        </record>
+        <record id="service_pricelist_tar03_ar" model="service.pricelist">
+            <field name="country_id" ref="base.ar"/>
+            <field name="register_date" eval="time.strftime('%Y-%m-%d')"/>
+        </record>
+        <record id="service_pricelist_tar01_uk" model="service.pricelist">
+            <field name="country_id" ref="base.uk"/>
+            <field name="register_date" eval="time.strftime('%Y-%m-%d')"/>
+        </record>
+        <record id="service_pricelist_tar01_us" model="service.pricelist">
+            <field name="country_id" ref="base.us"/>
+            <field name="register_date" eval="time.strftime('%Y-%m-%d')"/>
+        </record>
+        <record id="service_pricelist_tar01_pe" model="service.pricelist">
+            <field name="country_id" ref="base.pe"/>
+            <field name="register_date" eval="time.strftime('%Y-%m-%d')"/>
+        </record>
+    </data>
+</odoo>

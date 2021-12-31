@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- plaft.status.civil.list Sequence -->
+        <record id="status_civil_sequence" model="ir.sequence">
+            <field name="name">Estado Civil Secuencia</field>
+            <field name="code">plaft.status.civil.list.sequence</field>
+            <field name="prefix">Civ</field>
+            <field name="padding">4</field>
+            <field name="suffix">Stat</field>
+            <field name="number_increment">1</field>
+            <!-- <field name="implementation">custom</field> -->
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!-- plaft.position Sequence -->
+        <record id="position_sequence" model="ir.sequence">
+            <field name="name">Posición o Cargo Secuencia</field>
+            <field name="code">plaft.position.sequence</field>
+            <field name="prefix">PoC</field>
+            <field name="padding">4</field>
+            <field name="suffix"></field>
+            <field name="number_increment">1</field>
+            <!-- <field name="implementation">custom</field> -->
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+        <!-- plaft.ro.declaration Sequence -->
+        <record id="plaft_ro_declaration_sequence" model="ir.sequence">
+            <field name="name">Declaracion Jurada de registro de operaciones</field>
+            <field name="code">plaft.ro.declaration.sequence</field>
+            <field name="prefix">RO</field>
+            <field name="padding">6</field>
+            <field name="suffix"></field>
+            <field name="number_increment">1</field>
+            <!-- <field name="implementation">standard</field> -->
+            <field name="company_id" ref="base.main_company"/>
+        </record>
+    </data>
+</odoo>

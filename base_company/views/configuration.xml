@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- profile.config tree view -->
+    <record id="profile_config_view_tree" model="ir.ui.view">
+        <field name="name">profile.config.view.tree</field>
+        <field name="model">profile.config</field>
+        <field name="arch" type="xml">
+            <tree create="false" editable="top">
+                <field name="name"/>
+                <field name="foreign_code"/>
+                <field name="module"/>
+                <field name="module_type"/>
+                <field name="type_pt_use" optional="hide"/>
+                <field name="company_id" optional="hide"/>
+                <field name="active" optional="hide"/>
+                <button type="object" class="btn btn-sm" name="action_open_document" icon="fa-folder-open-o text-warning" string="Abrir Documento"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- profile.config form view -->
+    <record id="profile_config_view_form" model="ir.ui.view">
+        <field name="name">profile.config.view.form</field>
+        <field name="model">profile.config</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="foreign_code"/>
+                            <field name="module"/>
+                            <field name="module_type"/>
+                        </group>
+                        <group>
+                            <field name="type_pt_use"/>
+                            <field name="company_id"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- profile.config action window -->
+    <record id="profile_config_action" model="ir.actions.act_window">
+        <field name="name">Lista de Perfiles de Operaciones</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">profile.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree su primer registro
+            </p>
+            <p>
+                Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Gestión" id="root_setting_management" web_icon="base_company,static/img/icons/management_company.png"/>
+    <menuitem name="Ajustes" id="management_settings" parent="root_setting_management" sequence="20"/>
+    <menuitem name="Perfil de Operador" id="operator_profile_menu" parent="management_settings" action="profile_config_action" sequence="1"/>
+    <menuitem name="Perfil de Ctas Bancarias" id="account_bank_profile_menu" parent="management_settings" action="base_config.profile_account_bank_action" sequence="2"/>
+</odoo>

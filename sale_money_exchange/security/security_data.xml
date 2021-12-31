@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_ope_moex_online" model="res.groups">
+            <field name="name">Venta de Divisas Online</field>
+            <field name="category_id" ref="sale_config.category_moex_online"/>
+        </record>
+        <record id="sale_config.group_ope_sale_total" model="res.groups">
+            <field name="implied_ids" eval="[(4, ref('group_ope_moex_online'))]"/>
+        </record>
+    </data>
+</odoo>

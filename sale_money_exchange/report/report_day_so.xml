@@ -1,0 +1,72 @@
+<odoo>
+    <data>
+        <template id="sale_ope_day_report_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <t t-foreach="docs" t-as="doc">
+                            <div class="row" id="sale_customer_header">
+                                <div class="col-12 text-center"><h2>Reporte de Operaciones del Día</h2></div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-6" id="sale_config_review_left">
+                                    <p><b>Usuario:</b> <span t-field="user.name"/></p>
+                                    <p><b>Fechas:</b> <span t-field="doc.start_date"/> - <span t-field="doc.end_date"/></p>
+                                </div>
+                                <br/>
+                                <div class="col-6" id="sale_config_review_right">
+                                    <p><b>Agencia:</b> <span t-field="doc.agency_id.name"/></p>
+                                    <p><b>Punto de Venta:</b> <span t-field="user.pos_ids.name"/></p>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>Cantidad de Operaciones: <span t-esc="ope_total"/></p>
+                                    <p>Ventas Concretadas: <span t-esc="sale_total"/></p>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-6"><h4>Valor Dólares</h4></div>
+                                <div class="col-6"><h4>Valor Soles</h4></div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>Ingresos: <span t-esc="ingresos_dol" t-options="{'widget': 'monetary', 'display_currency': Money_USD}"/></p>
+                                    <p>Egresos: <span t-esc="egresos_dol" t-options="{'widget': 'monetary', 'display_currency': Money_USD}"/></p>
+                                </div>
+                                <div class="col-6">
+                                    <p>Ingresos: <span t-esc="ingresos_sol" t-options="{'widget': 'monetary', 'display_currency': Money_PEN}"/></p>
+                                    <p>Egresos: <span t-esc="egresos_sol" t-options="{'widget': 'monetary', 'display_currency': Money_PEN}"/></p>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <report
+            id="report_soday_html"
+            model="so.detail.wizard"
+            string="Ventas del Día"
+            report_type="qweb-html"
+            name="sale_money_exchange.sale_ope_day_report_template"
+            file="sale_money_exchange.sale_ope_day_report_template"
+
+            menu="False"/>
+
+        <report
+            id="report_soday_pdf"
+            model="so.detail.wizard"
+            string="Ventas del Día"
+            report_type="qweb-pdf"
+            name="sale_money_exchange.sale_ope_day_report_template"
+            file="sale_money_exchange.sale_ope_day_report_template"
+
+            menu="False"/>
+    </data>
+</odoo>

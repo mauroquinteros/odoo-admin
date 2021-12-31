@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- business.line tree view -->
+    <record id="business_line_view_tree" model="ir.ui.view">
+        <field name="name">business.line.view.tree</field>
+        <field name="model">business.line</field>
+        <field name="arch" type="xml">
+            <tree create="false" editable="top">
+                <field name="name"/>
+                <field name="foreign_code"/>
+                <field name="active"/>
+                <button type="object" class="btn btn-sm" name="action_open_document" icon="fa-folder-open-o text-warning" string="Abrir Documento"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- business.line form view -->
+    <record id="business_line_view_form" model="ir.ui.view">
+        <field name="name">business.line.view.form</field>
+        <field name="model">business.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                        </group>
+                        <group>
+                            <field name="foreign_code"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- business.line action window -->
+    <record id="business_line_action" model="ir.actions.act_window">
+        <field name="name">Líneas de Negocio</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">business.line</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree su primer registro
+            </p>
+            <p>
+                Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+            </p>
+        </field>
+    </record>
+
+    <!-- business.channel tree view -->
+    <record id="business_channel_view_tree" model="ir.ui.view">
+        <field name="name">business.channel.view.tree</field>
+        <field name="model">business.channel</field>
+        <field name="arch" type="xml">
+            <tree create="false" editable="top">
+                <field name="name"/>
+                <field name="name_code"/>
+                <field name="channel_type"/>
+                <field name="foreign_code"/>
+                <field name="plaftrisk_id"/>
+                <field name="company_id"/>
+                <field name="active"/>
+                <button type="object" class="btn btn-sm" name="action_open_document" icon="fa-folder-open-o text-warning" string="Abrir Documento"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- business.channel form view -->
+    <record id="business_channel_view_form" model="ir.ui.view">
+        <field name="name">business.channel.view.form</field>
+        <field name="model">business.channel</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="name_code"/>
+                        <field name="channel_type"/>
+                        <field name="foreign_code"/>
+                    </group>
+                    <group>
+                        <field name="plaftrisk_id"/>
+                        <field name="company_id"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="message_ids" widget="mail_thread" />
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!-- business.channel action window -->
+    <record id="business_channel_action" model="ir.actions.act_window">
+        <field name="name">Canales de Negocio</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">business.channel</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree su primer registro
+            </p>
+            <p>
+                Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+            </p>
+        </field>
+    </record>
+
+   <menuitem name="Negocio" id="business_menu" parent="root_setting_management" sequence="5"/>
+   <menuitem name="Líneas de Negocio" id="business_line_menu" parent="business_menu" action="business_line_action" sequence="1"/>
+   <menuitem name="Canales de Negocio" id="business_channel_menu" parent="business_menu" action="business_channel_action" sequence="2"/>
+</odoo>

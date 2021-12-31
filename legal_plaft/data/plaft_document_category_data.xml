@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="plaft_documentcatalog_cat_1" model="plaft.document.category">
+            <field name="name">Documentos de identidad - Pers. Natural</field>
+            <field name="acronym">DOI - P.Natural</field>
+            <field name="code">doi_prs_ntrl</field>
+            <field name="description">Tipos de Documentos de identidad para personas naturales que obligatorios para enviar al Corresponsal</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_documentcatalog_cat_2" model="plaft.document.category">
+            <field name="name">Documentos de identidad - Pers. Juridica</field>
+            <field name="acronym">DOI - P. Juridica</field>
+            <field name="code">doi_prs_jdrc</field>
+            <field name="description">Tipos de Documentos de identidad para personas juridicas que obligatorios para enviar al Corresponsal</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_documentcatalog_cat_3" model="plaft.document.category">
+            <field name="name">Formulario de Cumplimiento - Pers. Natural</field>
+            <field name="acronym">FC-P.Natural</field>
+            <field name="code">fdc_prs_ntrl</field>
+            <field name="description"></field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_documentcatalog_cat_4" model="plaft.document.category">
+            <field name="name">Formulario de Cumplimiento- Pers. Juridica</field>
+            <field name="acronym">FC-P.Juridica</field>
+            <field name="code">fdc_prs_jdrc</field>
+            <field name="description"></field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_documentcatalog_cat_5" model="plaft.document.category">
+            <field name="name">Formato Autogiro -  Pers.Natural</field>
+            <field name="acronym">FA-P.Natural</field>
+            <field name="code">fag_prs_ntrl</field>
+            <field name="description"></field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_documentcatalog_cat_6" model="plaft.document.category">
+            <field name="name">Formato Autogiro - Pers. Jurídico</field>
+            <field name="acronym">FA-P.Juridico</field>
+            <field name="code">fag_prs_jdrc</field>
+            <field name="description"></field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_documentcatalog_cat_7" model="plaft.document.category">
+            <field name="name">Sutento - Pers. Natural</field>
+            <field name="acronym">SU-P.Natural</field>
+            <field name="code">sust_prs_ntrl</field>
+            <field name="description"></field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_documentcatalog_cat_8" model="plaft.document.category">
+            <field name="name">Sutento - Pers. Juridico</field>
+            <field name="acronym">SU-P.Juridico</field>
+            <field name="code">sust_prs_jdrc</field>
+            <field name="description"></field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_documentcatalog_cat_9" model="plaft.document.category">
+            <field name="name">Docs de Identidad - General</field>
+            <field name="acronym">DI</field>
+            <field name="description"></field>
+            <field name="code">di_doc</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_documentcatalog_cat_10" model="plaft.document.category">
+            <field name="name">Registro de Operaciones</field>
+            <field name="acronym">RO</field>
+            <field name="code">ro_doc</field>
+            <field name="description">Registro de Operaciones</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_documentcatalog_cat_11" model="plaft.document.category">
+            <field name="name">Expedientes</field>
+            <field name="acronym">EXP</field>
+            <field name="code">exp_doc</field>
+            <field name="description">Expedientes del cliente</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

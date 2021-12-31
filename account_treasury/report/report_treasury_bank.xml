@@ -1,0 +1,145 @@
+<odoo>
+  <data>
+    <template id="treasury_bank_report_template">
+      <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+          <div class="page">
+            <t t-foreach="docs" t-as="doc">
+              <div class="row" id="treasury_bank_header">
+                <div class="col-12 text-center">
+                  <h2>Reporte de Bancos <span t-esc="name"/>
+                  </h2>
+                </div>
+              </div>
+              <br/>
+              <div class="row">
+                <div class="col-6" id="treasury_bank_config_review_left">
+                  <p>
+                    <b>Usuario:</b>
+                    <span t-field="user.name"/>
+                  </p>
+                </div>
+                <div class="col-6" id="treasury_bank_config_review_right">
+                  <p>
+                    <b>Fechas:</b>
+                    <span t-esc="doc.start_date"/>
+ -                    <span t-esc="doc.end_date"/>
+                  </p>
+                </div>
+              </div>
+              <br/>
+              <div class="row">
+                <div class="col-12">
+                  <table class="table table-bordered" style="table-layout: fixed" id="sale_customer_config_table">
+                    <t t-set="banks" t-value="[]"/>
+                    <t t-foreach="results" t-as="result">
+                      <t t-if="result.type==type">
+                        <t t-if="type=='A-I' and result.state=='deposit'">
+                          <t t-set="banks" t-value="banks+[result.destination_account_bank_id]"/>
+                        </t>
+                        <t t-if="type=='B-E' and result.state=='acredit'">
+                          <t t-set="banks" t-value="banks+[result.origin_account_bank_id]"/>
+                        </t>
+                      </t>
+                    </t>
+                    <t t-foreach="set(banks)" t-as="bank">
+                      <thead style="display: table-row-group">
+                        <tr>
+                          <th class="text-center" style="width: 20%" scope="col">Cuenta Jet PERU <strong t-esc="bank.bank_id.name" style="color: black;"/>
+:                          <strong t-esc="bank.sanitized_acc_number" style="color: black;"/>
+                          <strong t-esc="bank.currency_id.name" style="color: black;"/>
+                        </th>
+                      </tr>
+                      <tr>
+                        <th class="text-center" style="width: 20%" scope="col">N° Cuenta Bancaria</th>
+                        <th class="text-center" style="width: 20%" scope="col">Tipo</th>
+                        <th class="text-center" style="width: 20%" scope="col">N° Operación</th>
+                        <th class="text-center" style="width: 20%" scope="col">Monto Depositado</th>
+                        <th class="text-center" style="width: 20%" scope="col">Fecha de Operación</th>
+                        <th class="text-center" style="width: 20%" scope="col">Cliente</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <t t-set="total" t-value="0"/>
+                      <t t-set="currency" t-value=""/>
+                      <t t-foreach="results" t-as="result">
+                        <t t-if="result.type==type">
+                          <t t-if="type=='A-I' and result.state=='deposit'">
+                            <t t-if="bank.id==result.destination_account_bank_id.id">
+                              <tr>
+                                <td class="text-center">
+                                  <span t-field="result.destination_account_bank_id.sanitized_acc_number"/>
+                                </td>
+                                <td class="text-center">
+                                  <span t-field="result.sale_order_id.operator"/>
+                                </td>
+                                <td class="text-center">
+                                  <span t-field="result.reference_deposit"/>
+                                </td>
+                                <td class="text-center">
+                                  <span t-field="result.amount_deposit" t-options="{'widget': 'monetary', 'display_currency': result.currency_id}"/>
+                                </td>
+                                <td class="text-center">
+                                  <span t-field="result.date_deposit"/>
+                                </td>
+                                <td class="text-center">
+                                  <span t-field="result.partner_id.name"/>
+                                </td>
+                              </tr>
+                              <t t-set="total" t-value="total+result.amount_deposit"/>
+                              <t t-set="currency" t-value="result.currency_id"/>
+                            </t>
+                          </t>
+                          <t t-if="type=='B-E' and result.state=='acredit'">
+                            <t t-if="bank.id==result.origin_account_bank_id.id">
+                              <tr>
+                                <td class="text-center">
+                                  <span t-field="result.origin_account_bank_id.sanitized_acc_number"/>
+                                </td>
+                                <td class="text-center">
+                                  <span t-field="result.sale_order_id.operator"/>
+                                </td>
+                                <td class="text-center">
+                                  <span t-field="result.reference_deposit"/>
+                                </td>
+                                <td class="text-center">
+                                  <span t-field="result.amount_payable" t-options="{'widget': 'monetary', 'display_currency': result.currency_id}"/>
+                                </td>
+                                <td class="text-center">
+                                  <span t-field="result.date_deposit"/>
+                                </td>
+                                <td class="text-center">
+                                  <span t-field="result.partner_id.name"/>
+                                </td>
+                              </tr>
+                              <t t-set="total" t-value="total+result.amount_payable"/>
+                              <t t-set="currency" t-value="result.currency_id"/>
+                            </t>
+                          </t>
+                        </t>
+                      </t>
+                      <tr>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center">Total: <span t-esc="total" t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                        </td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                      </tr>
+                    </tbody>
+                  </t>
+                </table>
+              </div>
+            </div>
+          </t>
+        </div>
+      </t>
+    </t>
+  </template>
+
+  <report id="report_treasury_bank_html" model="treasury.bank.wizard" string="Reporte de Bancos" report_type="qweb-html" name="account_treasury.treasury_bank_report_template" file="account_treasury.treasury_bank_report_template" paperformat="account_treasury.paperformat_treasury_portrait" menu="False"/>
+
+  <report id="report_treasury_bank_pdf" model="treasury.bank.wizard" string="Reporte de Bancos" report_type="qweb-pdf" name="account_treasury.treasury_bank_report_template" file="account_treasury.treasury_bank_report_template" paperformat="account_treasury.paperformat_treasury_portrait" menu="False"/>
+</data>
+</odoo>

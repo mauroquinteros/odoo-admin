@@ -1,0 +1,6 @@
+id,name,risk_value,remark,active
+plaft_risk_001,Muy Bajo,1,,1
+plaft_risk_002,Bajo,2,,1
+plaft_risk_003,Medio,3,,1
+plaft_risk_004,Alto,4,,1
+plaft_risk_005,Muy Alto,5,,1

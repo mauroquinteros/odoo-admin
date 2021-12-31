@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates>
+    <t t-name="TopButton_systray" groups="l10n_pe_currency.group_js_wizard_traysystem">
+        <li class="themes_selector_li">
+            <label class="switch" style="margin-bottom:0px;">
+                <div class="systray_click">
+                    <i class="fa fa-usd"/>
+                </div>
+            </label>
+        </li>
+    </t>
+</templates>

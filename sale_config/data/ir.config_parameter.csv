@@ -1,0 +1,5 @@
+id,key,value
+exception_sale_111,exception.sale.111,"Solamente los usuarios pertenecientes a (%s) están permitidos a realizar esta acción específica en el sistema."
+currency_domain_parameter,currency.domain.parameter,"USD,PEN"
+default_origin_currency,default.origin.currency,"base.USD"
+default_destination_currency,default.destination.currency,"base.PEN"

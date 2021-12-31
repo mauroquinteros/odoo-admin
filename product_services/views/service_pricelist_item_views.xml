@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="service_pricelist_item_view_tree" model="ir.ui.view">
+      <field name="name">service.pricelist.item.view.tree</field>
+      <field name="model">service.pricelist.item</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="service_type"/>
+          <field name="deposit_currency_id"/>
+          <field name="payment_currency_id"/>
+          <field name="initial_range"/>
+          <field name="final_range"/>
+          <field name="price_amount"/>
+          <field name="price_currency_id"/>
+          <field name="price_expression"/>
+          <field name="tax_included" widget="boolean_toggle" readonly="1"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="service_pricelist_item_view_form" model="ir.ui.view">
+      <field name="name">service.pricelist.item.view.form</field>
+      <field name="model">service.pricelist.item</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="service_pricelist_id" invisible="1"/>
+              <field name="deposit_currency_id"/>
+              <field name="payment_currency_id"/>
+              <field name="initial_range"/>
+              <field name="final_range"/>
+              <field name="price_expression"/>
+              <field name="hide_tax_field" invisible="1"/>
+              <field name="tax_included" attrs="{'invisible': [('hide_tax_field','=', True)]}"/>
+            </group>
+            <group>
+              <field name="price_amount"/>
+              <field name="service_type"/>
+              <field name="price_currency_id" attrs="{'readonly': [('price_expression','=','porcentual')], 'invisible': [('price_expression','=','porcentual')]}"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+  </data>
+</odoo>

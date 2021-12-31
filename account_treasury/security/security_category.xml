@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record model="ir.module.category" id="category_treasury_management">
+      <field name="name">Tesorería</field>
+      <field name="description">Helps you handle your cashbox security.</field>
+    </record>
+    <record model="ir.module.category" id="category_payment_order">
+      <field name="name">Ordenes de Pago</field>
+      <field name="description">Helps you handle your helpdesk security.</field>
+      <field name="sequence">10</field>
+      <field name="parent_id" ref="category_treasury_management"/>
+    </record>
+    <record model="ir.module.category" id="category_foreing_exchange">
+      <field name="name">Divisas y Cambio</field>
+      <field name="description">Helps you handle your helpdesk security.</field>
+      <field name="sequence">20</field>
+      <field name="parent_id" ref="category_treasury_management"/>
+    </record>
+    <record model="ir.module.category" id="category_treasury_model">
+      <field name="name">Modelos de Tesorería</field>
+      <field name="description">Helps you handle your helpdesk security.</field>
+      <field name="sequence">30</field>
+      <field name="parent_id" ref="category_treasury_management"/>
+    </record>
+    <record model="ir.module.category" id="category_treasury">
+      <field name="name">Usuario Tesorero</field>
+      <field name="description">Helps you handle your helpdesk security.</field>
+      <field name="sequence">40</field>
+      <field name="parent_id" ref="category_treasury_management"/>
+    </record>
+  </data>
+</odoo>

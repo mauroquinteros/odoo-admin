@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="plaft_risk_age_view_tree" model="ir.ui.view">
+            <field name="name">plaft.risk.age.view.tree</field>
+            <field name="model">plaft.risk.age</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="ini_number"/>
+                    <field name="end_number"/>
+                    <field name="remark"/>
+                    <field name="plaftrisk_id"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="plaft_risk_age_action" model="ir.actions.act_window">
+            <field name="name">Parámetros Riesgos de edades PLAFT</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">plaft.risk.age</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                Cree su primer Parámetros Riesgos de edades PLAFT.
+                </p>
+                <p>
+                Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+                </p>
+            </field>
+        </record>
+
+        
+        <menuitem id="plaft_risk_age_menu" name="Riesgos de Edades" parent="parameter_menu" action="plaft_risk_age_action" sequence="2"/>
+    </data>
+</odoo>

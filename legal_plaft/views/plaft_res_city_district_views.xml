@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- l10n_pe.res.city.district plaft tree view -->
+        <record id="plaft_res_city_district_view_tree" model="ir.ui.view">
+            <field name="name">l10n_pe.res.city.district.view.tree</field>
+            <field name="model">l10n_pe.res.city.district</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="city_id" options="{'no_create': True}"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- l10n_pe.res.city.district plaft search view -->
+        <record id="plaft_res_city_district_view_search" model="ir.ui.view">
+            <field name="name">l10n_pe.res.city.district.view.search</field>
+            <field name="model">l10n_pe.res.city.district</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <separator/>
+                    <filter name="group_state" 
+                        string="Provincia" 
+                        context="{'group_by':'city_id'}"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- l10n_pe.res.city.district plaft form view -->
+        <!-- <record id="plaft_res_city_district_view_form" model="ir.ui.view">
+            <field name="name">l10n_pe.res.city.district.view.form</field>
+            <field name="model">l10n_pe.res.city.district</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                        <group name="main_group">
+                            <group name="country_details">
+                                <field name="name"/>
+                                <field name="currency_id"/>
+                                <field name="code"/>
+                            </group>
+                            <group name="phone_vat_settings">
+                                <field name="phone_code"/>
+                                <field name="vat_label"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record> -->
+
+        <!-- l10n_pe.res.city.district plaft action window -->
+        <record id="plaft_res_city_district_action" model="ir.actions.act_window">
+            <field name="name">Niveles de Riesgos Provincias</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">l10n_pe.res.city.district</field>
+            <field name="view_mode">tree</field>
+            <field name="context">
+            {
+                'tree_view_ref':'plaft_res_city_district_view_tree'
+            }
+            </field>
+            <field name="search_view_id" ref="plaft_res_city_district_view_search"/>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('plaft_res_city_district_view_tree')})
+                ]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                Create the first city
+                </p>
+                <p>
+                Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="plaft_res_city_district_menu" name="Riesgos de Distritos" parent="parameter_menu" action="plaft_res_city_district_action" sequence="7"/>
+    </data>
+</odoo>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Sale-related subtypes for messaging / Chatter -->
+        <record id="mt_order_require_auth" model="mail.message.subtype">
+            <field name="name">Require Auth Quote</field>
+            <field name="res_model">sale.order</field>
+            <field name="default" eval="False"/>
+            <field name="description">Se requiere de autorización de un superior para esta cotización.</field>
+        </record>
+        <record id="mt_order_grant_auth" model="mail.message.subtype">
+            <field name="name">Auth Quote</field>
+            <field name="res_model">sale.order</field>
+            <field name="default" eval="False"/>
+            <field name="internal" eval="False"/>
+            <field name="description">Se ha concedido la autorización a esta cotización.</field>
+        </record>
+        <record id="mt_order_confirm_deposit" model="mail.message.subtype">
+            <field name="name">Deposit Attachment</field>
+            <field name="res_model">sale.order</field>
+            <field name="default" eval="False"/>
+            <field name="description">Se ha solicitado la revisión del depósito y abono conversado con el cliente.</field>
+        </record>
+        <record id="mt_check_deposit_done" model="mail.message.subtype">
+            <field name="name">Deposit Checked</field>
+            <field name="res_model">sale.order</field>
+            <field name="default" eval="True"/>
+            <field name="description">Se revisó el depósito del cliente.</field>
+        </record>
+        <record id="mt_order_acredit_realized" model="mail.message.subtype">
+            <field name="name">Acredit realized</field>
+            <field name="res_model">sale.order</field>
+            <field name="default" eval="False"/>
+            <field name="description">Se ha realizado el abono al cliente.</field>
+        </record>
+
+        <!-- Cashbox-related subtypes for messaging / Chatter -->
+        <record id="success_exchange_wizard" model="mail.message.subtype">
+            <field name="name">MoEx Cashier Success</field>
+            <field name="res_model">op.cashbox</field>
+            <field name="default" eval="True"/>
+            <field name="description">Se ha realizado un Cambio de divisas en ventanilla.</field>
+        </record>
+        <record id="mt_state_FCu" model="mail.message.subtype">
+            <field name="name">Cuadre Efectivo</field>
+            <field name="res_model">op.cashbox</field>
+            <field name="default" eval="True"/>
+            <field name="description">Se ha finalizado el Control Operativo.</field>
+        </record>
+
+        <record id="email_template_notify_moex" model="mail.template">
+            <field name="name">Cotización: Cambios Online</field>
+            <field name="model_id" ref="sale.model_sale_order"/>
+            <field name="subject">${object.company_id.name} ${object.state in ('draft', 'sent', 'valid') and 'Cotización' or 'Orden'} (Ref ${object.name or 'n/a' })</field>
+            <field name="email_from">${(object.user_id.email_formatted or user.email_formatted) | safe}</field>
+            <field name="partner_to">${object.partner_id.id}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 16px;">
+                        % set doc_name = 'cotización' if object.state in ('draft', 'sent', 'valid') else 'orden'
+                        Estimado (a) ${object.partner_id.title.name or ''}, <strong>${object.partner_id.name}</strong>
+                        <br/><br/>
+                        La 
+                        % if ctx.get('proforma'):
+                            Factura proforma para ${doc_name} <strong>${object.name}</strong>
+                            % if object.origin:
+                                (con referencia: ${object.origin} )
+                            % endif
+                            por el importe <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong> está lista para su revisión.
+                        % else:
+                            ${doc_name} <strong>${object.name}</strong>
+                            % if object.origin:
+                                (con referencia: ${object.origin} )
+                            % endif
+                            por el importe <strong>${format_amount(object.amount_total, object.pricelist_id.currency_id)}</strong> está lista para su revisión.
+                        % endif
+                        <br/><br/>
+                        Usted debe de hacer un depósito o transferencia a las siguientes cuentas:
+                        <br/><br/>
+                            % for list in object.get_list_bank():
+                                <li>${list.bank_id.name} | ${list.sanitized_acc_number}  | ${list.currency_id.currency_unit_label}</li>
+                            % endfor
+                        <br/><br/>
+                        Usted debe presentar los siguientes documentos:
+                        <br/><br/>
+                            % for list in object.pcl_requirement_ids:
+                                <li>${list.cat_document_id.name}</li>
+                            % endfor
+                        <br/><br/>
+                        No dude en ponerse en contacto con nosotros si tiene alguna pregunta.
+                        <br/>
+                    </p>
+                </div>
+            </field>
+            <field name="report_template" ref="sale.action_report_saleorder"/>
+            <field name="report_name">${(object.name or '').replace('/','_')}</field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="user_signature" eval="True"/>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

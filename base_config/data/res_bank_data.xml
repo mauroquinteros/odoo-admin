@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="bank_bcp" model="res.bank">
+            <field name="name">BCP</field>
+            <field name="name_complete">Banco de Crédito del Perú</field>
+            <field name="owner">CrediCorp</field>
+            <!-- <field name="bic">0129</field> -->
+            <field name="country" ref="base.pe"/>
+            <field name="presence_in_ids" eval="[(6, 0, [ref('base.pe')])]"/>
+            <field name="city">Lima,Perú</field>
+            <!-- <field name="state" ref="base.state_pe_15"/> -->
+            <field name="street">Ca. Centenario #156 La Molina</field>
+            <field name="street2"/>
+            <field name="phone">(01) 311-9898</field>
+            <field name="email">consultasbcp@bcp.com.pe</field>
+        </record>
+        <record id="bank_pichincha" model="res.bank">
+            <field name="name">PICHINCHA</field>
+            <field name="name_complete">Banco Pichincha C.A.</field>
+            <field name="owner">Grupo Pichincha</field>
+            <!-- <field name="bic">0261</field> -->
+            <field name="country" ref="base.ec"/>
+            <field name="presence_in_ids" eval="[(6, 0, [
+                ref('base.ec'),ref('base.pe'),ref('base.co'),ref('base.es'),ref('base.pa')
+            ])]"/>
+            <field name="city">Ecuador,Quito</field>
+            <!-- <field name="state" ref="base_company.EC_QUI"/> -->
+            <field name="street">Av. Amazonas y Pereira</field>
+            <field name="street2"/>
+            <field name="phone">(593-2) 2 999-999</field>
+            <field name="email">info@pichincha.com</field>
+        </record>
+        <record id="bank_gnb" model="res.bank">
+            <field name="name">GNB</field>
+            <field name="name_complete">Banco GNB Perú S.A.</field>
+            <field name="owner">Banco GNB Sudameris S.A.</field>
+            <!-- <field name="bic">6257</field> -->
+            <field name="country" ref="base.co"/>
+            <field name="presence_in_ids" eval="[(6, 0, [
+                ref('base.pe'),ref('base.co'),ref('base.py')
+            ])]"/>
+            <field name="city">Colombia,Bogotá</field>
+            <!-- <field name="state" ref="base_company.CO_BOG"/> -->
+            <field name="street"/>
+            <field name="street2"/>
+            <field name="phone">(01) 616-4722</field>
+            <field name="email">servicios.peru@bancognb.com.pe</field>
+        </record>
+        <record id="bank_interbank" model="res.bank">
+            <field name="name">Interbank</field>
+            <field name="name_complete">Banco Internacional del Perú, S.A.</field>
+            <field name="owner">Grupo InterCorp</field>
+            <!-- <field name="bic">2651</field> -->
+            <field name="country" ref="base.pe"/>
+            <field name="presence_in_ids" eval="[(6, 0, [
+                ref('base.pe'),ref('base.us')
+            ])]"/>
+            <field name="city">Lima,Perú</field>
+            <!-- <field name="state" ref="base.state_pe_15"/> -->
+            <field name="street"/>
+            <field name="street2"/>
+            <field name="phone">(01) 311 9000</field>
+            <field name="email"></field>
+        </record>
+    </data>
+</odoo>

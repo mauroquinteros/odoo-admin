@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>        
+        <!-- plaft.ro.declaration tree view -->
+        <record id="plaft_ro_declaration_view_tree" model="ir.ui.view">
+            <field name="name">plaft.ro.declaration.view.tree</field>
+            <field name="model">plaft.ro.declaration</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sequence"/>
+                    <field name="reference_number"/>
+                    <field name="state"/>
+                    <field name="ro_type"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- plaft.ro.declaration form view -->
+        <record id="plaft_ro_declaration_view_form" model="ir.ui.view">
+            <field name="name">plaft.ro.declaration.view.form</field>
+            <field name="model">plaft.ro.declaration</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="record_row"/>
+                            <field name="company"/>
+                            <field name="record_operation"/>
+                            <field name="internal_number"/>
+                            <field name="reference_number"/>
+                            <field name="mode_operation"/>
+                            <field name="ubigeo_agency"/>
+                            <field name="date_operation"/>
+                            <field name="time_operation"/>
+                            <field name="payer_type_relationship"/>
+                            <field name="payer_residence_condition"/>
+                            <field name="payer_type_person"/>
+                            <field name="payer_ide_document"/>
+                            <field name="payer_document"/>
+                            <field name="payer_name_paternal"/>
+                            <field name="payer_name_maternal"/>
+                            <field name="payer_name_client"/>
+                            <field name="payer_occupation_id"/>
+                            <field name="payer_code_ciiu_id"/>
+                            <field name="payer_position_id"/>
+                            <field name="payer_legal_address"/>
+                            <field name="payer_depaubigeo"/>
+                            <field name="payer_provubigeo"/>
+                            <field name="payer_distubigeo"/>
+                            <field name="payer_movil_client"/>
+                            <field name="performer_type_relationship"/>
+                            <field name="performer_residence_condition"/>
+                            <field name="performer_type_person"/>
+                            <field name="performer_ide_document"/>
+                            <field name="performer_document"/>
+                            <field name="performer_name_paternal"/>
+                            <field name="performer_name_maternal"/>
+                            <field name="performer_name_client"/>
+                            <field name="performer_occupation_id"/>
+                            <field name="performer_code_ciiu_id"/>
+                            <field name="performer_position_id"/>
+                            <field name="performer_legal_address"/>
+                            <field name="performer_depaubigeo"/>
+                            <field name="performer_provubigeo"/>
+                            <field name="performer_distubigeo"/>
+                            <field name="performer_movil_client"/>
+                            <field name="beneficiary_type_relationship"/>
+                            <field name="beneficiary_residence_condition"/>
+                            <field name="beneficiary_type_person"/>
+                            <field name="beneficiary_ide_document"/>
+                            <field name="beneficiary_document"/>
+                            <field name="beneficiary_name_paternal"/>
+                            <field name="beneficiary_name_maternal"/>
+                            <field name="beneficiary_name_client"/>
+                            <field name="beneficiary_occupation_id"/>
+                            <field name="beneficiary_code_ciiu_id"/>
+                            <field name="beneficiary_position_id"/>
+                            <field name="beneficiary_legal_address"/>
+                            <field name="beneficiary_depaubigeo"/>
+                            <field name="beneficiary_provubigeo"/>
+                            <field name="beneficiary_distubigeo"/>
+                            <field name="beneficiary_movil_client"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- plaft.ro.declaration action window -->
+        <record id="ro_declaration_plaft_action" model="ir.actions.act_window">
+            <field name="name">R.O. PLAFT</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">plaft.ro.declaration</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cree su primer R.O. PLAFT.
+                </p>
+                <p>
+                    Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                    en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="plaft_legal_menu" name="Cumplimiento Legal" parent="root_plaft" sequence="20"/>
+        <menuitem id="plaft_ro_declaration_menu" name="Declaracion R.O." parent="plaft_legal_menu" action="ro_declaration_plaft_action" sequence="1"/>
+    </data>
+</odoo>

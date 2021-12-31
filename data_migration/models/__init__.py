@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+
+##########################################################################
+#    License, author and contributors information in:                    #
+#    __manifest__.py file at the root folder of this module.             #
+#           models related to TRAYBOOK services                          #
+##########################################################################
+
+from . import inherit
+from . import glossary
+from . import hr_contract_condition
+from . import raw_data

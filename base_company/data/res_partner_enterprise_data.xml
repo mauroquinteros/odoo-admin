@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="partner_enterprise_choice_money_transfer" model="res.partner">
+            <field name="name">CHOICE MONEY TRANSFER INC</field>
+            <field name="display_name">01-0803397 - CHOICE MONEY TRANSFER INC</field>
+            <field name="lang">es_PE</field>
+            <field name="type">enterprise</field>
+            <field name="employee" eval="False"/>
+            <field name="street">Empire State Building 350 5th Av Suite 2722</field>
+            <field name="city">Manhatan</field>
+            <field name="phone">212-268-9290</field>
+            <field name="company_type">company</field>
+            <field name="is_company" eval="True"/>
+            <field name="company_name">CHOICE MONEY TRANSFER INC</field>
+            <field name="email">kalan@choicemoneytransfer.com</field>
+            <field name="image_1920" type="base64" file="base_company/static/img/logos/choice_logo.jpg"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="l10n_latam_identification_type_id" ref="legal_plaft.it_other"/>
+            <field name="vat">01-0803397</field>
+        </record>
+        <record id="partner_enterprise_correspondent_multienvios" model="res.partner">
+            <field name="name">MULTIENVIOS S.R.L.</field>
+            <field name="display_name">30-70945226-2 - MULTIENVIOS S.R.L.</field>
+            <field name="lang">es_PE</field>
+            <field name="type">enterprise</field>
+            <field name="employee" eval="False"/>
+            <field name="street">Ramon L. Falcon 7252 Local 55 C 1408 Dsl</field>
+            <field name="city">Buenos Aires</field>
+            <field name="phone">4954-5779</field>
+            <field name="company_type">company</field>
+            <field name="is_company" eval="True"/>
+            <field name="company_name">MULTIENVIOS S.R.L.</field>
+            <field name="email">dviagui70@hotmail.com.pe</field>
+            <field name="image_1920" type="base64" file="base_company/static/img/logos/multienvio_logo_1.jpg"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="correspondent_rank" eval="0"/>
+            <field name="l10n_latam_identification_type_id" ref="legal_plaft.it_other"/>
+            <field name="vat">30-70945226-2</field>
+        </record>
+        <record id="partner_enterprise_correspondent_maguiexpress" model="res.partner">
+            <field name="name">MAGUIEXPRESS S.A.</field>
+            <field name="display_name">30-70780432-3 - MAGUIEXPRESS S.A.</field>
+            <field name="lang">es_PE</field>
+            <field name="type">enterprise</field>
+            <field name="employee" eval="False"/>
+            <field name="street">Av. Corrientes 2451, Argentina.</field>
+            <field name="city">Córdoba</field>
+            <field name="phone">4953-5780</field>
+            <field name="company_type">company</field>
+            <field name="is_company" eval="True"/>
+            <field name="company_name">MAGUIEXPRESS S.A.</field>
+            <field name="email">gerenciageneral@maguiexpress.com.ar</field>
+            <field name="image_1920" type="base64" file="base_company/static/img/logos/maguiexpress-logo.png"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="correspondent_rank" eval="0"/>
+            <field name="l10n_latam_identification_type_id" ref="legal_plaft.it_other"/>
+            <field name="vat">30-70780432-3</field>
+        </record>
+        <record id="partner_enterprise_correspondent_connectplus" model="res.partner">
+            <field name="name">CONNECT PLUS</field>
+            <field name="display_name">HM12224297 - CONNECT PLUS</field>
+            <field name="lang">es_PE</field>
+            <field name="type">enterprise</field>
+            <field name="employee" eval="False"/>
+            <field name="street">40 Hanway Street, W1T 1US, London, United Kingdom</field>
+            <field name="city">Londres</field>
+            <field name="phone">4912-5620</field>
+            <field name="company_type">company</field>
+            <field name="is_company" eval="True"/>
+            <field name="company_name">CONNECT PLUS BUSINESS LIMITED</field>
+            <field name="email">jorge.vega@connect-plus.co.uk</field>
+            <field name="image_1920" type="base64" file="base_company/static/img/logos/connect-plus-logo.png"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="correspondent_rank" eval="0"/>
+            <field name="l10n_latam_identification_type_id" ref="legal_plaft.it_other"/>
+            <field name="vat">HM12224297</field>
+        </record>
+        <record id="partner_enterprise_correspondent_continentalexchange" model="res.partner">
+            <field name="name">CONTINENTAL EXCHANGE</field>
+            <field name="display_name">22-28-29900 - CONTINENTAL EXCHANGE</field>
+            <field name="lang">es_PE</field>
+            <field name="type">enterprise</field>
+            <field name="employee" eval="False"/>
+            <field name="street">419 King St. West Unit K4 Oshawa, Ontario L1J 2K5, CA</field>
+            <field name="city">California</field>
+            <field name="phone">1-844-438-3939</field>
+            <field name="company_type">company</field>
+            <field name="is_company" eval="True"/>
+            <field name="company_name">CONTINENTAL EXCHANGE SOLUTIONS INC.</field>
+            <field name="email">info@continentalcurrency.ca</field>
+            <field name="image_1920" type="base64" file="base_company/static/img/logos/continental-logo.png"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Corresponsal')])]"/>
+            <field name="correspondent_rank" eval="0"/>
+            <field name="l10n_latam_identification_type_id" ref="legal_plaft.it_other"/>
+            <field name="vat">22-28-29900</field>
+        </record>
+    </data>
+</odoo>

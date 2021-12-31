@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="rec_controllist_cat_1" model="plaft.control.category">
+            <field name="name">OFAC</field>
+            <field name="risklevel_id" ref="plaft_risk_001"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_controllist_cat_2" model="plaft.control.category">
+            <field name="name">Lista negativa</field>
+            <field name="risklevel_id" ref="plaft_risk_002"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_controllist_cat_3" model="plaft.control.category">
+            <field name="name">Lista PEP</field>
+            <field name="risklevel_id" ref="plaft_risk_002"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

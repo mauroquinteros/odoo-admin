@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+        <!-- O' Cron -->
+        <record id="save_exchange_rate_ir_cron" forcecreate="True" model="ir.cron">
+            <field name="name">Procesar Tipo de Cambio BCRP</field>
+            <field name="user_id" ref="base.user_root" />
+            <field name="doall" eval="False" />
+            <field name="active" eval="False" />
+            <field name="interval_number">10</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="model_id" ref="model_res_currency" />
+            <field name="state">code</field>
+            <field name="code">model.process_remittance()</field>
+        </record>
+    </data>
+</odoo>

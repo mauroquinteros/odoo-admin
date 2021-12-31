@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="product_tmpl_service_moex" model="product.template">
+            <field name="name">Servicio de Cambio de Divisas</field>
+            <field name="default_code">sMoEx</field>
+            <field name="type">service</field>
+            <field name="taxes_id" eval="[(6,0,[ref('l10n_pe.sale_tax_igv_18')])]"/>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="uom_id" ref="uom.product_uom_categ_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_categ_unit"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="business_line_id" ref="base_company.business_line_001"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="product_tmpl_service_moex_online" model="product.template">
+            <field name="name">Servicio de Cambio de Divisas Online</field>
+            <field name="default_code">sMoExOnline</field>
+            <field name="type">service</field>
+            <field name="taxes_id" eval="False"/>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="uom_id" ref="uom.product_uom_categ_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_categ_unit"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="business_line_id" ref="base_company.business_line_001"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="product_tmpl_service_convert_online" model="product.template">
+            <field name="name">Depósito para Conversión de Moneda</field>
+            <field name="default_code">sMoExConvert</field>
+            <field name="type">service</field>
+            <field name="taxes_id" eval="False"/>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="uom_id" ref="uom.product_uom_categ_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_categ_unit"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="business_line_id" ref="base_company.business_line_001"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="product_tmpl_service_ift" model="product.template">
+            <field name="name">ITF del Monto</field>
+            <field name="default_code">ITF-REM</field>
+            <field name="type">service</field>
+            <field name="taxes_id" eval="[(6,0,[ref('product_services.sale_tax_itf_0050')])]"/>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="uom_id" ref="uom.product_uom_categ_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_categ_unit"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="business_line_id" ref=""/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="product_tmpl_service_edr" model="product.template">
+            <field name="name">Servicio de Envio de Remesa</field>
+            <field name="default_code">sEnvRe</field>
+            <field name="type">service</field>
+            <field name="taxes_id" eval="False"/>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="uom_id" ref="uom.product_uom_categ_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_categ_unit"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="business_line_id" ref="base_company.business_line_006"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="product_tmpl_service_edro" model="product.template">
+            <field name="name">Servicio de Envio de Remesa Online</field>
+            <field name="default_code">sEnvReOn</field>
+            <field name="type">service</field>
+            <field name="taxes_id" eval="False"/>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="uom_id" ref="uom.product_uom_categ_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_categ_unit"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="business_line_id" ref="base_company.business_line_006"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="product_tmpl_service_der" model="product.template">
+            <field name="name">Depósito para Envio de Remesa</field>
+            <field name="default_code">sDpEnvRe</field>
+            <field name="type">service</field>
+            <field name="taxes_id" eval="False"/>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="uom_id" ref="uom.product_uom_categ_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_categ_unit"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="business_line_id" ref="base_company.business_line_006"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="product_tmpl_service_pdr" model="product.template">
+            <field name="name">Servicio de Pago de Remesa</field>
+            <field name="default_code">sPDR</field>
+            <field name="type">service</field>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="uom_id" ref="uom.product_uom_categ_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_categ_unit"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="business_line_id" ref="base_company.business_line_005"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="product_tmpl_service_ead" model="product.template">
+            <field name="name">Servicio de Entrega a Domicilio</field>
+            <field name="default_code">sEAD</field>
+            <field name="type">service</field>
+            <field name="taxes_id" eval="[(6,0,[ref('l10n_pe.sale_tax_igv_18_included')])]"/>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="uom_id" ref="uom.product_uom_categ_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_categ_unit"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="business_line_id" ref=""/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="product_tmpl_service_ppb" model="product.template">
+            <field name="name">Servicio de Pago por Banco</field>
+            <field name="default_code">sPPB</field>
+            <field name="type">service</field>
+            <field name="taxes_id" eval="[(6,0,[ref('l10n_pe.sale_tax_igv_18')])]"/>
+            <field name="supplier_taxes_id" eval="False"/>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="uom_id" ref="uom.product_uom_categ_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_categ_unit"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="sale_ok" eval="True"/>
+            <field name="list_price" eval="0.0"/>
+            <field name="purchase_ok" eval="False"/>
+            <field name="business_line_id" ref="base_company.business_line_002"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

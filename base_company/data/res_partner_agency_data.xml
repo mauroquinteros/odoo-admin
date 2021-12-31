@@ -1,0 +1,1081 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="agency_virtual_009" model="res.partner.agency">
+            <field name="name">VIRTUAL: SAN ISIDRO</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150131"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">611-5050</field>
+            <field name="mobile"></field>
+            <field name="street">Av Camino Real 395</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">009</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">JET PERU S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.PEN'), ref('base.USD'), ref('base.EUR')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.PEN'), ref('base.USD'), ref('base.EUR')])]"/>
+        </record>
+        <record id="agency_SanIsidro_009" model="res.partner.agency">
+            <field name="name">SAN ISIDRO</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150131"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">611-5050</field>
+            <field name="mobile"></field>
+            <field name="street">Av Camino Real 395</field>
+            <field name="email">agenciasanisidro@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">009</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">JET PERU S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.PEN'), ref('base.USD'), ref('base.EUR')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.PEN'), ref('base.USD'), ref('base.EUR')])]"/>
+        </record>
+        <record id="agency_Miraf_018" model="res.partner.agency">
+            <field name="name">MIRAFLORES</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150122"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">242-2203</field>
+            <field name="mobile"></field>
+            <field name="street">Av Pardo 620 Ofic 14 Cc Latino</field>
+            <field name="email">agenciamiraflores@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">018</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">JET PERU S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.PEN'), ref('base.USD'), ref('base.EUR')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.PEN'), ref('base.USD'), ref('base.EUR')])]"/>
+        </record>
+        <record id="agency_Lince_010" model="res.partner.agency">
+            <field name="name">Lince</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150116"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">471-5600</field>
+            <field name="mobile"></field>
+            <field name="street">Av Arenales 2077</field>
+            <field name="email">agencialince@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">010</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Sjl_029" model="res.partner.agency">
+            <field name="name">San Juan De Lurigancho</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150132"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">375-1939</field>
+            <field name="mobile"></field>
+            <field name="street">Av Gran Chimu 337 Zarate</field>
+            <field name="email">agenciasanjuan@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">029</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Surco_030" model="res.partner.agency">
+            <field name="name">Surco</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150732"/>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av Aviacion 5095 Int 53 Urb Residencial Higuereta</field>
+            <field name="email">agenciasurco@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">004</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Sjm_037" model="res.partner.agency">
+            <field name="name">San Juan De Miraflores</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150732"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">450-8880</field>
+            <field name="mobile"></field>
+            <field name="street">Av Los Heroes 648</field>
+            <field name="email">agenciasanjuandemiraflores@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">037</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Chimbote_109" model="res.partner.agency">
+            <field name="name">Chimbote</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_16"/>
+            <field name="city_id" ref="l10n_pe.city_pe_0218"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_021801"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">043-344448</field>
+            <field name="mobile"></field>
+            <field name="street">Av Elias Aguirre 242</field>
+            <field name="email">agenciachimbote@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">109</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Arequipa_113" model="res.partner.agency">
+            <field name="name">Arequipa</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_04"/>
+            <field name="city_id" ref="l10n_pe.city_pe_0401"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_040101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">054-203690</field>
+            <field name="mobile"></field>
+            <field name="street">Calle Mercaderes 224 Cc Panoramico Ofic 210</field>
+            <field name="email">agenciaarequipa@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">113</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Chiclayo_114" model="res.partner.agency">
+            <field name="name">Chiclayo</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_14"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1401"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_140101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">074-222552</field>
+            <field name="mobile"></field>
+            <field name="street">Av Jose Balta 275</field>
+            <field name="email">agenciachiclayo@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">114</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Piura_102" model="res.partner.agency">
+            <field name="name">Piura</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_20"/>
+            <field name="city_id" ref="l10n_pe.city_pe_2001"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_200101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">073-308484</field>
+            <field name="mobile"></field>
+            <field name="street">Av. Grau Nro. 1460 Int. L145</field>
+            <field name="email">agenciapiura@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">102</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Chosica_110" model="res.partner.agency">
+            <field name="name">Chosica</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150118"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">361-4852</field>
+            <field name="mobile"></field>
+            <field name="street">Psje Emilio Del Solar 530 Cc. San Hilarion Tda 4-5</field>
+            <field name="email">agenciachosica@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">110</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Huancayo_117" model="res.partner.agency">
+            <field name="name">Huancayo</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_12"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1201"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_120101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">064-218751</field>
+            <field name="mobile"></field>
+            <field name="street">Av Giraldes 274 Ofic 10</field>
+            <field name="email">agenciahuancayo@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">117</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Ica_112" model="res.partner.agency">
+            <field name="name">Ica</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_11"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1101"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_110101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">056-231890</field>
+            <field name="mobile"></field>
+            <field name="street">Av Los Maestros Km 303-304 Pan.Sur Local M112</field>
+            <field name="email">agenciaica@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">112</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Cusco_105" model="res.partner.agency">
+            <field name="name">Cusco</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_08"/>
+            <field name="city_id" ref="l10n_pe.city_pe_0801"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_080101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">084-235081</field>
+            <field name="mobile"></field>
+            <field name="street">Cc Cusco Sol Plaza, Av El Sol 948 Ofic 105</field>
+            <field name="email">agenciacusco@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">105</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Iquitos_125" model="res.partner.agency">
+            <field name="name">Iquitos</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_16"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1601"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_160101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">065-242119</field>
+            <field name="mobile"></field>
+            <field name="street">Calle Fitzcarral 327</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">125</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Huaral_126" model="res.partner.agency">
+            <field name="name">Huaral</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150601"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">246-4615</field>
+            <field name="mobile"></field>
+            <field name="street">Av Solar 479 Cc Fiori Local 09</field>
+            <field name="email">agenciahuaral@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">126</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Huacho_127" model="res.partner.agency">
+            <field name="name">Huacho</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150801"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">239-4490</field>
+            <field name="mobile"></field>
+            <field name="street">Calle Colon 601 L.118 Cc Plaza Del Sol Ref.Empresa Enel</field>
+            <field name="email">agenciahuacho@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">127</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Barranca_128" model="res.partner.agency">
+            <field name="name">Barranca</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150201"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">235-5160</field>
+            <field name="mobile"></field>
+            <field name="street">Jr Jose Galvez 410</field>
+            <field name="email">agenciabarranca@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">128</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_SanMiguel_022" model="res.partner.agency">
+            <field name="name">San Miguel</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150136"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">4527157</field>
+            <field name="mobile"></field>
+            <field name="street">Av Elmer Faucett 216</field>
+            <field name="email">agenciasanmiguel@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">022</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Minka_034" model="res.partner.agency">
+            <field name="name">Callao Minka</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_07"/>
+            <field name="city_id" ref="l10n_pe.city_pe_0701"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_070101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">4656521</field>
+            <field name="mobile"></field>
+            <field name="street">Av Argentina 3093 Local 258 Calle 1 Pab 4 Minka</field>
+            <field name="email">agenciacallao@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">034</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_principal_009" model="res.partner.agency">
+            <field name="name">Principal: San Isidro</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150131"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">611-5050</field>
+            <field name="mobile"></field>
+            <field name="street">Av Camino Real 395</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">009</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Trujillo_101" model="res.partner.agency">
+            <field name="name">Trujillo</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_13"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1301"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_130101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">044-248358</field>
+            <field name="mobile"></field>
+            <field name="street">Diego De Almagro 545 Ofic 109 Trujillo</field>
+            <field name="email">agenciatrujillo@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">101</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Canaval_044" model="res.partner.agency">
+            <field name="name">Canaval Y Moreyra</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150131"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av Canaval Y Moreyra 285 Urb Sta Ana</field>
+            <field name="email">agenciacanavalymoreyra@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">044</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Wilson_011" model="res.partner.agency">
+            <field name="name">Wilson</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">3308844</field>
+            <field name="mobile"></field>
+            <field name="street">Av Garcilazo De La Vega 915</field>
+            <field name="email">agenciawilson@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">011</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Los_Olivos_025" model="res.partner.agency">
+            <field name="name">Los Olivos</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150112"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av Alfredo Mendiola 3900 Local 1160 Superm Metro</field>
+            <field name="email">agencialosolivos@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">025</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Gamarra_047" model="res.partner.agency">
+            <field name="name">Gamarra</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150115"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone">3242035</field>
+            <field name="mobile"></field>
+            <field name="street">Hipolito Unanue 1518</field>
+            <field name="email">agenciagamarra@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">047</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Minkamodulo_049" model="res.partner.agency">
+            <field name="name">Minka Modulo</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_07"/>
+            <field name="city_id" ref="l10n_pe.city_pe_0701"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_070101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av Argentina 3093 Cc Minka Modulo 135 Calle 2</field>
+            <field name="email">agenciacallaomodulo@jetperu.com.pe</field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">049</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Ate_054" model="res.partner.agency">
+            <field name="name">Metro Ate</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150103"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av La Molina 378 Int 1108</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">054</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Ovalopapal_060" model="res.partner.agency">
+            <field name="name">Metro Ovalo Papal</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_13"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1301"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_130101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Urb Vista Hermosa Mz J Lote 1 Int 1116 Ovalo Papal</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">060</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Comas_059" model="res.partner.agency">
+            <field name="name">Metro Comas</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150110"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av.Tupac Amaru 3900 Int 1116 Urb La Pascana</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">059</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Capon_056" model="res.partner.agency">
+            <field name="name">Capon</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Jr Paruro 860 Int 2108</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">056</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Santaclara_058" model="res.partner.agency">
+            <field name="name">Real Plaza Santa Clara</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150103"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av.La Estrella 133 Int Lc-123</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">058</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Termterrest_061" model="res.partner.agency">
+            <field name="name">Terminal Terreste</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150112"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av.Gerardo Unger 6911 Int Lb82</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">061</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Chorrillos_062" model="res.partner.agency">
+            <field name="name">Metro Chorrilllos</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150108"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Prolongacion Paseo De La Republica Local 1138</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">062</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Mendiola_063" model="res.partner.agency">
+            <field name="name">Metro Mendiola</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150112"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av Alfredo Mendiola 3900 Local 1160</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">063</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Brena_065" model="res.partner.agency">
+            <field name="name">Metro Brena</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150105"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av Alfonso Ugarte Esq Av Venezuela Supermercado Metro Brena Local 1140</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">065</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Proceres_067" model="res.partner.agency">
+            <field name="name">Metro Proceres</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150132"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av. Próceres Dela Lndependencia  N&quot;1632,Local 1160</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">067</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Cajamarca_129" model="res.partner.agency">
+            <field name="name">Metro Cajamarca</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_06"/>
+            <field name="city_id" ref="l10n_pe.city_pe_0601"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_060101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Jr. Sor Manuela Gil 151 - Ba Pueblo Nuevo</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">129</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Minkacallao_064" model="res.partner.agency">
+            <field name="name">Minka Callao</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_07"/>
+            <field name="city_id" ref="l10n_pe.city_pe_0701"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_070101"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av Argentina 3093 Int 293 Av 01 Pab 02 Cc Minka</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">064</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+        <record id="agency_Metrosmiguel_066" model="res.partner.agency">
+            <field name="name">Metro San Miguel</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website">http://www.jetperu.com.pe</field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.pe"/>
+            <field name="state_id" ref="base.state_pe_15"/>
+            <field name="city_id" ref="l10n_pe.city_pe_1501"/>
+            <field name="l10n_pe_district" ref="l10n_pe.district_pe_150136"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="commercial_partner_id" ref="base.main_partner"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">Av La Marina Esq Cdra 25 Av Parque Las Leyendas Local 1112 Metro</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">066</field>
+            <field name="correspondent_id" ref="res_partner_correspondent_jp"/>
+            <field name="reference_payer">Jet Peru S.A.</field>
+            <field name="office_hour">L-V 9:00 a 6:00</field>
+            <field name="state">activo</field>
+        </record>
+    </data>
+</odoo>

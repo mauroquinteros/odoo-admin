@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="rec_moex_oer_1" model="res.currency.rate.oer">
+            <field name="business_partner_id" ref="base.main_partner"/>
+            <field name="agency_id" ref="base_company.agency_SanIsidro_009"/>
+            <field name="origin_currency_id" ref="base.USD"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="price_orp">3.3050</field>
+            <field name="price_drs">3.3310</field>
+            <field name="currentactive" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_moex_oer_2" model="res.currency.rate.oer">
+            <field name="business_partner_id" ref="base.main_partner"/>
+            <field name="agency_id" ref="base_company.agency_SanIsidro_009"/>
+            <field name="origin_currency_id" ref="base.EUR"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="price_orp">3.7200</field>
+            <field name="price_drs">3.7900</field>
+            <field name="currentactive" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_moex_oer_3" model="res.currency.rate.oer">
+            <field name="business_partner_id" ref="base.main_partner"/>
+            <field name="agency_id" ref="base_company.agency_SanIsidro_009"/>
+            <field name="origin_currency_id" ref="base.EUR"/>
+            <field name="destination_currency_id" ref="base.USD"/>
+            <field name="price_orp">0.8720</field>
+            <field name="price_drs">0.8954</field>
+            <field name="currentactive" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="rec_moex_oer_4" model="res.currency.rate.oer">
+            <field name="business_partner_id" ref="base.main_partner"/>
+            <field name="agency_id" ref="base_company.agency_principal_009"/>
+            <field name="origin_currency_id" ref="base.USD"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="price_orp">3.5820</field>
+            <field name="price_drs">3.5960</field>
+            <field name="currentactive" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_moex_oer_5" model="res.currency.rate.oer">
+            <field name="business_partner_id" ref="base.main_partner"/>
+            <field name="agency_id" ref="base_company.agency_principal_009"/>
+            <field name="origin_currency_id" ref="base.EUR"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="price_orp">4.3100</field>
+            <field name="price_drs">4.3500</field>
+            <field name="currentactive" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_moex_oer_6" model="res.currency.rate.oer">
+            <field name="business_partner_id" ref="base.main_partner"/>
+            <field name="agency_id" ref="base_company.agency_principal_009"/>
+            <field name="origin_currency_id" ref="base.EUR"/>
+            <field name="destination_currency_id" ref="base.USD"/>
+            <field name="price_orp">0.8720</field>
+            <field name="price_drs">0.8954</field>
+            <field name="currentactive" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="rec_moex_oer_7" model="res.currency.rate.oer">
+            <field name="business_partner_id" ref="base.main_partner"/>
+            <field name="agency_id" ref="base_company.agency_virtual_009"/>
+            <field name="origin_currency_id" ref="base.USD"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="price_orp">3.5820</field>
+            <field name="price_drs">3.5960</field>
+            <field name="currentactive" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_moex_oer_8" model="res.currency.rate.oer">
+            <field name="business_partner_id" ref="base.main_partner"/>
+            <field name="agency_id" ref="base_company.agency_virtual_009"/>
+            <field name="origin_currency_id" ref="base.EUR"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="price_orp">4.3100</field>
+            <field name="price_drs">4.3500</field>
+            <field name="currentactive" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_moex_oer_9" model="res.currency.rate.oer">
+            <field name="business_partner_id" ref="base.main_partner"/>
+            <field name="agency_id" ref="base_company.agency_virtual_009"/>
+            <field name="origin_currency_id" ref="base.EUR"/>
+            <field name="destination_currency_id" ref="base.USD"/>
+            <field name="price_orp">0.8720</field>
+            <field name="price_drs">0.8954</field>
+            <field name="currentactive" eval="True"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

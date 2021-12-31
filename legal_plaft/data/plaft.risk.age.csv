@@ -1,0 +1,5 @@
+id,ini_number,end_number,remark,plaftrisk_id:id,active
+plaft_risk_age_001,16,25,,plaft_risk_004,1
+plaft_risk_age_002,26,45,,plaft_risk_004,1
+plaft_risk_age_003,46,60,,plaft_risk_003,1
+plaft_risk_age_004,61,99,,plaft_risk_002,1

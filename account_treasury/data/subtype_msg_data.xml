@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="mt_deposit_order_done" model="mail.message.subtype">
+            <field name="name">Depósito Confirmado</field>
+            <field name="res_model">deposit.order</field>
+            <field name="default" eval="True"/>
+            <field name="description">Se verifica que el depósito está correcto.</field>
+        </record>
+
+        <record id="mt_pre_acredit_order_done" model="mail.message.subtype">
+            <field name="name">Pre-Abono al Cliente</field>
+            <field name="res_model">deposit.order</field>
+            <field name="default" eval="True"/>
+            <field name="description">Se ha realizado un pre-abono al cliente y se está a la espera de la ultima firma.</field>
+        </record>
+        <record id="mt_acredit_order_done" model="mail.message.subtype">
+            <field name="name">Abono al Cliente</field>
+            <field name="res_model">deposit.order</field>
+            <field name="default" eval="True"/>
+            <field name="description">Se ha realizado el abono al cliente, esta orden ha sido notificada y pagada.</field>
+        </record>
+    </data>
+</odoo>

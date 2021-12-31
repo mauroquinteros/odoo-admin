@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>        
+        <!-- plaft.status.civil.list tree view -->
+        <record id="plaft_status_civil_view_tree" model="ir.ui.view">
+            <field name="name">plaft.status.civil.list.view.tree</field>
+            <field name="model">plaft.status.civil.list</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="sequence"/>
+                    <field name="name"/>
+                    <field name="t_description"/>
+                    <field name="risklevel_id"/>
+                    <field name="company_id"/>
+                    <field name="active" widget="toggle_button"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- plaft.status.civil.list action window -->
+        <record id="plaft_status_civil_list_action" model="ir.actions.act_window">
+            <field name="name">Lista de Estado Civil PLAFT</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">plaft.status.civil.list</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cree su primer Lista de Estado Civil PLAFT.
+                </p>
+                <p>
+                    Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                    en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="plaft_status_civil_menu" name="Riesgos de Estado Civil" parent="parameter_menu" action="plaft_status_civil_list_action" sequence="3"/>
+
+    </data>
+</odoo>

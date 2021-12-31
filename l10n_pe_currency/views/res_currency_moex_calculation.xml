@@ -1,0 +1,60 @@
+<odoo>
+    <!-- res.currency.moex.calculation tree view -->
+    <record id="res_currency_moex_calculation_view_tree" model="ir.ui.view">
+        <field name="name">res.currency.moex.calculation.view.tree</field>
+        <field name="model">res.currency.moex.calculation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- <field name="business_partner_id"/> -->
+                <!-- <field name="agency_id"/> -->
+                <field name="name"/>
+                <field name="origin_currency_id"/>
+                <field name="destination_currency_id"/>
+                <field name="s_operationtype"/>
+                <field name="operator"/>
+                <field name="amount_proposedexchangerate_adj"/>
+                <field name="amount_approvedexchangerate_adj"/>
+                <field name="product_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- res.currency.moex.calculation form view -->
+    <record id="res_currency_moex_calculation_view_form" model="ir.ui.view">
+        <field name="name">res.currency.moex.calculation.view.form</field>
+        <field name="model">res.currency.moex.calculation</field>
+        <field name="arch" type="xml">
+            <form>
+            </form>
+        </field>
+    </record>
+
+    <!-- res.currency.moex.calculation action window -->
+    <record id="res_currency_moex_calculation_action" model="ir.actions.act_window">
+        <field name="name">Forma De Cálculo De Operaciones De Cambio De Dinero</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.currency.moex.calculation</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                No hay registros de Tipo de Cambio Operativos
+            </p>
+        </field>
+        <field name="context">
+            {
+                'tree_view_ref':'res_currency_moex_calculation_view_tree',
+                'form_view_ref':'res_currency_moex_calculation_view_form'
+            }
+        </field>
+        <field name="view_ids" eval="[(5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('res_currency_moex_calculation_view_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('res_currency_moex_calculation_view_form')}),
+            ]"/>
+    </record>
+
+    <menuitem id="res_currency_moex_calculation_menu" 
+            name="Cálculo de Op de Cambio Dinero" 
+            parent="l10n_pe_currency.l10n_pe_moneys_config" 
+            action="res_currency_moex_calculation_action"/>
+</odoo>

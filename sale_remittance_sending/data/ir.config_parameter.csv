@@ -1,0 +1,2 @@
+id,key,value
+summary_scheme_order_line,summary.scheme.order.line,"Usted solicita enviar %s %s %s, los cuales fueron convertidos a %s %s %s (Tipo de cambio: %s %s)"

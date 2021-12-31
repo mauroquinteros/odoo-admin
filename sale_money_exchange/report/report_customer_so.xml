@@ -1,0 +1,190 @@
+<odoo>
+    <data>
+        <template id="customer_ope_report_template">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <t t-foreach="docs" t-as="doc">
+                            <div class="row" id="sale_customer_header">
+                                <div class="col-12 text-center"><h2>Reporte de Cliente - Ventas Online</h2></div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-3" id="sale_config_review_left">
+                                    <p><b>Cliente:</b> <span t-field="doc.partner_id.name"/></p>
+                                    <p><b>Fechas:</b> <span t-field="doc.start_date"/> hasta <span t-field="doc.end_date"/></p>
+                                </div>
+                                <br/>
+                                <div class="col-3" id="sale_config_review_right">
+                                    <p><b>Tipo de Documento:</b> <span t-field="doc.partner_id.l10n_latam_identification_type_id.name"/></p>
+                                    <p><b>Número de Documento:</b> <span t-field="doc.partner_id.vat"/></p>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-12">
+                                    <table class="table table-bordered" style="table-layout: fixed" id="sale_customer_config_table">
+                                        <thead style="display: table-row-group">
+                                            <tr>
+                                                <th class="text-center" style="width: 0.03%" scope="col">Ref#</th>
+                                                <th class="text-center" style="width: 0.04%" scope="col">Fecha Operación</th>
+                                                <th class="text-center" style="width: 0.05%" scope="col">Tipo de Operación</th>
+                                                <th class="text-center" style="width: 0.04%" scope="col">Monto Origen (U$D)</th>
+                                                <th class="text-center" style="width: 0.04%" scope="col">Monto Origen (PEN)</th>
+                                                <th class="text-center" style="width: 0.03%" scope="col">Tipo de Cambio</th>
+                                                <th class="text-center" style="width: 0.04%" scope="col">Monto Destino (U$D)</th>
+                                                <th class="text-center" style="width: 0.04%" scope="col">Monto Destino (PEN)</th>
+                                                <th class="text-center" style="width: 0.05%" scope="col">Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <t t-foreach="results" t-as="result">
+                                                <tr>
+                                                    <td class="text-center"><span t-esc="result['name']"/></td>
+                                                    <td class="text-center"><span t-esc="result['date_order']" t-options='{"widget": "date"}'/></td>
+                                                    <td class="text-center">Cambio de Divisas</td>
+                                                    <td class="text-center"><t t-if="result['origin_currency_id'].name == 'USD'"><span t-esc="result['origin_import']" t-options="{'widget': 'monetary', 'display_currency': result['origin_currency_id']}"/></t></td>
+                                                    <td class="text-center"><t t-if="result['origin_currency_id'].name == 'PEN'"><span t-esc="result['origin_import']" t-options="{'widget': 'monetary', 'display_currency': result['origin_currency_id']}"/></t></td>
+                                                    <td class="text-center"><span t-esc="result['approved_rate']"/></td>
+                                                    <td class="text-center"><t t-if="result['destination_currency_id'].name == 'USD'"><span t-esc="result['destination_import']" t-options="{'widget': 'monetary', 'display_currency': result['destination_currency_id']}"/></t></td>
+                                                    <td class="text-center"><t t-if="result['destination_currency_id'].name == 'PEN'"><span t-esc="result['destination_import']" t-options="{'widget': 'monetary', 'display_currency': result['destination_currency_id']}"/></t></td>
+                                                    <td class="text-center"><t t-if="result['state'] == 'draft'"><span>Cotización</span></t><t t-if="result['state'] == 'auth'"><span>Autorizar Tasas</span></t><t t-if="result['state'] == 'valid'"><span>Validado</span></t><t t-if="result['state'] == 'sent'"><span>Presupuesto Enviado</span></t><t t-if="result['state'] == 'deposit'"><span>Depósito Adjuntado</span></t><t t-if="result['state'] == 'sale'"><span>Orden de Venta</span></t><t t-if="result['state'] == 'done'"><span>Bloqueado</span></t><t t-if="result['state'] == 'cancel'"><span>Cancelado</span></t></td>
+                                                </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div></div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-6"><h4>Totales Divisas Para Convertir</h4></div>
+                                <div class="col-6"><h4>Totales Divisas Convertidas</h4></div>
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="row col-6">
+                                    <div class="col-1"></div>
+
+                                    <div class="col-5">
+                                        <t t-set="vardraft" t-value="0"/>
+                                        <t t-set="varsale" t-value="0"/>
+                                        <t t-set="varcancel" t-value="0"/>
+                                        <p t-foreach="results" t-as="i">
+                                            <t t-if="i['origin_currency_id'].name == 'USD'">
+                                                <t t-if="i['state'] in ['draft','auth','valid','sent']">
+                                                    <t t-set="vardraft" t-value="vardraft+i['origin_import']"/>
+                                                </t>
+                                                <t t-if="i['state'] in ['deposit','sale']">
+                                                    <t t-set="varsale" t-value="varsale+i['origin_import']"/>
+                                                </t>
+                                                <t t-if="i['state'] == 'cancel'">
+                                                    <t t-set="varcancel" t-value="varcancel+i['origin_import']"/>
+                                                </t>
+                                            </t>
+                                        </p>
+                                        <p>Cotizado: <t t-esc="vardraft" t-options="{'widget': 'monetary', 'display_currency': Money_USD}"/></p>
+                                        <p>Orden de Venta: <t t-esc="varsale" t-options="{'widget': 'monetary', 'display_currency': Money_USD}"/></p>
+                                        <p>Cancelado: <t t-esc="varcancel" t-options="{'widget': 'monetary', 'display_currency': Money_USD}"/></p>
+                                    </div>
+                                    <div class="col-1"></div>
+
+                                    <div class="col-5">
+                                        <t t-set="vardraft" t-value="0"/>
+                                        <t t-set="varsale" t-value="0"/>
+                                        <t t-set="varcancel" t-value="0"/>
+                                        <p t-foreach="results" t-as="i">
+                                            <t t-if="i['origin_currency_id'].name == 'PEN'">
+                                                <t t-if="i['state'] in ['draft','auth','valid','sent']">
+                                                    <t t-set="vardraft" t-value="vardraft+i['origin_import']"/>
+                                                </t>
+                                                <t t-if="i['state'] in ['deposit','sale']">
+                                                    <t t-set="varsale" t-value="varsale+i['origin_import']"/>
+                                                </t>
+                                                <t t-if="i['state'] == 'cancel'">
+                                                    <t t-set="varcancel" t-value="varcancel+i['origin_import']"/>
+                                                </t>
+                                            </t>
+                                        </p>
+                                        <p>Cotizado: <t t-esc="vardraft" t-options="{'widget': 'monetary', 'display_currency': Money_PEN}"/></p>
+                                        <p>Orden de Venta: <t t-esc="varsale" t-options="{'widget': 'monetary', 'display_currency': Money_PEN}"/></p>
+                                        <p>Cancelado: <t t-esc="varcancel" t-options="{'widget': 'monetary', 'display_currency': Money_PEN}"/></p>
+                                    </div>
+                                </div>
+                                <div class="row col-6">
+                                    <div class="col-1"></div>
+
+                                    <div class="col-5">
+                                        <t t-set="vardraft" t-value="0"/>
+                                        <t t-set="varsale" t-value="0"/>
+                                        <t t-set="varcancel" t-value="0"/>
+                                        <p t-foreach="results" t-as="i">
+                                            <t t-if="i['destination_currency_id'].name == 'USD'">
+                                                <t t-if="i['state'] in ['draft','auth','valid','sent']">
+                                                    <t t-set="vardraft" t-value="vardraft+i['destination_import']"/>
+                                                </t>
+                                                <t t-if="i['state'] in ['deposit','sale']">
+                                                    <t t-set="varsale" t-value="varsale+i['destination_import']"/>
+                                                </t>
+                                                <t t-if="i['state'] == 'cancel'">
+                                                    <t t-set="varcancel" t-value="varcancel+i['destination_import']"/>
+                                                </t>
+                                            </t>
+                                        </p>
+
+                                        <p>Cotizado: <t t-esc="vardraft" t-options="{'widget': 'monetary', 'display_currency': Money_USD}"/></p>
+                                        <p>Orden de Venta: <t t-esc="varsale" t-options="{'widget': 'monetary', 'display_currency': Money_USD}"/></p>
+                                        <p>Cancelado: <t t-esc="varcancel" t-options="{'widget': 'monetary', 'display_currency': Money_USD}"/></p>
+                                    </div>
+                                    <div class="col-1"></div>
+
+                                    <div class="col-5">
+                                        <t t-set="vardraft" t-value="0"/>
+                                        <t t-set="varsale" t-value="0"/>
+                                        <t t-set="varcancel" t-value="0"/>
+                                        <p t-foreach="results" t-as="i">
+                                            <t t-if="i['destination_currency_id'].name == 'PEN'">
+                                                <t t-if="i['state'] in ['draft','auth','valid','sent']">
+                                                    <t t-set="vardraft" t-value="vardraft+i['destination_import']"/>
+                                                </t>
+                                                <t t-if="i['state'] in ['deposit','sale']">
+                                                    <t t-set="varsale" t-value="varsale+i['destination_import']"/>
+                                                </t>
+                                                <t t-if="i['state'] == 'cancel'">
+                                                    <t t-set="varcancel" t-value="varcancel+i['destination_import']"/>
+                                                </t>
+                                            </t>
+                                        </p>
+                                        <p>Cotizado: <t t-esc="vardraft" t-options="{'widget': 'monetary', 'display_currency': Money_PEN}"/></p>
+                                        <p>Orden de Venta: <t t-esc="varsale" t-options="{'widget': 'monetary', 'display_currency': Money_PEN}"/></p>
+                                        <p>Cancelado: <t t-esc="varcancel" t-options="{'widget': 'monetary', 'display_currency': Money_PEN}"/></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <report
+            id="report_soopc_html"
+            model="so.detail.wizard"
+            string="Operaciones Clientes"
+            report_type="qweb-html"
+            name="sale_money_exchange.customer_ope_report_template"
+            file="sale_money_exchange.customer_ope_report_template"
+            paperformat="sale_config._paperformat_sale_order_customer_landscape"
+            menu="False"/>
+
+        <report
+            id="report_soopc_pdf"
+            model="so.detail.wizard"
+            string="Operaciones Clientes"
+            report_type="qweb-pdf"
+            name="sale_money_exchange.customer_ope_report_template"
+            file="sale_money_exchange.customer_ope_report_template"
+            paperformat="sale_config._paperformat_sale_order_customer_landscape"
+            menu="False"/>
+    </data>
+</odoo>

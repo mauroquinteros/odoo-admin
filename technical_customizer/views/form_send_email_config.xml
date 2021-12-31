@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="mail_compose_message_view_id_form_xpath">
+        <field name="name">mail.compose.message.view.form.features.private</field>
+        <field name="model">mail.compose.message</field>
+        <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='template_id']" position="attributes">
+                <attribute name="groups">technical_customizer.compose_email_features_access</attribute>
+            </xpath>
+            <xpath expr="//button[@name='save_as_template']" position="attributes">
+                <attribute name="groups">technical_customizer.compose_email_features_access</attribute>
+            </xpath>
+            <xpath expr="//field[@name='attachment_ids']" position="attributes">
+                <attribute name="readonly">context.get('att_field',False)</attribute>
+                <attribute name="force_save">context.get('att_field',False)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='subject']" position="attributes">
+                <attribute name="readonly">context.get('subject',False)</attribute>
+                <attribute name="force_save">context.get('subject',False)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_ids']" position="attributes">
+                <attribute name="readonly">context.get('partner_ids',False)</attribute>
+                <attribute name="force_save">context.get('partner_ids',False)</attribute>
+            </xpath>
+            <xpath expr="//field[@name='body']" position="attributes">
+                <attribute name="readonly">context.get('body',False)</attribute>
+                <attribute name="force_save">context.get('body',False)</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="agency_MarEd_663" model="res.partner.agency">
+            <field name="name">MARYLAND - EDGEWATER</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website"></field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="state_id" ref="base.state_us_33"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="phone">410-956-7205</field>
+            <field name="mobile"></field>
+            <field name="street">183 MAYO RD SUITE A</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">663</field>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_continentalexchange"/>
+            <field name="reference_payer">CONTINENTAL EXCHANGE</field>
+            <field name="office_hour">L-S 9:00-19:30 HRS.</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+        </record>
+        <record id="agency_CaAr_175" model="res.partner.agency">
+            <field name="name">CALIFORNIA - ARTESIA</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website"></field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="state_id" ref="base.state_us_5"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="phone">(562) 809-5070</field>
+            <field name="mobile"></field>
+            <field name="street">18933 NORWALK BLVD</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">175</field>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_continentalexchange"/>
+            <field name="reference_payer">CONTINENTAL EXCHANGE</field>
+            <field name="office_hour">L-S 9:00-19:30 HRS.</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+        </record>
+        <record id="agency_LoBan_083" model="res.partner.agency">
+            <field name="name">LONDRES - DEP BANCO</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website"></field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.uk"/>
+            <field name="state_id" ref="base.state_uk117"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="phone">008471-4787-0675</field>
+            <field name="mobile"></field>
+            <field name="street">LONDRES - DEP BANCO</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">083</field>
+            <field name="code_reference">30858</field>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_connectplus"/>
+            <field name="reference_payer">CONNECT PLUS</field>
+            <field name="office_hour">L-S 9:00-19:30 HRS.</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.EUR')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.EUR')])]"/>
+        </record>
+        <record id="agency_MerLiv_050" model="res.partner.agency">
+            <field name="name">LIVERPOOL-MERSEYSIDE</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website"></field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.uk"/>
+            <field name="state_id" ref="base.state_uk76"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="phone">01513454426</field>
+            <field name="mobile"></field>
+            <field name="street">34 LAWRENCE ROAD</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">050</field>
+            <field name="code_reference">30847</field>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_connectplus"/>
+            <field name="reference_payer">CONNECT PLUS</field>
+            <field name="office_hour">L-S 9:00-19:30 HRS.</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.EUR')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.EUR')])]"/>
+        </record>
+        <record id="agency_BaBel_031" model="res.partner.agency">
+            <field name="name">BUENOS AIRES - BELGRANO</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website"></field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.ar"/>
+            <field name="state_id" ref="base.state_ar_b"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="phone">005411-4789-0777</field>
+            <field name="mobile"></field>
+            <field name="street">AV OLAZABAL 2509</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">031</field>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_multienvios"/>
+            <field name="reference_payer">MULTIENVIOS</field>
+            <field name="office_hour">L-S 9:00-19:30 HRS.</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.USD'), ref('base.ARS')])]"/>
+            <field name="pricelist_id" ref="product_services.service_pricelist_tar01_multi"/>
+        </record>
+        <record id="agency_BaOn_029" model="res.partner.agency">
+            <field name="name">BUENOS AIRES - ONCE</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website"></field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.ar"/>
+            <field name="state_id" ref="base.state_ar_b"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="phone">4952-2860</field>
+            <field name="mobile"></field>
+            <field name="street">AV CORRIENTES 2510 LOCAL 6 ENTRE LARREA Y PASO GAL</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">029</field>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_multienvios"/>
+            <field name="reference_payer">MULTIENVIOS</field>
+            <field name="office_hour">L-S 9:00-19:30 HRS.</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.USD'), ref('base.ARS')])]"/>
+            <field name="pricelist_id" ref="product_services.service_pricelist_tar01_multi"/>
+        </record>
+        <record id="agency_CorCor_021" model="res.partner.agency">
+            <field name="name">CORDOVA - CENTRO</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website"></field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.ar"/>
+            <field name="state_id" ref="base.state_ar_x"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="phone">3515690824</field>
+            <field name="mobile"></field>
+            <field name="street">9 DE JULIO 526 CORDOVA</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">021</field>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_maguiexpress"/>
+            <field name="reference_payer">MAGUIEXPRESS</field>
+            <field name="office_hour">L-V 9:00-18:00HRS.</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="False"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+            <field name="pricelist_id" ref="product_services.service_pricelist_tar01_magui"/>
+        </record>
+        <record id="agency_MendMen_027" model="res.partner.agency">
+            <field name="name">MENDOZA - CENTRO</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website"></field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.ar"/>
+            <field name="state_id" ref="base.state_ar_m"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="phone">(261) 429 5303</field>
+            <field name="mobile"></field>
+            <field name="street">SAN MARTIN 1163. GALERIA TONSA LOCAL MERCURIO 17</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">027</field>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_maguiexpress"/>
+            <field name="reference_payer">MAGUIEXPRESS</field>
+            <field name="office_hour">LUNES A VIERNES: 9 A 13HRS. / 17 A 20: 30 HRS.</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.USD'), ref('base.ARS')])]"/>
+            <field name="pricelist_id" ref="product_services.service_pricelist_tar02_magui"/>
+        </record>
+        <record id="agency_CoAg_004" model="res.partner.agency">
+            <field name="name">AGUADAS</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website"></field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.co"/>
+            <field name="state_id" ref="base.state_co_06"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="phone">4952-2860</field>
+            <field name="mobile"></field>
+            <field name="street">CARRRERA 5 N. 6 - 18 - SUCURSAL AGUADAS,CALDAS-UBI</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">004</field>
+            <field name="code_reference">B20523</field>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_choice"/>
+            <field name="reference_payer">CHOICE</field>
+            <field name="office_hour">Office pick up</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+        </record>
+        <record id="agency_COCa_066" model="res.partner.agency">
+            <field name="name">CALDAS</field>
+            <field name="lang">es_PE</field>
+            <field name="tz">America/Lima</field>
+            <field name="company_type">company</field>
+            <field name="website"></field>
+            <field name="type">agency</field>
+            <field name="color">8</field>
+            <field name="country_id" ref="base.co"/>
+            <field name="state_id" ref="base.state_co_06"/>
+            <field name="category_id" eval="[(6, 0, [ref('base_config.res_cat_Agencia')])]"/>
+            <field name="customer_rank" eval="0"/>
+            <field name="phone"></field>
+            <field name="mobile"></field>
+            <field name="street">CALLE 130 SUR N. 49 - 25 - EN TODO EL PARQUE PRINC</field>
+            <field name="email"></field>
+            <!-- Data para res.partner.agency -->
+            <field name="internal_code">066</field>
+            <field name="code_reference">06B204466</field>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_choice"/>
+            <field name="reference_payer">CHOICE</field>
+            <field name="office_hour">Office pick up</field>
+            <field name="state">activo</field>
+            <field name="accept_local_currency" eval="True"/>
+            <field name="send_currency_ids" eval="[(6, 0, [ref('base.USD')])]"/>
+            <field name="pay_currency_ids" eval="[(6, 0, [ref('base.USD'), ref('base.COP')])]"/>
+        </record>
+    </data>
+</odoo>

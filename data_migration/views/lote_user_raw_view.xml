@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="lote_user_raw_data_view_tree" model="ir.ui.view">
+        <field name="name">lote.user.raw.view.tree</field>
+        <field name="model">lote.user.raw</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="sequence" optional="hide"/>
+                <field name="firstname" optional="show"/>
+                <field name="flstname" optional="show"/>
+                <field name="mlstname" optional="show"/>
+                <field name="name" optional="show"/>
+                <field name="gender" optional="show"/>
+                <field name="birth" optional="show"/>
+                <field name="ide_type" optional="show"/>
+                <field name="ide_num" optional="show"/>
+                <field name="phone" optional="show"/>
+                <field name="mobile" optional="show"/>
+                <field name="street" optional="show"/>
+                <field name="l10n_pe_district" optional="show"/>
+                <field name="city" optional="show"/>
+                <field name="state" optional="show"/>
+                <field name="country" optional="hide"/>
+                <field name="private_email" optional="show"/>
+                <field name="login" optional="show"/>
+                <field name="civil_status" optional="hide"/>
+                <field name="password" optional="hide"/>
+                <field name="parent_id" optional="hide"/>
+                <field name="parent" optional="hide"/>
+                <field name="status" optional="show"/>
+                <field name="situation" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="lote_user_raw_data_view_form" model="ir.ui.view">
+        <field name="name">lote.user.raw.view.form</field>
+        <field name="model">lote.user.raw</field>
+        <field name="arch" type="xml">
+            <form>
+            </form>
+        </field>
+    </record>
+
+    <record id="lote_user_raw_data_action" model="ir.actions.act_window">
+        <field name="name">Lotes de Registro de Usuarios</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">lote.user.raw</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <menuitem id="menu_raw_data" name="Datos y Carga" parent="base.menu_administration" groups="base.group_no_one"/>
+    <menuitem id="submenu_warehouse" name="Data WH" parent="menu_raw_data" sequence="2"/>
+    <menuitem id="submenu_lote_users" name="Carga de Lotes (Usuarios)" parent="submenu_warehouse" action="lote_user_raw_data_action"/>
+</odoo>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="rec_odoo" model="ir.modules.extension">
+            <field name="name">Odoo</field>
+            <field name="default" eval="True"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_cfs" model="ir.modules.extension">
+            <field name="name">CFS</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_plaft" model="ir.modules.extension">
+            <field name="name">PLAFT</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_master" model="ir.modules.extension">
+            <field name="name">TrayBook</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_base_cfs" model="ir.modules.extension">
+            <field name="name">BASE&CFS</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_account" model="ir.modules.extension">
+            <field name="name">Account</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_treasury" model="ir.modules.extension">
+            <field name="name">Treasury</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_moex" model="ir.modules.extension">
+            <field name="name">Money Exchange</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_cashbox" model="ir.modules.extension">
+            <field name="name">CashBox</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_tof" model="ir.modules.extension">
+            <field name="name">ToF</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_cashbox_assistant" model="ir.modules.extension">
+            <field name="name">Assistant</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_report_cfs" model="ir.modules.extension">
+            <field name="name">Report for CFS</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_cfs_data" model="ir.modules.extension">
+            <field name="name">Data PreCharge</field>
+            <field name="default" eval="False"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

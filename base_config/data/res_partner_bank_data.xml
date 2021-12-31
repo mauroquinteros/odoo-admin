@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!--                BANK BCP            -->
+        <record id="ofx_partner_bank_bcp_PEN" model="res.partner.bank">
+            <field name="acc_number">1931709749090</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.PEN"/>
+            <field name="company_id" ref="base.main_company"/>
+            <!-- <field name="businnes_line_id" ref="base_config.business_line_001"/> -->
+            <!-- <field name="sale_channel_id" ref="base_config.business_channel_002"/> -->
+            <field name="account_type">ctamoex</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_bcp"/>
+            <field name="acc_holder_name">Jet PERU S.A.</field>
+        </record>
+        <record id="ofx_partner_bank_bcp_USD" model="res.partner.bank">
+            <field name="acc_number">1931098197107</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="company_id" ref="base.main_company"/>
+            <!-- <field name="businnes_line_id" ref="base_config.business_line_001"/> -->
+            <!-- <field name="sale_channel_id" ref="base_config.business_channel_002"/> -->
+            <field name="account_type">ctamoex</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_bcp"/>
+            <field name="acc_holder_name">Jet PERU S.A.</field>
+        </record>
+        <!--                BANK PICHINCA            -->
+        <record id="ofx_partner_bank_pichincha_PEN" model="res.partner.bank">
+            <field name="acc_number">000535742126</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.PEN"/>
+            <field name="company_id" ref="base.main_company"/>
+            <!-- <field name="businnes_line_id" ref="base_config.business_line_001"/> -->
+            <!-- <field name="sale_channel_id" ref="base_config.business_channel_002"/> -->
+            <field name="account_type">ctamoex</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_pichincha"/>
+            <field name="acc_holder_name">Jet PERU S.A.</field>
+        </record>
+        <record id="ofx_partner_bank_pichincha_USD" model="res.partner.bank">
+            <field name="acc_number">000535742096</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="company_id" ref="base.main_company"/>
+            <!-- <field name="businnes_line_id" ref="base_config.business_line_001"/> -->
+            <!-- <field name="sale_channel_id" ref="base_config.business_channel_002"/> -->
+            <field name="account_type">ctamoex</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_pichincha"/>
+            <field name="acc_holder_name">Jet PERU S.A.</field>
+        </record>
+        <!--                BANK GNB            -->
+        <record id="ofx_partner_bank_gnb_PEN" model="res.partner.bank">
+            <field name="acc_number">1074223004</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.PEN"/>
+            <field name="company_id" ref="base.main_company"/>
+            <!-- <field name="businnes_line_id" ref="base_config.business_line_001"/> -->
+            <!-- <field name="sale_channel_id" ref="base_config.business_channel_002"/> -->
+            <field name="account_type">ctamoex</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_gnb"/>
+            <field name="acc_holder_name">Jet PERU S.A.</field>
+        </record>
+        <record id="ofx_partner_bank_gnb_USD" model="res.partner.bank">
+            <field name="acc_number">1074223005</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="company_id" ref="base.main_company"/>
+            <!-- <field name="businnes_line_id" ref="base_config.business_line_001"/> -->
+            <!-- <field name="sale_channel_id" ref="base_config.business_channel_002"/> -->
+            <field name="account_type">ctamoex</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_gnb"/>
+            <field name="acc_holder_name">Jet PERU S.A.</field>
+        </record>
+
+        <record id="remto_partner_bank_bcp_PEN" model="res.partner.bank">
+            <field name="acc_number">1931709749091</field>
+            <field name="cci_acc_number">00219300170974909012</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.PEN"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="account_type">ctaremon</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_bcp"/>
+            <field name="acc_holder_name">JET PERU S.A.</field>
+        </record>
+        <record id="remto_partner_bank_pichincha_PEN" model="res.partner.bank">
+            <field name="acc_number">000535742124</field>
+            <field name="cci_acc_number">03505100053574212421</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.PEN"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="account_type">ctaremon</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_pichincha"/>
+            <field name="acc_holder_name">JET PERU S.A.</field>
+        </record>
+        <record id="remto_partner_bank_gnb_PEN" model="res.partner.bank">
+            <field name="acc_number">1074223002</field>
+            <field name="cci_acc_number">05300100107422300243</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.PEN"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="account_type">ctaremon</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_gnb"/>
+            <field name="acc_holder_name">JET PERU S.A.</field>
+        </record>
+        <record id="remto_partner_bank_bcp_USD" model="res.partner.bank">
+            <field name="acc_number">1931098197108</field>
+            <field name="cci_acc_number">00219300109819710719</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="account_type">ctaremon</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_bcp"/>
+            <field name="acc_holder_name">JET PERU S.A.</field>
+        </record>
+        <record id="remto_partner_bank_pichincha_USD" model="res.partner.bank">
+            <field name="acc_number">000535742093</field>
+            <field name="cci_acc_number">03505100053574209326</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="account_type">ctaremon</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_pichincha"/>
+            <field name="acc_holder_name">JET PERU S.A.</field>
+        </record>
+        <record id="remto_partner_bank_gnb_USD" model="res.partner.bank">
+            <field name="acc_number">1074223003</field>
+            <field name="cci_acc_number">05300100107422300341</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="acc_type">bank</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="account_type">ctaremon</field>
+            <field name="country_id" ref='base.pe'/>
+            <field name="bank_id" ref="base_config.bank_gnb"/>
+            <field name="acc_holder_name">JET PERU S.A.</field>
+        </record>
+    </data>
+</odoo>

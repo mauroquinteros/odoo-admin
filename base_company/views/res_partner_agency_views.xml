@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_partner_agency_view_tree" model="ir.ui.view">
+        <field name="name">res.partner.agency.view.tree</field>
+        <field name="model">res.partner.agency</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="internal_code" string="Código"/>
+                <field name="name"/>
+                <field name="street" string="Dirección"/>
+                <field name="correspondent_id"/>
+                <field name="reference_payer"/>
+                <field name="office_hour"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_partner_agency_view_search" model="ir.ui.view">
+        <field name="name">res.partner.agency.view.search</field>
+        <field name="model">res.partner.agency</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Nombre" filter_domain="[('name','ilike',self)]"/>
+                <field name="internal_code" string="Código Interno" filter_domain="[('internal_code','ilike',self)]"/>
+                <filter name="group_by_country" string="País" context="{'group_by': 'country_id'}"/>
+                <filter name="group_by_correspondent" string="Corresponsal" context="{'group_by': 'correspondent_id'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_partner_agency_view_form" model="ir.ui.view">
+        <field name="name">res.partner.agency.view.form</field>
+        <field name="model">res.partner.agency</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="alert alert-warning oe_edit_only" role="alert" attrs="{'invisible': [('id', '!=', False)]}">
+                  Asegúrese de crear una Agencia teniendo en consideración los campos obligatorios que se solicita
+                </div>
+                <sheet>
+                    <widget name="web_ribbon" title="Activo" bg_color="bg-primary" attrs="{'invisible': ['|',('state','=','inactivo'),('state','=','cerrado')]}"/>
+                    <widget name="web_ribbon" title="Inactivo" bg_color="bg-warning" attrs="{'invisible': ['|',('state','=','activo'),('state','=','cerrado')]}"/>
+                    <widget name="web_ribbon" title="Cerrado" bg_color="bg-danger" attrs="{'invisible': ['|',('state','=','activo'),('state','=','inactivo')]}"/>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_128&quot;}"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Información General">
+                            <field name="company_type" invisible="1"/>
+                            <field name="state" invisible="1"/>
+                            <field style="font-weight:bold;" name="country_internal_code" readonly="1" attrs="{'invisible': [('id', '=', False)]}"/>
+                            <field name="internal_code"/>
+                            <field name="correspondent_id"/>
+                            <field name="reference_payer"/>
+                            <field name="previous_correspondent_name" invisible="1"/>
+                            <field name="code_reference"/>
+                            <field name="state" readonly="1"/>
+                            <separator/>
+                            <field name="street" string="Dirección"/>
+                            <field name="country_id"/>
+                            <field name="state_id"/>
+                        </group>
+                        <group string="Información Complementaria">
+                            <field style="font-weight:bold;" name="office_hour"/>
+                            <separator/>
+                            <field name="phone" widget="phone" string="Teléfono fijo"/>
+                            <field name="mobile" widget="phone" string="Teléfono móvil"/>
+                            <field name="email"/>
+                            <separator/>
+                            <field name="accept_local_currency" widget="boolean_toggle"/>
+                            <field name="send_currency_ids" widget="many2many_tags"/>
+                            <field name="pay_currency_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page name='contacts_page' string="Contactos y Direcciones" mode="kanban">
+                            <field name="child_ids" context="{'default_street': street, 'default_state_id': state_id, 'default_country_id': country_id}">
+                                <kanban>
+                                    <field name="id"/>
+                                    <field name="name"/>
+                                    <field name="function"/>
+                                    <field name="email"/>
+                                    <field name="mobile"/>
+                                    <field name="street"/>
+                                    <field name="country_id"/>
+                                    <field name="image_128"/>
+                                    <field name="company_type"/>
+                                    <templates>
+                                        <t t-name="kanban-box">
+                                            <div class="oe_kanban_global_click">
+                                                <div class="o_kanban_image">
+                                                    <img alt="" t-if="record.image_128.raw_value" t-att-src="kanban_image('res.partner', 'image_128', record.id.raw_value)"/>
+                                                    <t t-if="!record.image_128.raw_value">
+                                                        <img alt="Logo" t-if="record.company_type.raw_value === 'company'" t-att-src="_s + &quot;/base/static/img/company_image.png&quot;"/>
+                                                        <img alt="Avatar" t-if="record.company_type.raw_value === 'person'" t-att-src="_s + &quot;/base/static/img/avatar_grey.png&quot;"/>
+                                                    </t>
+                                                </div>
+                                                <div class="oe_kanban_details">
+                                                    <strong style="display: block;" class="o_kanban_record_title">
+                                                        <field name="name"/>
+                                                    </strong>
+                                                    <strong style="display: block;" class="o_kanban_record_title">
+                                                        <field name="function"/>
+                                                    </strong>
+                                                    <div t-if="record.email.value">
+                                                        <t t-esc="record.email.value"/>
+                                                    </div>
+                                                    <div t-if="record.mobile.value">
+                                                        <t t-esc="record.mobile.value"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                                <form string="Agregar contacto">
+                                    <sheet>
+                                        <field name="image_1920" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_128&quot;}"/>
+                                        <div class="oe_title">
+                                            <field name="is_company" invisible="1"/>
+                                            <field name="active" invisible="1"/>
+                                            <field name="company_type" widget="radio" class="oe_edit_only" options="{'horizontal': true}"/>
+                                            <h1>
+                                                <field name="name" default_focus="1" placeholder="Name" attrs="{'required' : [('company_type', '=', 'person')]}" readonly="1"/>
+                                            </h1>
+                                        </div>
+                                        <group>
+                                            <group>
+                                                <label for="" name="last_name">
+                                                    <b attrs="{'invisible': [('company_type', '=', 'person')]}">R. Social</b>
+                                                    <b attrs="{'invisible': [('company_type', '=', 'company')]}">Apellido Paterno</b>
+                                                </label>
+                                                <field name="lastname" style="text-transform: capitalize;" nolabel="1" required="1"/>
+                                                <field name="motherlastname" style="text-transform: capitalize;" attrs="{'invisible' : [('company_type', '=', 'company')], 'required' : [('company_type', '=', 'person')]}"/>
+                                                <field name="firstname" style="text-transform: capitalize;" attrs="{'invisible' : [('company_type', '=', 'company')], 'required' : [('company_type', '=', 'person')]}"/>
+                                                <field name="type" invisible="1"/>
+                                                <field name="street" string="Domicilio" placeholder="Dirección..." class="o_address_street"/>
+                                                <field name="country_id" placeholder="Country" class="o_address_country" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                                <field name="state_id" string="Departamento" class="o_address_state" placeholder="Departamento..." options="{&quot;no_open&quot;: True}" context="{'country_id': country_id}"/>
+                                            </group>
+                                            <group>
+                                                <label for="l10n_latam_identification_type_id" string="N° Identificación"/>
+                                                <div>
+                                                    <field name="l10n_latam_identification_type_id" placeholder="Type" class="oe_inline"/>
+                                                    <field name="vat" placeholder="Número DNI/RUC etc.." class="oe_inline"/>
+                                                </div>
+                                                <field name="civil_status_id" attrs="{'invisible' : [('company_type', '=', 'company')]}" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+                                                <field name="function"/>
+                                                <field name="email" widget="email" string="Correo electrónico"/>
+                                                <field name="website" widget="url" placeholder="e.g. https://www.odoo.com"/>
+                                                <field name="phone" widget="phone" string="Teléfono"/>
+                                                <field name="mobile" widget="phone" string="Móvil"/>
+                                                <field name="date_birth" attrs="{'invisible' : [('company_type', '=', 'company')]}"/>
+                                                <field name="gender_id" attrs="{'invisible' : [('company_type', '=', 'company')]}" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+                                            </group>
+                                        </group>
+                                    </sheet>
+                                </form>
+                            </field>
+                        </page>
+                        <page name='pos_page' string="Puntos de Venta" invisible="1">
+                            <field name="pos_ids" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_partner_agency_custom_view_form" model="ir.ui.view">
+        <field name="name">res.partner.agency.custom.view.form</field>
+        <field name="model">res.partner.agency</field>
+        <field name="arch" type="xml">
+            <form>
+                <div class="alert alert-warning oe_edit_only" role="alert" attrs="{'invisible': [('id', '!=', False)]}">
+                    Asegúrese de crear una Agencia teniendo en consideración los campos obligatorios que se solicita
+                </div>
+                <sheet>
+                    <field name="state" invisible="1"/>
+                    <widget name="web_ribbon" title="Activo" bg_color="bg-primary" attrs="{'invisible': ['|',('state','=','inactivo'),('state','=','cerrado')]}"/>
+                    <widget name="web_ribbon" title="Inactivo" bg_color="bg-warning" attrs="{'invisible': ['|',('state','=','activo'),('state','=','cerrado')]}"/>
+                    <widget name="web_ribbon" title="Cerrado" bg_color="bg-danger" attrs="{'invisible': ['|',('state','=','activo'),('state','=','inactivo')]}"/>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_128&quot;}"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Información General">
+                            <field style="font-weight:bold;" name="country_internal_code" readonly="1" attrs="{'invisible': [('id', '=', False)]}"/>
+                            <field name="internal_code"/>
+                            <field name="correspondent_id"/>
+                            <field name="reference_payer"/>
+                            <field name="code_reference"/>
+                            <separator/>
+                            <field name="street" string="Dirección"/>
+                            <field name="country_id"/>
+                            <field name="state_id"/>
+                        </group>
+                        <group string="Información Complementaria">
+                            <field style="font-weight:bold;" name="office_hour"/>
+                            <separator/>
+                            <field name="phone" widget="phone" string="Teléfono fijo"/>
+                            <field name="mobile" widget="phone" string="Teléfono móvil"/>
+                            <field name="email"/>
+                            <separator/>
+                            <field name="accept_local_currency" widget="boolean_toggle"/>
+                            <field name="send_currency_ids" widget="many2many_tags"/>
+                            <field name="pay_currency_ids" widget="many2many_tags"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_partner_agency_action" model="ir.actions.act_window">
+        <field name="name">Directorio de Agencias</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner.agency</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="res_partner_agency_view_search"/>
+        <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('res_partner_agency_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('res_partner_agency_view_form')}),]"/>
+        <field name="context">
+            {
+                'search_default_group_by_country': True,
+                'search_default_group_by_correspondent': True,
+                'default_company_type': 'company'
+            }
+        </field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree su primer registro de Agencia
+            </p>
+            <p>
+                Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="res_partner_sub_menu_agency" name="Agencias" parent="base_company.company_contacts" action="res_partner_agency_action" sequence="4"/>
+</odoo>

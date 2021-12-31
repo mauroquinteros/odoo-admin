@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- plaft.document.category tree view -->
+        <record id="plaft_document_category_view_tree" model="ir.ui.view">
+            <field name="name">plaft.document.category.view.tree</field>
+            <field name="model">plaft.document.category</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!-- Add your fields here -->
+                    <field name="name"/>
+                    <field name="acronym"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- plaft.document.category form view -->
+        <record id="plaft_document_category_view_form" model="ir.ui.view">
+            <field name="name">plaft.document.category.view.form</field>
+            <field name="model">plaft.document.category</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <group>
+                                <!-- Add your fields here -->
+                                <field name="name"/>
+                                <field name="acronym"/>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="code"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Documentos" name="documentos">
+                                <field name="documentcatalog_ids" nolabel="1">
+                                    <tree create="false" delete="false">
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- ACTIONS -->
+        <!-- plaft.document.category action window -->
+        <record id="plaft_document_category_action" model="ir.actions.act_window">
+            <field name="name">Categoría de documentos PLAFT</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">plaft.document.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                Crea la primera categoría de documentos
+                </p>
+                <p>
+                Agrega categorías para que los documentos se puedan filtrar con facilidad
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="plaft_document_category_menu" name="Categorías de Requisitos" parent="control_menu" action="plaft_document_category_action" sequence="4"/>
+    </data>
+</odoo>

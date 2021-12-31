@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- pos.config.correlative tree view -->
+    <record id="pos_correlative_view_tree" model="ir.ui.view">
+        <field name="name">pos.config.correlative.view.tree</field>
+        <field name="model">pos.config.correlative</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="serie"/>
+                <field name="ir_sequence_id"/>
+                <field name="pos_ids"/>
+                <field name="i_number"/>
+                <field name="commdocument_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- pos.config.correlative form view -->
+    <record id="pos_correlative_view_form" model="ir.ui.view">
+        <field name="name">pos.config.correlative.view.form</field>
+        <field name="model">pos.config.correlative</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <separator string="Registro de Correlativos" colspan="4"/>
+                    <group name="group_top">
+                        <group name="group_left">
+                            <field name="name" context="{'c_abbrevation':True}"/>
+                            <field name="commdocument_id" options="{'no_create': True, 'no_open': True}"/>
+                        </group>
+                        <group name="group_right">
+                            <field name="ir_sequence_id"/>
+                            <field name="i_number"/>
+                            <field name="serie"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Correlativos" >
+                            <field name="pos_ids" options="{'no_create': True, 'no_open': True}">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="agency_id"/>
+                                    <field name="aperture_user_id"/>
+                                    <field name="profile_id"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- pos.config.correlative action window -->
+    <record id="pos_correlative_action" model="ir.actions.act_window">
+        <field name="name">Registro de Correlativos para PoS</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">pos.config.correlative</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Agregue un nuevo Correlativo aquí
+            </p>
+            <p>
+                Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu POS Correlative -->
+    <menuitem 
+        id="pos_correlative_menu" 
+        name="Correlativos de PdV" 
+        parent="point_of_sale.menu_point_config_product"
+        action="pos_correlative_action" 
+        sequence="30"/>
+
+</odoo>

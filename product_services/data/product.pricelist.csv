@@ -1,0 +1,3 @@
+id,name,active,currency_id:id,company_id:id
+prod_002,Tarifa Estandar Dólares,1,base.USD,base.main_company
+prod_003,Tarifa Estandar Euros,1,base.EUR,base.main_company

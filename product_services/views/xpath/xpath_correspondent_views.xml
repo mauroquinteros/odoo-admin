@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_correspondent_view_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.correspondent.view.form.inherit</field>
+            <field name="model">res.partner.correspondent</field>
+            <field name="inherit_id" ref="base_company.res_partner_correspondent_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//sheet//div[hasclass('oe_title')]" position="after">
+                    <button name="open_wizard_to_add_pricelist" class="btn btn-primary" type="object" attrs="{'invisible': [('id', '=', False)]}">
+                        <span class="o_stat_text">Agregar Tarifario</span>
+                    </button>
+                </xpath>
+                <xpath expr="//form//sheet//field[@name='internal_code']" position="before">
+                    <field name="current_exchange_rate" context="{'default_correspondent_id': id, 'default_country_id': country_id, 'form_view_ref': 'product_services.remittance_exchange_rate_custom_view_form'}" attrs="{'invisible': [('id', '=', False)]}"/>
+                    <separator/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

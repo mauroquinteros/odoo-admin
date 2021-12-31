@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="settings_default_website" model="res.config.settings">
+            <field name="website_name">JetPerú</field>
+            <field name="website_domain">jetperu.com.pe</field>
+            <field name="website_logo" type="base64" file="technical_customizer/static/img/src/logo.png"/>
+            <field name="social_default_image" type="base64" file="technical_customizer/static/img/src/logo.png"/>
+            <field name="favicon" type="base64" file="technical_customizer/static/img/src/favicon.ico"/>
+        </record>
+    </data>
+</odoo>

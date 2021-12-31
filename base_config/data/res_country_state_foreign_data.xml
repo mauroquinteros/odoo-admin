@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="EC_QUI" model="res.country.state">
+            <field name="country_id" ref="base.ec"/>
+            <field name="name">Quito</field>
+            <field name="code">ECQUI</field>
+        </record>
+        <record id="CO_BOG" model="res.country.state">
+            <field name="country_id" ref="base.co"/>
+            <field name="name">Bogotá</field>
+            <field name="code">COBOG</field>
+        </record>
+    </data>
+</odoo>

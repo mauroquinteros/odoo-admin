@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pay_order_sequence" model="ir.sequence">
+            <field name="name">Pay Order Sequence</field>
+            <field name="code">pay.order.sequence</field>
+            <field name="prefix">ORD-</field>
+            <field name="padding">4</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="pay_order_moex_sequence" model="ir.sequence">
+            <field name="name">Pay Order MoEx Sequence</field>
+            <field name="code">pay.order.money.exchange.sequence</field>
+            <field name="prefix">MoEx-</field>
+            <field name="padding">4</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

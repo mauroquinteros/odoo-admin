@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>	
+
+	<!-- TABLA ANEXA Nº 1: CIIU (CLASIFICACIÓN INDUSTRIAL INTERNACIONAL UNIFORME) -->
+	<record id="view_anexo_01_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.01.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.01</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 1: CIIU (CLASIFICACIÓN INDUSTRIAL INTERNACIONAL UNIFORME)">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_01_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.01.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.01</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 1: CIIU (CLASIFICACIÓN INDUSTRIAL INTERNACIONAL UNIFORME)">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_01_action">
+		<field name="name">TABLA ANEXA Nº 1: CIIU (CLASIFICACIÓN INDUSTRIAL INTERNACIONAL UNIFORME)</field>
+		<field name="res_model">l10n_pe_sunat.anexo.01</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- TABLA ANEXA Nº 2: TIPO DE CONTRIBUYENTE -->
+	<record id="view_anexo_02_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.02.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.02</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 2: TIPO DE CONTRIBUYENTE">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_02_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.02.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.02</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 2: TIPO DE CONTRIBUYENTE">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_02_action">
+		<field name="name">TABLA ANEXA Nº 2: TIPO DE CONTRIBUYENTE</field>
+		<field name="res_model">l10n_pe_sunat.anexo.02</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- TABLA ANEXA Nº 3: TIPO DE ZONA -->
+	<record id="view_anexo_03_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.03.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.03</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 3: TIPO DE ZONA">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_03_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.03.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.03</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 3: TIPO DE ZONA">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_03_action">
+		<field name="name">TABLA ANEXA Nº 3: TIPO DE ZONA</field>
+		<field name="res_model">l10n_pe_sunat.anexo.03</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- TABLA ANEXA Nº 4: TIPO DE VIA -->
+	<record id="view_anexo_04_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.04.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.04</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 4: TIPO DE VIA">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_04_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.04.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.04</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 4: TIPO DE VIA">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_04_action">
+		<field name="name">TABLA ANEXA Nº 4: TIPO DE VIA</field>
+		<field name="res_model">l10n_pe_sunat.anexo.04</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- TABLA ANEXA Nº 5: DOCUMENTO DE IDENTIDAD -->
+	<record id="view_anexo_05_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.05.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.05</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 5: DOCUMENTO DE IDENTIDAD">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_05_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.05.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.05</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 5: DOCUMENTO DE IDENTIDAD">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_05_action">
+		<field name="name">TABLA ANEXA Nº 5: DOCUMENTO DE IDENTIDAD</field>
+		<field name="res_model">l10n_pe_sunat.anexo.05</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- TABLA ANEXA Nº 6: SEXO -->
+	<record id="view_anexo_06_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.06.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.06</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 6: SEXO">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_06_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.06.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.06</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 6: SEXO">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_06_action">
+		<field name="name">TABLA ANEXA Nº 6: SEXO</field>
+		<field name="res_model">l10n_pe_sunat.anexo.06</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- TABLA ANEXA Nº 7: NACIONALIDAD -->
+	<record id="view_anexo_07_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.07.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.07</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 7: NACIONALIDAD">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_07_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.07.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.07</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 7: NACIONALIDAD">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_07_action">
+		<field name="name">TABLA ANEXA Nº 7: NACIONALIDAD</field>
+		<field name="res_model">l10n_pe_sunat.anexo.07</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- TABLA ANEXA Nº 8: CONDICION DE DOMICILIADO -->
+	<record id="view_anexo_08_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.08.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.08</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 8: CONDICION DE DOMICILIADO">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_08_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.08.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.08</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 8: CONDICION DE DOMICILIADO">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_08_action">
+		<field name="name">TABLA ANEXA Nº 8: CONDICION DE DOMICILIADO</field>
+		<field name="res_model">l10n_pe_sunat.anexo.08</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- TABLA ANEXA Nº 9: ORIGEN DE LA ENTIDAD -->
+	<record id="view_anexo_09_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.09.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.09</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 9: ORIGEN DE LA ENTIDAD">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_09_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.09.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.09</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 9: ORIGEN DE LA ENTIDAD">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_09_action">
+		<field name="name">TABLA ANEXA Nº 9: ORIGEN DE LA ENTIDAD</field>
+		<field name="res_model">l10n_pe_sunat.anexo.09</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- TABLA ANEXA Nº 10:  CODIFICACION DE TRIBUTOS -->
+	<record id="view_anexo_10_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.10.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.10</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 10:  CODIFICACION DE TRIBUTOS">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_10_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.10.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.10</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 10:  CODIFICACION DE TRIBUTOS">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_10_action">
+		<field name="name">TABLA ANEXA Nº 10:  CODIFICACION DE TRIBUTOS</field>
+		<field name="res_model">l10n_pe_sunat.anexo.10</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- TABLA ANEXA Nº 11:  CODIGOS DE PROFESION U OFICIO -->
+	<record id="view_anexo_11_tree" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.11.view.tree</field>
+		<field name="model">l10n_pe_sunat.anexo.11</field>
+		<field name="arch" type="xml">
+			<tree string="TABLA ANEXA Nº 11:  CODIGOS DE PROFESION U OFICIO">
+				<field name="code"/>
+				<field name="name"/>
+			</tree>
+		</field>
+	</record>
+	<record id="view_anexo_11_form" model="ir.ui.view">
+		<field name="name">l10n_pe_sunat.anexo.11.view.form</field>
+		<field name="model">l10n_pe_sunat.anexo.11</field>
+		<field name="arch" type="xml">
+			<form string="TABLA ANEXA Nº 11:  CODIGOS DE PROFESION U OFICIO">
+				<group>
+					<group>
+						<field name="code"/>
+						<field name="name"/>
+					</group>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record model="ir.actions.act_window" id="anexo_11_action">
+		<field name="name">TABLA ANEXA Nº 11:  CODIGOS DE PROFESION U OFICIO</field>
+		<field name="res_model">l10n_pe_sunat.anexo.11</field>
+		<field name="view_mode">tree,form</field>
+	</record>
+
+	<!-- Menu -->
+	<menuitem name="Tablas Anexas" id="l10n_pe_sunat_anexo_menu" parent="root_sunat_menu" sequence="1"/>
+	<menuitem name="Tabla Anexa Nº 1: Ciiu (Clasificación Industrial Internacional Uniforme)" id="l10n_pe_sunat_anexo_01_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_01_action" sequence="1"/>
+	<menuitem name="Tabla Anexa Nº 2: Tipo De Contribuyente" id="l10n_pe_sunat_anexo_02_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_02_action" sequence="2"/>
+	<menuitem name="Tabla Anexa Nº 3: Tipo De Zona" id="l10n_pe_sunat_anexo_03_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_03_action" sequence="3"/>
+	<menuitem name="Tabla Anexa Nº 4: Tipo De Via" id="l10n_pe_sunat_anexo_04_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_04_action" sequence="4"/>
+	<menuitem name="Tabla Anexa Nº 5: Documento De Identidad" id="l10n_pe_sunat_anexo_05_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_05_action" sequence="5"/>
+	<menuitem name="Tabla Anexa Nº 6: Sexo" id="l10n_pe_sunat_anexo_06_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_06_action" sequence="6"/>
+	<menuitem name="Tabla Anexa Nº 7: Nacionalidad" id="l10n_pe_sunat_anexo_07_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_07_action" sequence="7"/>
+	<menuitem name="Tabla Anexa Nº 8: Condicion De Domiciliado" id="l10n_pe_sunat_anexo_08_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_08_action" sequence="8"/>
+	<menuitem name="Tabla Anexa Nº 9: Origen De La Entidad" id="l10n_pe_sunat_anexo_09_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_09_action" sequence="9"/>
+	<menuitem name="Tabla Anexa Nº 10:  Codificacion De Tributos" id="l10n_pe_sunat_anexo_10_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_10_action" sequence="10"/>
+	<menuitem name="Tabla Anexa Nº 11:  Codigos De Profesion U Oficio" id="l10n_pe_sunat_anexo_11_menu" parent="l10n_pe_sunat_anexo_menu" action="anexo_11_action" sequence="11"/>
+
+</odoo>

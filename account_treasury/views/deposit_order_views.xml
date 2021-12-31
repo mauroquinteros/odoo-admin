@@ -1,0 +1,347 @@
+<odoo>
+  <record id="deposit_order_view_tree" model="ir.ui.view">
+    <field name="name">deposit.order.view.tree</field>
+    <field name="model">deposit.order</field>
+    <field name="arch" type="xml">
+      <tree decoration-primary="state=='acredit'" decoration-info="state=='pre-acredit'" decoration-success="state=='deposit'" decoration-warning="state=='unchecked'" decoration-danger="state=='cancel'" create="false" import="false" export_xlsx="false">
+        <field name="partner_id" groups="account_treasury.group_financial_treasury_assistant" readonly="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+        <field name="agency_id" readonly="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+        <field name="origin_account_bank_id" attrs="{'readonly': [('id','!=',False)]}" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+        <field name="reference_deposit" attrs="{'readonly': ['|',('block','=',True),'&amp;',('type','=','A-I'),('id','!=',False)]}"/>
+        <field name="date_deposit" readonly="1"/>
+        <field name="type" optional="hide" readonly="1"/>
+        <field name="block" invisible="1"/>
+        <field name="amount_deposit" attrs="{'invisible': [('type', '=', 'B-E')],'readonly': [('id','!=',False)]}"/>
+        <field name="amount_payable" widget='monetary' options="{'currency_field': 'currency_id'}" attrs="{'invisible': ['|',('type', '=', 'A-I')],'readonly': [('id','!=',False)]}"/>
+        <field name="state" optional="hide" readonly="1" options="{'no_open': True}"/>
+        <button type="object" class="btn btn-sm" name="action_open_document" icon="fa-folder-open-o text-dark" string="Abrir Documento" groups="account_treasury.group_financial_treasury_assistant"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="deposit_order_view_search" model="ir.ui.view">
+    <field name="name">deposit.order.search.inherit.quotation</field>
+    <field name="model">deposit.order</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+      <search>
+        <filter name="state_pending" string="Pendientes" domain="[('state', '=', 'unchecked')]"/>
+        <filter name="partner_group" string="Dirigido a" context="{'group_by': 'partner_id'}"/>
+        <filter name="sale_group" string="Orden de Venta" context="{'group_by': 'sale_order_id'}"/>
+        <filter name="type_group" string="Tipo de Línea" context="{'group_by': 'type'}"/>
+        <searchpanel>
+          <field name="state" icon="fa-sliders" string="Etapas"/>
+          <field name="type" icon="fa-sliders" string="Tipos"/>
+        </searchpanel>
+      </search>
+    </field>
+  </record>
+
+  <record id="deposit_order_view_form" model="ir.ui.view">
+    <field name="name">deposit.order.view.form</field>
+    <field name="model">deposit.order</field>
+    <field name="arch" type="xml">
+      <form create="false" delete="false">
+        <header>
+          <button name="action_confirm_deposit" string="Pre Abonar" type="object" class="oe_read_only btn-primary" confirm="Está seguro(a) de Pre Abonar?, este cambio no se podrá deshacer." context="{'statkey': 'pre-acredit'}" attrs="{'invisible': ['|',('type','=','A-I'),('state','not in',('unchecked'))]}"/>
+          <button name="action_confirm_deposit" string="Confirmar" type="object" class="oe_read_only btn-primary" confirm="Está seguro(a) de confirmar este depósito?, este cambio no se podrá deshacer." context="{'statkey': 'deposit'}" attrs="{'invisible': ['|',('type','=','B-E'),('state','not in',('unchecked'))]}"/>
+          <button name="action_cancel_deposit" string="Cancelar" type="object" states="unchecked" class="oe_read_only btn-danger"/>
+
+          <field name="state" widget="statusbar"/>
+        </header>
+        <sheet>
+          <div class="oe_button_box" name="button_box">
+            <button name="action_open_document" type="object" class="oe_stat_button" icon="fa-external-link icon">
+              <div class="o_field_widget o_stat_info">
+                <span class="o_stat_text">Orden de Venta</span>
+                <span class="o_stat_text">
+                  <field name="sale_order_id" readonly="1"/>
+                </span>
+              </div>
+            </button>
+          </div>
+          <group col="4" style="font-size: large;">
+            <label for="" name="partner_name">
+              <span attrs="{'invisible': [('type', '=', 'B-E')]}">Recibido de</span>
+              <span attrs="{'invisible': [('type', '=', 'A-I')]}">Dirigido a</span>
+            </label>
+            <field name="partner_id" readonly="1" nolabel="1" force_save="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+            <field name="agency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" readonly="1" force_save="1"/>
+          </group>
+          <group style="font-size: large;">
+            <group>
+              <field name="origin_account_bank_id" string="Banco/Cta Salida" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" attrs="{'invisible': [('type','=','A-I')],'readonly': [('id','!=',False)],'required': [('type','=','B-E')],}"/>
+              <field name="origin_acc_holder_names" readonly="1" force_save="1" attrs="{'invisible': [('type','=','A-I')]}"/>
+            </group>
+            <group>
+              <label for="" name="destination_account_bank_name">
+                <span attrs="{'invisible': [('type', '!=', 'A-I')]}">Banco Cta</span>
+                <span attrs="{'invisible': [('type', '!=', 'B-E')]}">Cta Cliente</span>
+              </label>
+              <field name="destination_account_bank_id" required="1" readonly="1" nolabel="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+              <field name="destination_acc_holder_names" readonly="1" force_save="1"/>
+            </group>
+          </group>
+          <group col="4" style="font-size: large;">
+            <field name="paymethod_id" required="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" attrs="{'readonly': [('id','!=',False)]}"/>
+            <field name="date_deposit" readonly="1" force_save="1"/>
+          </group>
+          <group style="font-size: large;">
+            <group>
+              <field name="reference_deposit" attrs="{'readonly': ['|',('type','=','A-I'),('block','=',True)]}"/>
+            </group>
+            <group>
+              <field name="amount_deposit" widget='monetary' options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('type', '=', 'B-E')],'readonly': [('id','!=',False)]}"/>
+              <field name="amount_payable" widget='monetary' options="{'currency_field': 'currency_id'}" attrs="{'invisible': [('type', '=', 'A-I')],'readonly': [('id','!=',False)]}"/>
+            </group>
+            <field name="type" invisible="1"/>
+            <field name="block" invisible="1"/>
+          </group>
+          <notebook>
+            <page name="image_binary" string="Imágenes">
+              <field name="image" widget="image" attrs="{'readonly': ['|',('block','=',True),'&amp;',('type','=','A-I'),('id','!=',False)]}"/>
+            </page>
+            <page name="file_attachment" string="Otros Archivos">
+              <group>
+                <field name="attachment_ids" widget="many2many_binary" attrs="{'readonly': ['|',('block','=',True),'&amp;',('type','=','A-I'),('id','!=',False)]}"/>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers"/>
+          <field name="activity_ids" widget="mail_activity"/>
+          <field name="message_ids" widget="mail_thread"/>
+        </div>
+      </form>
+    </field>
+  </record>
+
+  <record id="sale_deposit_order_view_tree" model="ir.ui.view">
+    <field name="name">sale.deposit.order.view.tree</field>
+    <field name="model">deposit.order</field>
+    <field name="arch" type="xml">
+      <tree decoration-primary="state=='acredit'" decoration-info="state=='pre-acredit'" decoration-success="state=='deposit'" decoration-warning="state=='unchecked'" decoration-danger="state=='cancel'">
+        <field name="partner_id" invisible="1"/>
+        <field name="agency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+        <field name="destination_account_bank_id" string="Cta de Entrada"/>
+        <field name="destination_acc_holder_names" string="Titular(es)" optional="hide"/>
+        <field name="reference_deposit"/>
+        <field name="date_deposit"/>
+        <field name="amount_deposit"/>
+        <field name="state"/>
+        <field name="type" optional="hide"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="sale_deposit_order_view_form" model="ir.ui.view">
+    <field name="name">sale.deposit.order.view.form</field>
+    <field name="model">deposit.order</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <field name="state" widget="statusbar" statusbar_visible="unchecked,deposit,cancel"/>
+        </header>
+        <sheet>
+          <group col="2" style="font-size: large;">
+            <field name="partner_id" readonly="1" force_save="1" string="Recibido de" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+          </group>
+          <group style="font-size: large;">
+            <group>
+              <field name="date_deposit" readonly="1" force_save="1"/>
+              <field name="reference_deposit" required="1"/>
+              <field name="amount_deposit" widget='monetary' options="{'currency_field': 'currency_id'}" required="1"/>
+            </group>
+            <group>
+              <field name="destination_account_bank_id" required="1" string="Banco y Cta" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+              <field name="destination_acc_holder_names" readonly="1" force_save="1"/>
+              <field name="currency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" readonly="1" force_save="1"/>
+            </group>
+          </group>
+          <group style="font-size: large;">
+            <group>
+              <field name="agency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" readonly="1" force_save="1"/>
+            </group>
+            <group>
+              <field name="paymethod_id" required="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+              <field name="type" invisible="1"/>
+            </group>
+          </group>
+          <notebook>
+            <page name="image_binary" string="Imágenes">
+              <field name="image" widget="image"/>
+            </page>
+            <page name="file_attachment" string="Otros Archivos">
+              <group>
+                <field name="attachment_ids" widget="many2many_binary"/>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers"/>
+          <field name="activity_ids" widget="mail_activity"/>
+          <field name="message_ids" widget="mail_thread"/>
+        </div>
+      </form>
+    </field>
+  </record>
+
+  <record id="sale_acredit_order_view_tree" model="ir.ui.view">
+    <field name="name">sale.acredit.order.view.tree</field>
+    <field name="model">deposit.order</field>
+    <field name="arch" type="xml">
+      <tree decoration-primary="state=='acredit'" decoration-info="state=='pre-acredit'" decoration-success="state=='deposit'" decoration-warning="state=='unchecked'" decoration-danger="state=='cancel'">
+        <field name="partner_id" invisible="1"/>
+        <field name="agency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+        <field name="origin_account_bank_id" string="Cta Salida" optional="show"/>
+        <field name="origin_acc_holder_names" string="Titular(es)" optional="hide"/>
+        <field name="destination_account_bank_id" string="Cta Cliente" optional="show"/>
+        <field name="destination_acc_holder_names" string="Titular(es)" optional="hide"/>
+        <field name="reference_deposit"/>
+        <field name="date_deposit"/>
+        <field name="amount_payable"/>
+        <field name="state"/>
+        <field name="type" optional="hide"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="sale_acredit_order_view_form" model="ir.ui.view">
+    <field name="name">deposit.order.view.form</field>
+    <field name="model">deposit.order</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <field name="state" widget="statusbar" statusbar_visible="unchecked,pre-acredit,acredit,cancel"/>
+        </header>
+        <sheet>
+          <group col="4" style="font-size: large;">
+            <field name="partner_id" readonly="1" force_save="1" string="Dirigido a" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+            <field name="date_deposit" readonly="1" force_save="1"/>
+          </group>
+          <group style="font-size: large;">
+            <group>
+              <field name="origin_account_bank_id" required="1" string="Cta Salida" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+              <field name="origin_acc_holder_names" required="1" readonly="1" force_save="1"/>
+              <field name="amount_payable" required="1" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+            </group>
+            <group>
+              <field name="destination_account_bank_id" required="1" string="Cta Cliente" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+              <field name="destination_acc_holder_names" required="1" readonly="1" force_save="1"/>
+              <field name="currency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" readonly="1" force_save="1"/>
+            </group>
+          </group>
+          <group style="font-size: large;">
+            <group>
+              <field name="agency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" readonly="1" force_save="1"/>
+            </group>
+            <group>
+              <field name="paymethod_id" required="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+              <field name="type" invisible="1"/>
+            </group>
+          </group>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers"/>
+          <field name="activity_ids" widget="mail_activity"/>
+          <field name="message_ids" widget="mail_thread"/>
+        </div>
+      </form>
+    </field>
+  </record>
+
+  <record id="treasury_acredit_order_view_tree" model="ir.ui.view">
+    <field name="name">treasury.acredit.order.view.tree</field>
+    <field name="model">deposit.order</field>
+    <field name="arch" type="xml">
+      <tree decoration-primary="state=='acredit'" decoration-info="state=='pre-acredit'" decoration-success="state=='deposit'" decoration-warning="state=='unchecked'" decoration-danger="state=='cancel'">
+        <button type="object" class="btn btn-sm" name="action_open_deposit" icon="fa-share-square-o text-primary" string="Abrir Documento" context="{'comment':'⬆️ Puede revisar el documento y regresar a la pagina anterior para confirmar que todo está listo.','mode':'info'}"/>
+        <field name="agency_id"/>
+        <field name="reference_deposit"/>
+        <field name="amount_payable"/>
+        <field name="state"/>
+        <!-- <button name="do_mark_line" states="pre-acredit" type="object" icon="fa-check text-success" context="{'state': 'acredit'}" confirm="Está seguro(a) de confirmar esta línea de depósito? esta acción no se podrá deshacer!"/>
+            <button name="do_mark_line" states="pre-acredit" type="object" icon="fa-times-circle text-danger" context="{'state': 'cancel'}" confirm="Está seguro(a) de cancelar esta línea de depósito? esta acción no se podrá deshacer!"/> -->
+      </tree>
+    </field>
+  </record>
+
+  <record id="treasury_acredit_order_view_form" model="ir.ui.view">
+    <field name="name">treasury.acredit.order.view.form</field>
+    <field name="model">deposit.order</field>
+    <field name="arch" type="xml">
+      <form>
+        <header>
+          <field name="state" widget="statusbar" statusbar_visible="unchecked,pre-acredit,acredit,cancel"/>
+        </header>
+        <sheet>
+          <group col="4" style="font-size: large;">
+            <field name="partner_id" readonly="1" force_save="1" string="Dirigido a" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+            <field name="date_deposit" readonly="1" force_save="1"/>
+          </group>
+          <group style="font-size: large;">
+            <group>
+              <field name="origin_account_bank_id" string="Cta Salida" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+              <field name="origin_acc_holder_names" readonly="1" force_save="1"/>
+              <field name="amount_payable" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+            </group>
+            <group>
+              <field name="destination_account_bank_id" string="Cta Cliente" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+              <field name="destination_acc_holder_names" readonly="1" force_save="1"/>
+              <field name="currency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" readonly="1" force_save="1"/>
+            </group>
+          </group>
+          <group style="font-size: large;">
+            <group>
+              <field name="agency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" readonly="1" force_save="1"/>
+            </group>
+            <group>
+              <field name="paymethod_id" required="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+              <field name="type" invisible="1"/>
+              <field name="block" invisible="1"/>
+            </group>
+          </group>
+          <notebook>
+            <page name="image_binary" string="Imágenes">
+              <field name="image" widget="image" attrs="{'readonly': [('block','=',True)]}"/>
+            </page>
+            <page name="file_attachment" string="Otros Archivos">
+              <group>
+                <field name="attachment_ids" widget="many2many_binary" attrs="{'readonly': [('block','=',True)]}"/>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers"/>
+          <field name="activity_ids" widget="mail_activity"/>
+          <field name="message_ids" widget="mail_thread"/>
+        </div>
+      </form>
+    </field>
+  </record>
+
+  <record id="deposit_order_action" model="ir.actions.act_window">
+    <field name="name">Ordenes de Depósito</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">deposit.order</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="deposit_order_view_search"/>
+    <field name="domain">[('state', '!=', False)]</field>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">
+                Ordenes de Depósito
+      </p>
+      <p>
+                En este apartado puede atender o visualizar los depósitos realizados <br/>
+                por ahora no hay mas ordenes que antender!
+      </p>
+    </field>
+    <field name="context">{'search_default_state_pending':1, 'search_default_partner_group':1, 'search_default_sale_group':1, 'search_default_type_group':1}</field>
+    <field name="view_ids" eval="[(5, 0, 0),(0, 0, {'view_mode': 'tree', 'view_id': ref('deposit_order_view_tree')}),(0, 0, {'view_mode': 'form', 'view_id': ref('deposit_order_view_form')})]"/>
+  </record>
+
+  <menuitem id="order_deposit_menu" name="Ordenes de Depósito" parent="treasury_root_menu" action="deposit_order_action" groups="group_financial_treasury_supervisor" sequence="2" />
+</odoo>

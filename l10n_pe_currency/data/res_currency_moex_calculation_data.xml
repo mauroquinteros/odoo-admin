@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <record id="rec_calculation_1" model="res.currency.moex.calculation">
+            <field name="name">Compra Divisas Dólares (U$D) a Soles (S/.)</field>
+            <field name="origin_currency_id" ref="base.USD"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="s_operationtype">com</field>
+            <field name="operator">*</field>
+            <field name="amount_proposedexchangerate_adj">0.0020</field>
+            <field name="amount_approvedexchangerate_adj">0.9999</field>
+            <field name="product_id" ref="product_services.product_tmpl_service_moex"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="rec_calculation_2" model="res.currency.moex.calculation">
+            <field name="name">Venta Divisas Soles (S/.) a Dólares (U$D)</field>
+            <field name="origin_currency_id" ref="base.PEN"/>
+            <field name="destination_currency_id" ref="base.USD"/>
+            <field name="s_operationtype">ven</field>
+            <field name="operator">/</field>
+            <field name="amount_proposedexchangerate_adj">0.0020</field>
+            <field name="amount_approvedexchangerate_adj">0.9999</field>
+            <field name="product_id" ref="product_services.product_tmpl_service_moex"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="rec_calculation_3" model="res.currency.moex.calculation">
+            <field name="name">Compra Divisas Euros (€) a Soles (S/.)</field>
+            <field name="origin_currency_id" ref="base.EUR"/>
+            <field name="destination_currency_id" ref="base.PEN"/>
+            <field name="s_operationtype">com</field>
+            <field name="operator">*</field>
+            <field name="amount_proposedexchangerate_adj">0.0020</field>
+            <field name="amount_approvedexchangerate_adj">0.9999</field>
+            <field name="product_id" ref="product_services.product_tmpl_service_moex"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="rec_calculation_4" model="res.currency.moex.calculation">
+            <field name="name">Venta Divisas Soles (S/.) a Euros (€)</field>
+            <field name="origin_currency_id" ref="base.PEN"/>
+            <field name="destination_currency_id" ref="base.EUR"/>
+            <field name="s_operationtype">ven</field>
+            <field name="operator">/</field>
+            <field name="amount_proposedexchangerate_adj">0.0020</field>
+            <field name="amount_approvedexchangerate_adj">0.9999</field>
+            <field name="product_id" ref="product_services.product_tmpl_service_moex"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="rec_calculation_5" model="res.currency.moex.calculation">
+            <field name="name">Compra Divisas Dólares (U$D) a Euros (€)</field>
+            <field name="origin_currency_id" ref="base.USD"/>
+            <field name="destination_currency_id" ref="base.EUR"/>
+            <field name="s_operationtype">com</field>
+            <field name="operator">*</field>
+            <field name="amount_proposedexchangerate_adj">0.0020</field>
+            <field name="amount_approvedexchangerate_adj">0.9999</field>
+            <field name="product_id" ref="product_services.product_tmpl_service_moex"/>
+            <field name="active" eval="True"/>
+        </record>
+
+        <record id="rec_calculation_6" model="res.currency.moex.calculation">
+            <field name="name">Venta Divisas Euros (€) a Dólares (U$D)</field>
+            <field name="origin_currency_id" ref="base.EUR"/>
+            <field name="destination_currency_id" ref="base.USD"/>
+            <field name="s_operationtype">ven</field>
+            <field name="operator">/</field>
+            <field name="amount_proposedexchangerate_adj">0.0020</field>
+            <field name="amount_approvedexchangerate_adj">0.9999</field>
+            <field name="product_id" ref="product_services.product_tmpl_service_moex"/>
+            <field name="active" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="data_warehouse_users_sequence" model="ir.sequence">
+            <field name="name">Users Charge-Data Ware House Sequence</field>
+            <field name="code">user.warehouse.data.sequence</field>
+            <field name="prefix">DWHU-</field>
+            <field name="padding">4</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="hr_contract_condition_sequence" model="ir.sequence">
+            <field name="name">Human Resource Contract - labor condition Sequence</field>
+            <field name="code">hr.contract.condition.sequence</field>
+            <field name="prefix">CONLAB-</field>
+            <field name="padding">4</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_glossary_sequence" model="ir.sequence">
+            <field name="name">glossary Header Sequence</field>
+            <field name="code">ir.glossary.sequence</field>
+            <field name="prefix">GL-</field>
+            <field name="padding">4</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="ir_subglossary_homologant_sequence" model="ir.sequence">
+            <field name="name">glossary Homologant Sequence</field>
+            <field name="code">ir.glossary.homologant.sequence</field>
+            <field name="prefix">Hmlgnt-</field>
+            <field name="padding">3</field>
+            <field name="suffix">-glossary</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="data_warehouse_process_agency_sequence" model="ir.sequence">
+            <field name="name">Agent &#38; Agencys external Sequence</field>
+            <field name="code">agent.agency.external.sequence</field>
+            <field name="prefix">AgAg-</field>
+            <field name="padding">4</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

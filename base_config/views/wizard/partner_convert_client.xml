@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="convert_to_client_form_view" model="ir.ui.view">
+        <field name="name">partner.convert.client.view.form</field>
+        <field name="model">partner.convert.client</field>
+        <field name="arch" type="xml">
+            <form>
+                <separator string="Otorgar Rangos a Contacto Seleccionado"/>
+                <p class="oe_grey">
+                    El contacto Seleccionado le será Otorgado el Rango de un Cliente, Proveedor u otro trazado en el asistente
+                </p>
+                <group col="2">
+                    <field name="partner_id" domain="['|',('supplier_rank', '=', 0 or False),('customer_rank', '=', 0 or False)]" readonly="1" force_save="1" required="1"/>
+                </group>
+                <group string="Rangos Actuales">
+                    <group>
+                        <field name="rank_customer_current"/>
+                        <p class="oe_grey" attrs="{'invisible': [('rank_customer_current','=',0)]}">
+                            Ya se le ha sido Otorgado un Rango mínimo
+                        </p>
+                    </group>
+                    <group>
+                        <field name="rank_supplier_current"/>
+                        <p class="oe_grey" attrs="{'invisible': [('rank_supplier_current','=',0)]}">
+                            Ya se le ha sido Otorgado un Rango mínimo
+                        </p>
+                    </group>
+                </group>
+                <footer>
+                    <button name="action_set_rank" type="object" string="Otorgar Rango Cliente" class="oe_highlight"
+                    context="{'keys': 'customer_rank'}" attrs="{'invisible': [('rank_customer_current','!=',0)]}"/>
+                    <button name="action_set_rank" type="object" string="Otorgar Rango Proveedor" class="oe_highlight"
+                    context="{'keys': 'supplier_rank'}" attrs="{'invisible': [('rank_supplier_current','!=',0)]}"/>
+                    <button name="action_set_rank" type="object" string="Otorgar Todo" class="oe_highlight"
+                    context="{'keys': 'customer_rank,supplier_rank'}" attrs="{'invisible': ['&amp;',('rank_supplier_current','!=',0),('rank_customer_current','!=',0)]}"/>
+                    <button special="cancel" string="Cerrar Ventana"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window name="Otorgar Rangos"
+        id="act_convert_client_sub_menu"
+        res_model="partner.convert.client"
+        binding_model="res.partner"
+        binding_views="form"
+        view_mode="form"
+        target="new"
+        context="{'default_partner_id': active_id}"/>
+
+</odoo>

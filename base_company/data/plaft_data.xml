@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Data to load plaft.control.threshold-->
+        <record id="plaft_controlthreshold_1" model="plaft.control.threshold">
+            <field name="business_line_id" ref="base_company.business_line_001"/>
+            <field name="origin_country_id" ref="base.pe"/>
+            <field name="origin_partner_id" ref="base.main_partner"/>
+            <field name="destination_country_id" ref="base.pe"/>
+            <field name="destination_partner_id" ref="base.main_partner"/>
+            <field name="threshold_type">obl</field>
+            <field name="date_validity_period_start" eval="(datetime.now())"/>
+            <field name="control_type">U</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="amount_min">2000</field>
+            <field name="amount_max">999999</field>
+            <field name="threshold_req_ids" eval="[
+                            (6, 0, [
+                            ref('legal_plaft.plaft_documentcatalog_cat_1'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_2'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_10')
+                            ])]"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_controlthreshold_2" model="plaft.control.threshold">
+            <field name="business_line_id" ref="base_company.business_line_001"/>
+            <field name="origin_country_id" ref="base.pe"/>
+            <field name="origin_partner_id" ref="base.main_partner"/>
+            <field name="destination_country_id" ref="base.pe"/>
+            <field name="destination_partner_id" ref="base.main_partner"/>
+            <field name="threshold_type">obl</field>
+            <field name="date_validity_period_start" eval="(datetime.now())"/>
+            <field name="control_type">M</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="amount_min">10000</field>
+            <field name="amount_max">999999</field>
+            <field name="threshold_req_ids" eval="[
+                            (6, 0, [
+                            ref('legal_plaft.plaft_documentcatalog_cat_1'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_2'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_10')
+                            ])]"/>
+            <field name="i_time_frame">30</field>
+            <field name="time_frame_type">cal_mes</field>
+            <field name="authorization">true</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_controlthreshold_3" model="plaft.control.threshold">
+            <field name="business_line_id" ref="base_company.business_line_006"/>
+            <field name="origin_country_id" ref="base.ar"/>
+            <field name="origin_partner_id" ref="base.main_partner"/>
+            <field name="destination_country_id" ref="base.pe"/>
+            <field name="destination_partner_id" ref="base.main_partner"/>
+            <field name="threshold_type">obl</field>
+            <field name="date_validity_period_start" eval="(datetime.now())"/>
+            <field name="control_type">U</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="amount_min">100</field>
+            <field name="amount_max">999999</field>
+            <field name="threshold_req_ids" eval="[
+                            (6, 0, [
+                            ref('legal_plaft.plaft_documentcatalog_cat_1'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_2'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_10')
+                            ])]"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_controlthreshold_4" model="plaft.control.threshold">
+            <field name="business_line_id" ref="base_company.business_line_006"/>
+            <field name="origin_country_id" ref="base.ar"/>
+            <field name="origin_partner_id" ref="base.main_partner"/>
+            <field name="destination_country_id" ref="base.pe"/>
+            <field name="destination_partner_id" ref="base.main_partner"/>
+            <field name="threshold_type">obl</field>
+            <field name="date_validity_period_start" eval="(datetime.now())"/>
+            <field name="control_type">M</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="amount_min">150</field>
+            <field name="amount_max">999999</field>
+            <field name="threshold_req_ids" eval="[
+                            (6, 0, [
+                            ref('legal_plaft.plaft_documentcatalog_cat_1'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_2'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_10')
+                            ])]"/>
+            <field name="i_time_frame">30</field>
+            <field name="time_frame_type">cal_mes</field>
+            <field name="authorization">true</field>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_controlthreshold_5" model="plaft.control.threshold">
+            <field name="business_line_id" ref="base_company.business_line_005"/>
+            <field name="origin_country_id" ref="base.ar"/>
+            <field name="origin_partner_id" ref="base.main_partner"/>
+            <field name="destination_country_id" ref="base.pe"/>
+            <field name="destination_partner_id" ref="base.main_partner"/>
+            <field name="threshold_type">obl</field>
+            <field name="date_validity_period_start" eval="(datetime.now())"/>
+            <field name="control_type">U</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="amount_min">100</field>
+            <field name="amount_max">999999</field>
+            <field name="threshold_req_ids" eval="[
+                            (6, 0, [
+                            ref('legal_plaft.plaft_documentcatalog_cat_1'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_2'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_10')
+                            ])]"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="plaft_controlthreshold_6" model="plaft.control.threshold">
+            <field name="business_line_id" ref="base_company.business_line_005"/>
+            <field name="origin_country_id" ref="base.ar"/>
+            <field name="origin_partner_id" ref="base.main_partner"/>
+            <field name="destination_country_id" ref="base.pe"/>
+            <field name="destination_partner_id" ref="base.main_partner"/>
+            <field name="threshold_type">obl</field>
+            <field name="date_validity_period_start" eval="(datetime.now())"/>
+            <field name="control_type">M</field>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="amount_min">150</field>
+            <field name="amount_max">999999</field>
+            <field name="threshold_req_ids" eval="[
+                            (6, 0, [
+                            ref('legal_plaft.plaft_documentcatalog_cat_1'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_2'),
+                            ref('legal_plaft.plaft_documentcatalog_cat_10')
+                            ])]"/>
+            <field name="i_time_frame">30</field>
+            <field name="time_frame_type">cal_mes</field>
+            <field name="authorization">true</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

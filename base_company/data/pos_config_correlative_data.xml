@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="pos_correlative_1" model="pos.config.correlative">
+            <field name="commdocument_id" ref="l10n_pe_sunat.pe_dc_a_f_cot"/>
+            <field name="pos_ids" eval="[
+                (4, ref('pos_moex')),
+                (4, ref('pos_isidro_001')),
+                (4, ref('pos_isidro_002'))
+                ]"/>
+            <field name="ir_sequence_id" ref="correlative_quote"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="pos_correlative_2" model="pos.config.correlative">
+            <field name="commdocument_id" ref="l10n_pe_sunat.pe_dc_a_f_odp"/>
+            <field name="pos_ids" eval="[
+                (4, ref('pos_moex')),
+                (4, ref('pos_isidro_001')),
+                (4, ref('pos_isidro_002'))
+                ]"/>
+            <field name="ir_sequence_id" ref="correlative_payorder"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="pos_correlative_6" model="pos.config.correlative">
+            <field name="commdocument_id" ref="l10n_pe_sunat.pe_dc_b_f_dtn"/>
+            <field name="pos_ids" eval="[
+                (4, ref('pos_moex')),
+                (4, ref('pos_isidro_001')),
+                (4, ref('pos_isidro_002'))
+                ]"/>
+            <field name="ir_sequence_id" ref="correlative_voucher"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="pos_correlative_7" model="pos.config.correlative">
+            <field name="commdocument_id" ref="l10n_pe_sunat.pe_dc_a_f_dtn"/>
+            <field name="pos_ids" eval="[
+                (4, ref('pos_isidro_001')),
+                (4, ref('pos_isidro_002'))
+                ]"/>
+            <field name="ir_sequence_id" ref="correlative_invoice"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

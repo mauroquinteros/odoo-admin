@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="service_pricelist_item_tar01_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1.00</field>
+      <field name="final_range">100.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">3.50</field>
+      <field name="price_currency_id" ref="base.USD"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar02_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">100.01</field>
+      <field name="final_range">1000.00</field>
+      <field name="price_expression">porcentual</field>
+      <field name="price_amount">3.50</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar03_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1000.01</field>
+      <field name="final_range">1100.00</field>
+      <field name="price_expression">porcentual</field>
+      <field name="price_amount">3.20</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar04_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1100.01</field>
+      <field name="final_range">1300.00</field>
+      <field name="price_expression">porcentual</field>
+      <field name="price_amount">3.00</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar05_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1300.01</field>
+      <field name="final_range">1700.00</field>
+      <field name="price_expression">porcentual</field>
+      <field name="price_amount">2.80</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar06_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">1.00</field>
+      <field name="final_range">100.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">9.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar07_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">100.01</field>
+      <field name="final_range">200.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">16.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar08_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">200.01</field>
+      <field name="final_range">300.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">23.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar09_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">200.01</field>
+      <field name="final_range">300.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">23.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar10_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">300.01</field>
+      <field name="final_range">500.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">40.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar11_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">500.01</field>
+      <field name="final_range">1000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">74.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+
+    <record id="service_pricelist_item_tar01_ar02" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar02_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1.00</field>
+      <field name="final_range">100.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">9.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar02_ar02" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar02_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1.00</field>
+      <field name="final_range">100.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">3.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st03"/>
+    </record>
+    <record id="service_pricelist_item_tar03_ar02" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar02_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">100.01</field>
+      <field name="final_range">200.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">16.00</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar04_ar02" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar02_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">100.01</field>
+      <field name="final_range">200.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">4.00</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st03"/>
+    </record>
+    <record id="service_pricelist_item_tar05_ar02" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar02_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">200.01</field>
+      <field name="final_range">300.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">23.00</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar06_ar02" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar02_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">200.01</field>
+      <field name="final_range">300.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">5.00</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st03"/>
+    </record>
+    <record id="service_pricelist_item_tar07_ar02" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar02_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">300.01</field>
+      <field name="final_range">500.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">40.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar08_ar02" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar02_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">500.01</field>
+      <field name="final_range">1000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">74.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar09_ar02" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar02_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1000.01</field>
+      <field name="final_range">1500.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">92.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar10_ar02" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar02_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1500.01</field>
+      <field name="final_range">2000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">110.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+
+    <record id="service_pricelist_item_tar01_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1.00</field>
+      <field name="final_range">100.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">9.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar02_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1.00</field>
+      <field name="final_range">100.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">3.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st03"/>
+    </record>
+    <record id="service_pricelist_item_tar03_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">100.01</field>
+      <field name="final_range">200.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">16.00</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar04_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">100.01</field>
+      <field name="final_range">200.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">4.00</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st03"/>
+    </record>
+    <record id="service_pricelist_item_tar05_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">200.01</field>
+      <field name="final_range">300.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">23.00</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar06_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">200.01</field>
+      <field name="final_range">300.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">5.00</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st03"/>
+    </record>
+    <record id="service_pricelist_item_tar07_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">300.01</field>
+      <field name="final_range">500.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">40.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar08_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">500.01</field>
+      <field name="final_range">1000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">74.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar09_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1000.01</field>
+      <field name="final_range">1500.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">92.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar10_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1500.01</field>
+      <field name="final_range">2000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">110.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar11_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">1.00</field>
+      <field name="final_range">100.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">9.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar12_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">100.01</field>
+      <field name="final_range">200.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">16.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar13_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">200.01</field>
+      <field name="final_range">300.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">23.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar14_ar03" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">300.01</field>
+      <field name="final_range">500.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">40.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar15_ar01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar03_ar"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.ARS"/>
+      <field name="initial_range">500.01</field>
+      <field name="final_range">1000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">74.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+
+    <record id="service_pricelist_item_tar01_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1.00</field>
+      <field name="final_range">200.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">5.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar02_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">200.01</field>
+      <field name="final_range">400.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">8.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar03_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">400.01</field>
+      <field name="final_range">1000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">10.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar04_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">1000.01</field>
+      <field name="final_range">2000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">15.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar05_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.USD"/>
+      <field name="payment_currency_id" ref="base.USD"/>
+      <field name="initial_range">2000.01</field>
+      <field name="final_range">10000.00</field>
+      <field name="price_expression">porcentual</field>
+      <field name="price_amount">0.50</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar06_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.EUR"/>
+      <field name="payment_currency_id" ref="base.EUR"/>
+      <field name="initial_range">1.00</field>
+      <field name="final_range">200.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">5.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar07_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.EUR"/>
+      <field name="payment_currency_id" ref="base.EUR"/>
+      <field name="initial_range">200.01</field>
+      <field name="final_range">400.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">8.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar08_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.EUR"/>
+      <field name="payment_currency_id" ref="base.EUR"/>
+      <field name="initial_range">400.01</field>
+      <field name="final_range">1000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">10.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar09_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.EUR"/>
+      <field name="payment_currency_id" ref="base.EUR"/>
+      <field name="initial_range">1000.01</field>
+      <field name="final_range">2000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">15.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar10_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.EUR"/>
+      <field name="payment_currency_id" ref="base.EUR"/>
+      <field name="initial_range">2000.01</field>
+      <field name="final_range">10000.00</field>
+      <field name="price_expression">porcentual</field>
+      <field name="price_amount">0.50</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar11_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.PEN"/>
+      <field name="payment_currency_id" ref="base.PEN"/>
+      <field name="initial_range">1.00</field>
+      <field name="final_range">500.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">5.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar12_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.PEN"/>
+      <field name="payment_currency_id" ref="base.PEN"/>
+      <field name="initial_range">500.01</field>
+      <field name="final_range">1000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">8.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar13_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.PEN"/>
+      <field name="payment_currency_id" ref="base.PEN"/>
+      <field name="initial_range">1000.01</field>
+      <field name="final_range">2000.00</field>
+      <field name="price_expression">nominal</field>
+      <field name="price_amount">10.00</field>
+      <field name="price_currency_id" ref="base.PEN"/>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+    <record id="service_pricelist_item_tar14_pe01" model="service.pricelist.item">
+      <field name="service_pricelist_id" ref="service_pricelist_tar01_pe"/>
+      <field name="deposit_currency_id" ref="base.PEN"/>
+      <field name="payment_currency_id" ref="base.PEN"/>
+      <field name="initial_range">2000.01</field>
+      <field name="final_range">10000.00</field>
+      <field name="price_expression">porcentual</field>
+      <field name="price_amount">0.50</field>
+      <field name="tax_included" eval="True"/>
+      <field name="service_type" ref="service_type_list_st01"/>
+    </record>
+  </data>
+</odoo>

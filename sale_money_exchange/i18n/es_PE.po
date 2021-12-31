@@ -1,0 +1,209 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * sale
+#
+# Translators:
+# Carlos Enrique Paico Zavala <EnriqueZav96@gmail.com>, 2019 - 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo 13.5\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-18 14:06+0000\n"
+"PO-Revision-Date: 2016-06-16 20:07+0000\n"
+"Last-Translator: Carlos Enrique Paico Zavala  <EnriqueZav96@gmail.com>\n"
+"Language-Team: Spanish (Peru) - Enrique Paico"
+"Language: es_PE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: sale_money_exchange
+#: model:mail.template,body_html:sale.email_template_edi_sale
+#  msgid ""
+#  "\n"
+#  "% set access_action = object.get_access_action()\n"
+#  "% set doc_name = 'quotation' if object.state in ('draft', 'sent') else "
+#  "'order confirmation'\n"
+#  "% set is_online = access_action and access_action['type'] == 'ir.actions."
+#  "act_url'\n"
+#  "% set access_name = is_online and object.template_id and 'Accept and pay %s "
+#  "online' % doc_name or 'View %s' % doc_name\n"
+#  "% set access_url = is_online and access_action['url'] or object."
+#  "get_signup_url()\n"
+#  "\n"
+#  "<p>Dear\n"
+#  "% if object.partner_id.is_company and object.child_ids:\n"
+#  "    ${object.partner_id.child_ids[0].name}\n"
+#  "% else :\n"
+#  "    ${object.partner_id.name}\n"
+#  "% endif\n"
+#  ",</p>\n"
+#  "<p>Thank you for your inquiry.<br />\n"
+#  "Here is your ${doc_name} <strong>${object.name}</strong>\n"
+#  "% if object.origin:\n"
+#  "(with reference: ${object.origin} )\n"
+#  "% endif\n"
+#  "amounting <strong>${object.amount_total} ${object.pricelist_id.currency_id."
+#  "name}</strong>\n"
+#  "from ${object.company_id.name}.\n"
+#  "</p>\n"
+#  "\n"
+#  "<p style=\"margin-left: 30px; margin-top: 10 px; margin-bottom: 10px;\">\n"
+#  "    <a href=\"${access_url}\" style=\"padding: 5px 10px; font-size: 12px; "
+#  "line-height: 18px; color: #FFFFFF; border-color:#192857; text-decoration: "
+#  "none; display: inline-block; margin-bottom: 0px; font-weight: 400; text-"
+#  "align: center; vertical-align: middle; cursor: pointer; white-space: nowrap; "
+#  "background-image: none; background-color: #192857; border: 1px solid "
+#  "#192857; border-radius:3px\" class=\"o_default_snippet_text\">${access_name}"
+#  "</a>\n"
+#  "</p>\n"
+#  "<p>If you have any question, do not hesitate to contact us.</p>\n"
+#  "<p>Best regards,</p>\n"
+#  msgstr ""
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale_money_exchange.moex_sale_order_view_form
+msgid "Confirm Sale"
+msgstr ""
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale_money_exchange.moex_sale_order_view_form
+msgid "Create Invoice"
+msgstr ""
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale.view_sale_advance_payment_inv
+msgid "Create Invoices"
+msgstr ""
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale_money_exchange.moex_sale_order_view_form
+msgid "Send by Email"
+msgstr "Enviar por Email"
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale_money_exchange.moex_sale_order_view_form
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale_money_exchange.moex_sale_order_view_form
+msgid "Confirm Deposit"
+msgstr "Confirmar Depósito"
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale_money_exchange.moex_sale_order_view_form
+msgid "Confirm Acredit"
+msgstr "Solicitar Acreditación"
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale_money_exchange.moex_sale_order_view_form
+msgid "Approve"
+msgstr "Aprobar"
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale_money_exchange.moex_sale_order_view_form
+msgid "Valid"
+msgstr "Validar"
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale.report_saleorder_document
+msgid "VAT:"
+msgstr "RUC:"
+
+
+#. module: sale_money_exchange
+#: model:ir.model.fields.selection,name:sale_money_exchange.selection__sale_order__state__auth
+msgid "Authorization T.C."
+msgstr "Autorizar T.C."
+
+#. module: sale_money_exchange
+#: model:ir.model.fields.selection,name:sale_money_exchange.selection__sale_order__state__valid
+msgid "Validated Quote"
+msgstr "Validado"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields.selection,name:sale_money_exchange.selection__sale_order__state__deposit
+msgid "Attach Deposit"
+msgstr "Depósito Adjuntado"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields.selection,name:sale_money_exchange.selection__sale_order__state__acredit
+msgid "Accredited Client"
+msgstr "Cliente Acreditado"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields.selection,name:sale_money_exchange.selection__sale_order__state__control
+msgid "Control PCL"
+msgstr "Control PCL"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__origin_currency_id
+msgid "Origin Currency"
+msgstr "Moneda Origen"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__destination_currency_id
+msgid "Destination Currency"
+msgstr "Moneda Destino"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__origin_import
+msgid "Origin Import"
+msgstr "Importe Origen"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__destination_import
+msgid "Destination Import"
+msgstr "Importe Destino"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__exchange_rate
+msgid "Exchange Rate"
+msgstr "Tipo de Cambio"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__operative_rate
+msgid "Operative Rate"
+msgstr "T.C. Operativo"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__proposed_rate
+msgid "Proposed Rate"
+msgstr "T.C. Propuesto"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__approved_rate
+msgid "Approved Rate"
+msgstr "T.C. Aprobado"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__deposit_ids
+msgid "Customer deposit"
+msgstr "Depósito del Cliente"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__total_deposit
+msgid "Total amount deposit"
+msgstr "Monto Depósito"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__acredit_ids
+msgid "Customer Accreditation"
+msgstr "Acreditación al Cliente"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__total_acredit
+msgid "Total amount acredit"
+msgstr "Monto Acreditado"
+
+#. module: sale_money_exchange
+#: model:ir.model.fields,field_description:sale_money_exchange.field_sale_order__document_pcl_ids
+msgid "Legal compliance"
+msgstr "Cumplimiento Legal"
+
+#. module: sale_money_exchange
+#: model_terms:ir.ui.view,arch_db:sale_money_exchange.moex_sale_order_view_form
+msgid "Currency trading"
+msgstr "Cambio de Divisa"

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner_correspondent_view_tree" model="ir.ui.view">
+        <field name="name">res.partner.correspondent.view.tree</field>
+        <field name="model">res.partner.correspondent</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="display_name"/>
+                <field name="vat" string="Nro. Identificador"/>
+                <field name="correspondent_type"/>
+                <field name="phone" widget="phone"/>
+                <field name="street" string="Dirección"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="res_partner_correspondent_view_search" model="ir.ui.view">
+        <field name="name">res.partner.correspondent.view.search</field>
+        <field name="model">res.partner.correspondent</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Nombre" filter_domain="[('name','ilike',self)]"/>
+                <field name="internal_code" string="Código Interno" filter_domain="[('internal_code','ilike',self)]"/>
+                <filter name="group_by_country" string="País" context="{'group_by': 'country_id'}"/>
+                <filter name="group_by_correspondent_type" string="Tipo" context="{'group_by': 'correspondent_type'}"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="res_partner_correspondent_view_form" model="ir.ui.view">
+        <field name="name">res.partner.correspondent.view.form</field>
+        <field name="model">res.partner.correspondent</field>
+        <field name="arch" type="xml">
+            <form string="Correspondent">
+                <div class="alert alert-warning oe_edit_only" role="alert" attrs="{'invisible': [('id', '!=', False)]}">
+                  Asegúrese de crear un Corresponsal teniendo en consideración los campos obligatorios que se solicita
+                </div>
+                <sheet>
+                    <widget name="web_ribbon" title="Activo" bg_color="bg-primary" attrs="{'invisible': ['|',('state','=','inactivo'),('state','=','cerrado')]}"/>
+                    <widget name="web_ribbon" title="Inactivo" bg_color="bg-warning" attrs="{'invisible': ['|',('state','=','activo'),('state','=','cerrado')]}"/>
+                    <widget name="web_ribbon" title="Cerrado" bg_color="bg-danger" attrs="{'invisible':  ['|',('state','=','activo'),('state','=','inactivo')]}"/>
+                    <field name="image_1920" widget="image" class="oe_avatar" options="{&quot;preview_image&quot;: &quot;image_128&quot;}"/>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only"/>
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Información General">
+                            <field name="company_type" invisible="1"/>
+                            <field name="internal_code"/>
+                            <field name="company_name" string="Razon Social" required="1"/>
+                            <field name="short_name"/>
+                            <field name="l10n_latam_identification_type_id" string="Tipo de Documento" domain="[('documentcategory_ids.acronym', '=', 'DI')]"/>
+                            <field name="vat" string="Nro. Identificador"/>
+                            <separator/>
+                            <field name="state"/>
+                            <field name="correspondent_type"/>
+                            <field name="business_type"/>
+                        </group>
+                        <group string="Información Complementaria">
+                            <field name="related_business"/>
+                            <separator/>
+                            <field name="phone" widget="phone" string="Teléfono fijo"/>
+                            <field name="mobile" widget="phone" string="Teléfono móvil"/>
+                            <field name="email"/>
+                            <separator/>
+                            <field name="street" string="Dirección"/>
+                            <field name="country_id"/>
+                            <field name="state_id"/>
+                        </group>
+                    </group>
+                    <separator/>
+                    <notebook>
+                        <page string="Inicio de Operaciones" name="operations_started" autofocus="autofocus">
+                            <group>
+                                <group>
+                                    <field name="opening_date"/>
+                                    <field name="inactivity_date" readonly="1" force_save="1"/>
+                                    <field name="deadline_date" readonly="1" force_save="1"/>
+                                </group>
+                                <group>
+                                    <field name="operation_observation"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Agencias" name="agency_ids">
+                            <field name="agency_ids" context="{'default_correspondent_id': id, 'default_country_id': country_id, 'default_state_id': state_id}">
+                                <tree>
+                                    <field name="internal_code" string="Código"/>
+                                    <field name="name"/>
+                                    <field name="state_id"/>
+                                    <field name="street" string="Dirección"/>
+                                    <field name="office_hour"/>
+                                    <field name="state"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="res_partner_correspondent_action" model="ir.actions.act_window">
+        <field name="name">Directorio de Corresponsales</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner.correspondent</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="res_partner_correspondent_view_search"/>
+        <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('res_partner_correspondent_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('res_partner_correspondent_view_form')}),]"/>
+        <field name="context">
+            {
+                'search_default_group_by_country': True,
+                'default_company_type': 'company',
+            }
+        </field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree su primer registro de Agencia
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="res_partner_sub_menu_correspondent" name="Corresponsales" parent="base_company.company_contacts" action="res_partner_correspondent_action" sequence='3'/>
+</odoo>

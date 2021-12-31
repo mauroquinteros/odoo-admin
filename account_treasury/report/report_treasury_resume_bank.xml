@@ -1,0 +1,185 @@
+<odoo>
+  <data>
+    <template id="treasury_resume_bank_report_template">
+      <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+          <div class="page">
+            <t t-foreach="docs" t-as="doc">
+              <div class="row" id="treasury_bank_header">
+                <div class="col-12 text-center">
+                  <h2>Resumen de Bancos</h2>
+                </div>
+              </div>
+              <br/>
+              <div class="row">
+                <div class="col-6" id="treasury_bank_config_review_left">
+                  <p>
+                    <b>Usuario:</b>
+                    <span t-field="user.name"/>
+                  </p>
+                </div>
+                <div class="col-6" id="treasury_bank_config_review_right">
+                  <p>
+                    <b>Fechas:</b>
+                    <span t-esc="doc.start_date"/>
+ -                    <span t-esc="doc.end_date"/>
+                  </p>
+                </div>
+              </div>
+              <br/>
+              <div class="row">
+                <t t-set="depbanks" t-value="[]"/>
+                <t t-set="acrbanks" t-value="[]"/>
+                <t t-foreach="results" t-as="result">
+                  <t t-if="result.state=='deposit'">
+                    <t t-set="depbanks" t-value="depbanks+[result]"/>
+                  </t>
+                  <t t-if="result.state=='acredit'">
+                    <t t-set="acrbanks" t-value="acrbanks+[result]"/>
+                  </t>
+                </t>
+                <div class="col-6">
+                  <t t-foreach="currencys" t-as="currency">
+                    <table class="table table-bordered" style="table-layout: fixed" id="sale_customer_config_table">
+                      <thead style="display: table-row-group">
+                        <tr>
+                          <th class="text-center" style="width: 50%" scope="col">Cuentas Ingresos en <span t-esc="currency.currency_unit_label"/>
+                          </th>
+                          <th class="text-center" style="width: 50%" scope="col">Depósitos</th>
+                        </tr>
+                      </thead>
+                      <t t-set="dep_deposits" t-value="[]"/>
+                      <t t-set="bank_ids" t-value="[]"/>
+                      <t t-set="obj_bank_ids" t-value="[]"/>
+                      <t t-foreach="set(depbanks)" t-as="depbank">
+                        <t t-if="depbank.destination_account_bank_id.id not in bank_ids and depbank.currency_id.name==currency.name">
+                          <t t-set="dep_deposits" t-value="dep_deposits+[depbank]"/>
+                          <t t-set="bank_ids" t-value="bank_ids+[depbank.destination_account_bank_id.id]"/>
+                          <t t-set="obj_bank_ids" t-value="obj_bank_ids+[depbank.destination_account_bank_id]"/>
+                        </t>
+                      </t>
+
+                      <t t-set="itot" t-value="0"/>
+                      <t t-set="itot_obj_bank_ids" t-value="[]"/>
+                      <t t-foreach="set(depbanks)" t-as="depbank">
+                        <t t-if="depbank.id not in itot_obj_bank_ids and depbank.currency_id.name==currency.name">
+                          <t t-set="itot_obj_bank_ids" t-value="itot_obj_bank_ids+[depbank]"/>
+                          <t t-set="itot" t-value="itot+depbank.amount_deposit"/>
+                        </t>
+                      </t>
+
+                      <t t-foreach="set(dep_deposits)" t-as="bank_obj_bank_id">
+                        <t t-set="obj_banks" t-value="[]"/>
+                        <t t-set="totdep" t-value="0"/>
+                        <t t-foreach="set(depbanks)" t-as="depbank">
+                          <t t-if="depbank.destination_account_bank_id.id == bank_obj_bank_id.destination_account_bank_id.id and depbank.currency_id.name==currency.name">
+                            <t t-set="obj_banks" t-value="obj_banks+[depbank.destination_account_bank_id]"/>
+                            <t t-set="totdep" t-value="totdep+depbank.amount_deposit"/>
+                          </t>
+                        </t>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">
+                              <strong t-esc="bank_obj_bank_id.destination_account_bank_id.bank_id.name"/>
+:
+                              <strong t-esc="bank_obj_bank_id.destination_account_bank_id.sanitized_acc_number"/>
+                            </td>
+                            <td class="text-center">
+                              <span t-esc="totdep" t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </t>
+                      <tbody>
+                        <tr>
+                          <td class="text-center">
+                            Ingresos Totales:
+                          </td>
+                          <td class="text-center">
+                            <span t-esc="itot" t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <br/>
+                  </t>
+                </div>
+                <div class="col-6">
+                  <t t-foreach="currencys" t-as="currency">
+                    <table class="table table-bordered" style="table-layout: fixed" id="sale_customer_config_table">
+                      <thead style="display: table-row-group">
+                        <tr>
+                          <th class="text-center" style="width: 50%" scope="col">Cuentas Egresos en <span t-esc="currency.currency_unit_label"/>
+                          </th>
+                          <th class="text-center" style="width: 50%" scope="col">Abonos</th>
+                        </tr>
+                      </thead>
+                      <t t-set="dep_acredits" t-value="[]"/>
+                      <t t-set="bank_ids" t-value="[]"/>
+                      <t t-set="obj_bank_ids" t-value="[]"/>
+                      <t t-foreach="set(acrbanks)" t-as="acrbank">
+                        <t t-if="acrbank.origin_account_bank_id.id not in bank_ids and acrbank.currency_id.name==currency.name">
+                          <t t-set="dep_acredits" t-value="dep_acredits+[acrbank]"/>
+                          <t t-set="bank_ids" t-value="bank_ids+[acrbank.origin_account_bank_id.id]"/>
+                          <t t-set="obj_bank_ids" t-value="obj_bank_ids+[acrbank.origin_account_bank_id]"/>
+                        </t>
+                      </t>
+
+                      <t t-set="etot" t-value="0"/>
+                      <t t-set="etot_obj_bank_ids" t-value="[]"/>
+                      <t t-foreach="set(acrbanks)" t-as="acrbank">
+                        <t t-if="acrbank.id not in etot_obj_bank_ids and acrbank.currency_id.name==currency.name">
+                          <t t-set="etot_obj_bank_ids" t-value="etot_obj_bank_ids+[acrbank]"/>
+                          <t t-set="etot" t-value="etot+acrbank.amount_payable"/>
+                        </t>
+                      </t>
+
+                      <t t-foreach="set(dep_acredits)" t-as="bank_obj_bank_id">
+                        <t t-set="obj_banks" t-value="[]"/>
+                        <t t-set="totacr" t-value="0"/>
+                        <t t-foreach="set(acrbanks)" t-as="acrbank">
+                          <t t-if="acrbank.origin_account_bank_id.id == bank_obj_bank_id.origin_account_bank_id.id and acrbank.currency_id.name==currency.name">
+                            <t t-set="obj_banks" t-value="obj_banks+[acrbank.origin_account_bank_id]"/>
+                            <t t-set="totacr" t-value="totacr+acrbank.amount_payable"/>
+                          </t>
+                        </t>
+                        <tbody>
+                          <tr>
+                            <td class="text-center">
+                              <strong t-esc="bank_obj_bank_id.origin_account_bank_id.bank_id.name"/>
+:
+                              <strong t-esc="bank_obj_bank_id.origin_account_bank_id.sanitized_acc_number"/>
+                            </td>
+                            <td class="text-center">
+                              <span t-esc="totacr" t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </t>
+                      <tbody>
+                        <tr>
+                          <td class="text-center">
+                            Egresos Totales:
+                          </td>
+                          <td class="text-center">
+                            <span t-esc="etot" t-options="{'widget': 'monetary', 'display_currency': currency}"/>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <br/>
+                  </t>
+                </div>
+              </div>
+            </t>
+          </div>
+        </t>
+      </t>
+    </template>
+
+    <report id="report_treasury_resume_bank_html" model="treasury.bank.wizard" string="Reporte de Bancos" report_type="qweb-html" name="account_treasury.treasury_resume_bank_report_template" file="account_treasury.treasury_resume_bank_report_template" paperformat="account_treasury.paperformat_treasury_portrait" menu="False"/>
+
+    <report id="report_treasury_resume_bank_pdf" model="treasury.bank.wizard" string="Reporte de Bancos" report_type="qweb-pdf" name="account_treasury.treasury_resume_bank_report_template" file="account_treasury.treasury_resume_bank_report_template" paperformat="account_treasury.paperformat_treasury_portrait" menu="False"/>
+  </data>
+</odoo>

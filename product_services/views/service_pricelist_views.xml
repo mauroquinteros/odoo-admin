@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="service_pricelist_view_tree" model="ir.ui.view">
+      <field name="name">service.pricelist.view.tree</field>
+      <field name="model">service.pricelist</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="internal_code"/>
+          <field name="register_date"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="service_pricelist_view_search" model="ir.ui.view">
+      <field name="name">service.pricelist.view.search</field>
+      <field name="model">service.pricelist</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="internal_code"/>
+          <filter name="group_by_country" string="País" context="{'group_by': 'country_id'}"/>
+        </search>
+      </field>
+    </record>
+
+    <record id="service_pricelist_view_form" model="ir.ui.view">
+      <field name="name">service.pricelist.view.form</field>
+      <field name="model">service.pricelist</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <div class="oe_title" attrs="{'invisible': [('id','=',False)]}">
+              <label for="internal_code" class="oe_edit_only"/>
+              <h1>
+                <field name="internal_code" readonly="1"/>
+              </h1>
+            </div>
+            <group col="2">
+              <group>
+                <field name="country_id"/>
+                <field name="register_date" readonly="1"/>
+              </group>
+            </group>
+            <separator/>
+            <notebook>
+              <page string="Detalle del tarifario" name="detail_pricelist" autofocus="autofocus">
+                <field name="service_pricelist_item_ids" nolabel="1"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="service_pricelist_action" model="ir.actions.act_window">
+      <field name="name">Tarifario por país</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">service.pricelist</field>
+      <field name="view_mode">tree,form</field>
+      <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('service_pricelist_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('service_pricelist_view_form')}),]"/>
+      <field name="context">
+                {
+                    'search_default_group_by_country': True
+                }
+      </field>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+                    Cree su primer registro de Tarifa
+        </p>
+      </field>
+    </record>
+
+    <menuitem id="menu_service_pricelists" name="Tarifario" parent="base_company.root_setting_management" sequence="3"/>
+
+    <menuitem id="submenu_service_pricelist" name="Tarifario por país" parent="menu_service_pricelists" action="service_pricelist_action" sequence="1"/>
+  </data>
+</odoo>

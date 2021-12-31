@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="fetchmail_server_gmail" model="fetchmail.server">
+            <field name="name">Enrique Gmail Entrante</field>
+            <field name="server_type">imap</field>
+            <field name="server">imap.gmail.com</field>
+            <field name="port" eval="993"/>
+            <field name="is_ssl" eval="True"/>
+            <field name="user">enri.msg.server@gmail.com</field>
+            <field name="password">wqxnpgzxpreehvfk</field>
+        </record>
+        <record id="ir_mail_server_gmail" model="ir.mail_server">
+            <field name="name">Enrique Gmail Saliente</field>
+            <field name="smtp_host">smtp.gmail.com</field>
+            <field name="smtp_port" eval="465"/>
+            <field name="smtp_encryption">ssl</field>
+            <field name="smtp_user">enri.msg.server@gmail.com</field>
+            <field name="smtp_pass">wqxnpgzxpreehvfk</field>
+        </record>
+        <!-- <record id="set_server_details" model="res.config.settings">
+            <field name="external_email_server_default" eval="True"/>
+            <field name="alias_domain">gmail.com</field>
+        </record> -->
+    </data>
+</odoo>

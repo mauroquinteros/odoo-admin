@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="copy_tc_oer_wizard_form_view" model="ir.ui.view">
+        <field name="name">copy.tc.oer.view.form</field>
+        <field name="model">copy.tc.oer</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="agency_id" readonly="True"/>
+                </group>
+                <group>
+                    <group>
+                        <separator string="Dólares"/>
+                        <field name="price_orpdol"/>
+                        <field name="price_drsdol"/>
+                        <separator string="Euros"/>
+                        <field name="price_orpeur"/>
+                        <field name="price_drseur"/>
+                        <separator string="Dólares/Euros"/>
+                        <field name="factorprice_orp"/>
+                        <field name="factorprice_drs"/>
+                    </group>
+                    <group string="Agencias">
+                        <field name="agency_copy_ids" widget="many2many_tags" domain="[('id','!=',agency_id)]" nolabel="1"/>
+                        <!-- <field name="agency_copy_ids" domain="[('id','!=',agency_id)]" nolabel='1'/> -->
+                    </group>
+                </group>
+
+                <footer>
+                    <button name="action_copy_agencies" type="object" string="Copiar tipos de cambio" class="oe_highlight"/>
+                    <button special="cancel" string="Cancelar"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window name="Copiar Agencias"
+        id="act_copy_tc_oer_sub_menu"
+        res_model="copy.tc.oer"
+        binding_model="res.currency.rate.oer"
+        binding_views="list,form"
+        view_mode="form"
+        target="new"
+        context="{'default_res_id': active_id}"/>
+
+</odoo>

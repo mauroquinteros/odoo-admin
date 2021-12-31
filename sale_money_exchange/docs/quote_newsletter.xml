@@ -1,0 +1,599 @@
+<odoo>
+    <template id="quote_newsletter">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <tr style="vertical-align:top">
+                        <td colspan="2" align="center" valign="top" rowspan="1">
+                            <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                                <tr style="border-collapse:collapse"></tr>
+                                <tr style="border-collapse:collapse">
+                                    <td align="center" style="padding:0;Margin:0">
+                                        <table class="es-header-body"
+                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#192857;width:600px"
+                                            cellspacing="0" cellpadding="0" bgcolor="#192857" align="center">
+                                            <tr style="border-collapse:collapse">
+                                                <td align="left"
+                                                    style="Margin:0;padding-top:35px;padding-bottom:35px;padding-left:35px;padding-right:35px">
+                                                    <table class="es-left" cellspacing="0" cellpadding="0" align="left"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;float:left">
+                                                        <tr style="border-collapse:collapse">
+                                                            <td class="es-m-p0r es-m-p20b" valign="top" align="center"
+                                                                style="padding:0;Margin:0;width:294px">
+                                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td align="left" style="padding:0;Margin:0">
+                                                                            <p
+                                                                                style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:26px;font-family:'trebuchet ms', 'lucida grande', 'lucida sans unicode', 'lucida sans', tahoma, sans-serif;line-height:39px;color:#FFFFFF">
+                                                                                <strong>JET PERU S.A.</strong>
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table cellspacing="0" cellpadding="0" align="right"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                        <tr class="es-hidden" style="border-collapse:collapse">
+                                                            <td class="es-m-p20b" align="left"
+                                                                style="padding:0;Margin:0;width:216px">
+                                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td style="padding:0;Margin:0;padding-bottom:5px;font-size:0"
+                                                                            align="center">
+                                                                            <table width="100%" height="100%" cellspacing="0"
+                                                                                cellpadding="0" border="0" role="presentation"
+                                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td
+                                                                                        style="padding:0;Margin:0;border-bottom:1px solid #192857;background:#FFFFFF none repeat scroll 0% 0%;height:1px;width:100%;margin:0px">
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td style="padding:0;Margin:0">
+                                                                            <table cellspacing="0" cellpadding="0" align="right"
+                                                                                role="presentation"
+                                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td align="left" style="padding:0;Margin:0">
+                                                                                        <table width="100%" cellspacing="0"
+                                                                                            cellpadding="0" role="presentation"
+                                                                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                                            <tr
+                                                                                                style="border-collapse:collapse">
+                                                                                                <td align="right"
+                                                                                                    style="padding:0;Margin:0">
+                                                                                                    <p
+                                                                                                        style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:14px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:21px;color:#FFFFFF">
+                                                                                                        <a target="_blank"
+                                                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:18px;text-decoration:none;color:#FFFFFF;line-height:22px"
+                                                                                                            href="https://jetperu.com.pe">Cotización</a>
+                                                                                                    </p>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                        </table>
+                                                                                    </td>
+                                                                                    <td style="padding:0;Margin:0;padding-left:10px;font-size:0px"
+                                                                                        valign="top" align="left">
+                                                                                        <a href="https://jetperu.com.pe"
+                                                                                            target="_blank"
+                                                                                            style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:14px;text-decoration:none;color:#FFFFFF">
+                                                                                            <img src="sale_money_exchange/static/img/mail/28171609608529101.png"
+                                                                                                style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"
+                                                                                                width="27" height="27" /></a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                                <tr style="border-collapse:collapse">
+                                    <td align="center" style="padding:0;Margin:0">
+                                        <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                                            align="center"
+                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+                                            <tr style="border-collapse:collapse">
+                                                <td align="left"
+                                                    style="padding:0;Margin:0;padding-left:35px;padding-right:35px;padding-top:40px">
+                                                    <table width="100%" cellspacing="0" cellpadding="0"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                        <tr style="border-collapse:collapse">
+                                                            <td valign="top" align="center"
+                                                                style="padding:0;Margin:0;width:530px">
+                                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td align="center"
+                                                                            style="padding:0;Margin:0;padding-bottom:10px">
+                                                                            <h2
+                                                                                style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:30px;font-style:normal;font-weight:bold;color:#333333">
+                                                                                Mensaje de Cotización</h2>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                                <tr style="border-collapse:collapse">
+                                    <td align="center" style="padding:0;Margin:0">
+                                        <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                                            align="center"
+                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+                                            <tr style="border-collapse:collapse">
+                                                <td align="left"
+                                                    style="padding:0;Margin:0;padding-top:20px;padding-left:35px;padding-right:35px">
+                                                    <table width="100%" cellspacing="0" cellpadding="0"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                        <tr style="border-collapse:collapse" class="table-active">
+                                                            <td valign="top" align="center"
+                                                                style="padding:0;Margin:0;width:530px">
+                                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td bgcolor="#eeeeee" align="left"
+                                                                            style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px">
+                                                                            <table
+                                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:500px"
+                                                                                class="cke_show_border" cellspacing="1"
+                                                                                cellpadding="1" border="0" align="left"
+                                                                                role="presentation">
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td width="80%" style="padding:0;Margin:0">
+                                                                                        <h4
+                                                                                            style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">
+                                                                                            Serie de Cotización #</h4>
+                                                                                    </td>
+                                                                                    <td width="20%" style="padding:0;Margin:0">
+                                                                                        <h4
+                                                                                            style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">
+                                                                                            <span t-field="o.name"/></h4>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-collapse:collapse">
+                                                <td align="left"
+                                                    style="padding:0;Margin:0;padding-left:35px;padding-right:35px">
+                                                    <table width="100%" cellspacing="0" cellpadding="0"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                        <tr style="border-collapse:collapse">
+                                                            <td valign="top" align="center"
+                                                                style="padding:0;Margin:0;width:530px">
+                                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td align="left"
+                                                                            style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px">
+                                                                            <table
+                                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:500px"
+                                                                                class="cke_show_border" cellspacing="1"
+                                                                                cellpadding="1" border="0" align="left"
+                                                                                role="presentation">
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td style="padding:5px 10px 5px 0;Margin:0"
+                                                                                        width="60%" align="left">
+                                                                                        <p
+                                                                                            style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                            Conversión</p>
+                                                                                    </td>
+                                                                                    <td style="padding:5px 0;Margin:0"
+                                                                                        width="40%" align="right">
+                                                                                        <p
+                                                                                            style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                            de <strong><span t-field="o.origin_currency_id.currency_unit_label" /></strong> a <strong><span t-field="o.destination_currency_id.currency_unit_label" /></strong></p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td style="padding:5px 10px 5px 0;Margin:0"
+                                                                                        width="60%" align="left">
+                                                                                        <p
+                                                                                            style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                            Importe a Recibir:</p>
+                                                                                    </td>
+                                                                                    <td style="padding:5px 0;Margin:0"
+                                                                                        width="40%" align="right">
+                                                                                        <p
+                                                                                            style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                            <span t-field="o.origin_currency_id.symbol" /><span t-esc="'%.2f'% o.origin_import"/></p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td style="padding:5px 10px 5px 0;Margin:0"
+                                                                                        width="60%" align="left">
+                                                                                        <p
+                                                                                            style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                            Tipo de cambio pactado:</p>
+                                                                                    </td>
+                                                                                    <td style="padding:5px 0;Margin:0"
+                                                                                        width="40%" align="right">
+                                                                                        <p 
+                                                                                            style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                            <span t-field="o.approved_rate"/>
+                                                                                        </p>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-collapse:collapse">
+                                                <td align="left"
+                                                    style="padding:0;Margin:0;padding-top:10px;padding-left:35px;padding-right:35px">
+                                                    <table width="100%" cellspacing="0" cellpadding="0"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                        <tr style="border-collapse:collapse">
+                                                            <td valign="top" align="center"
+                                                                style="padding:0;Margin:0;width:530px">
+                                                                <table
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;border-top:3px solid #EEEEEE;border-bottom:3px solid #EEEEEE"
+                                                                    width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td align="left"
+                                                                            style="Margin:0;padding-left:10px;padding-right:10px;padding-top:15px;padding-bottom:15px">
+                                                                            <table
+                                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:500px"
+                                                                                class="cke_show_border" cellspacing="1"
+                                                                                cellpadding="1" border="0" align="left"
+                                                                                role="presentation">
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td width="80%" style="padding:0;Margin:0">
+                                                                                        <h4
+                                                                                            style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">
+                                                                                            Importe a Transferir (al
+                                                                                            Cliente):<br /></h4>
+                                                                                    </td>
+                                                                                    <td width="20%" style="padding:0;Margin:0">
+                                                                                        <h4
+                                                                                            style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif">
+                                                                                            <span t-field="o.destination_currency_id.symbol" /><span t-esc="'%.2f'% o.destination_import"/></h4>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                                <tr style="border-collapse:collapse">
+                                    <td align="center" style="padding:0;Margin:0">
+                                        <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                                            align="center"
+                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+                                            <tr style="border-collapse:collapse">
+                                                <td align="left"
+                                                    style="padding:0;Margin:0;padding-top:20px;padding-left:35px;padding-right:35px">
+                                                    <table width="100%" cellspacing="0" cellpadding="0"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                        <tr style="border-collapse:collapse">
+                                                            <td valign="top" align="center"
+                                                                style="padding:0;Margin:0;width:530px">
+                                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td align="left" style="padding:0;Margin:0">
+                                                                            <p
+                                                                                style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                Observaciones:<br />
+                                                                                <span
+                                                                                    style="font-family:'merriweather sans', 'helvetica neue', helvetica, arial, sans-serif">-El
+                                                                                    cliente debe realizar el abono a las cuentas
+                                                                                    corrientes de Jet Peru de los siguientes
+                                                                                    bancos:</span>
+                                                                                <br />
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                                <tr style="border-collapse:collapse">
+                                    <td align="center" style="padding:0;Margin:0">
+                                        <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                                            align="center"
+                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+                                            <tr style="border-collapse:collapse">
+                                                <td align="left"
+                                                    style="padding:0;Margin:0;padding-top:20px;padding-left:35px;padding-right:35px">
+                                                    <table width="100%" cellspacing="0" cellpadding="0" class="table-active"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                        <tr style="border-collapse:collapse">
+                                                            <td valign="top" align="center"
+                                                                style="padding:0;Margin:0;width:530px">
+                                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td bgcolor="#eeeeee" align="center"
+                                                                            style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px">
+                                                                            <table
+                                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:500px"
+                                                                                class="cke_show_border" cellspacing="1"
+                                                                                cellpadding="1" border="0" align="left"
+                                                                                role="presentation">
+                                                                                <tr style="border-collapse:collapse">
+                                                                                    <td width="25%" style="padding:0;Margin:0">
+                                                                                        <h4
+                                                                                            style="Margin:0;line-height:16px;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:13px;text-align:center">
+                                                                                            Banco<br /></h4>
+                                                                                    </td>
+                                                                                    <td width="25%" style="padding:0;Margin:0">
+                                                                                        <h4
+                                                                                            style="Margin:0;line-height:16px;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:13px;text-align:center">
+                                                                                            Número de Cta.<br /></h4>
+                                                                                    </td>
+                                                                                    <td width="25%" style="padding:0;Margin:0">
+                                                                                        <h4
+                                                                                            style="Margin:0;line-height:16px;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:13px;text-align:center">
+                                                                                            Cta. Interbancaria<br /></h4>
+                                                                                    </td>
+                                                                                    <td width="25%" style="padding:0;Margin:0">
+                                                                                        <h4
+                                                                                            style="Margin:0;line-height:16px;mso-line-height-rule:exactly;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;font-size:13px;text-align:center">
+                                                                                            Moneda<br /></h4>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr style="border-collapse:collapse">
+                                                <td align="center"
+                                                    style="padding:0;Margin:0;padding-left:35px;padding-right:35px">
+                                                    <table width="100%" cellspacing="0" cellpadding="0"
+                                                        class="table table-bordered"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                        <tr style="border-collapse:collapse">
+                                                            <td valign="top" align="center"
+                                                                style="padding:0;Margin:0;width:530px">
+                                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td align="center"
+                                                                            style="Margin:0;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px">
+                                                                            <table
+                                                                                style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;width:500px"
+                                                                                class="cke_show_border" cellspacing="1"
+                                                                                cellpadding="1" border="0" align="center"
+                                                                                role="presentation">
+                                                                                
+                                                                                <t t-foreach="o.get_list_bank()" t-as="bank">
+                                                                                    <tr style="border-collapse:collapse">
+                                                                                            <td style="padding:5px 10px 5px 0;Margin:0"
+                                                                                                width="25%" align="center">
+                                                                                                <p
+                                                                                                    style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                                    <span t-field="bank.bank_id.name" /><br /></p>
+                                                                                            </td>
+                                                                                        <td style="padding:5px 10px 5px 0;Margin:0"
+                                                                                            width="25%" align="center">
+                                                                                            <p
+                                                                                                style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                                <span t-field="bank.sanitized_acc_number"/><br /></p>
+                                                                                        </td>
+                                                                                        <td style="padding:5px 0;Margin:0"
+                                                                                            width="25%" align="center">
+                                                                                            <p
+                                                                                                style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                                ---------</p>
+                                                                                        </td>
+                                                                                        <td style="padding:5px 0;Margin:0"
+                                                                                            width="25%" align="center">
+                                                                                            <p
+                                                                                                style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                                <span t-field="bank.currency_id.currency_unit_label"/></p>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                </t>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="es-content" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%">
+                                <tr style="border-collapse:collapse">
+                                    <td align="center" style="padding:0;Margin:0">
+                                        <table class="es-content-body" cellspacing="0" cellpadding="0" bgcolor="#ffffff"
+                                            align="center"
+                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#FFFFFF;width:600px">
+                                            <tr style="border-collapse:collapse">
+                                                <td align="left"
+                                                    style="padding:0;Margin:0;padding-top:20px;padding-left:35px;padding-right:35px">
+                                                    <table width="100%" cellspacing="0" cellpadding="0"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                        <tr style="border-collapse:collapse">
+                                                            <td valign="top" align="center"
+                                                                style="padding:0;Margin:0;width:530px">
+                                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td align="left" style="padding:0;Margin:0">
+                                                                            <p
+                                                                                style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;color:#333333">
+                                                                                - <span
+                                                                                    style="font-family:'merriweather sans', 'helvetica neue', helvetica, arial, sans-serif">
+                                                                                    El Cliente Deberá de Adjuntar en <strong>Formato Digital</strong> los siguientes documentos:
+                                                                                    <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;Margin-bottom:15px;color:#333333">
+                                                                                        Documento de Identidad (DNI u otros).<span style="font-family:'merriweather sans', 'helvetica neue', helvetica, arial, sans-serif"></span><br />
+                                                                                    </li>
+                                                                                    </span>
+
+                                                                                - <span
+                                                                                    style="font-family:'merriweather sans', 'helvetica neue', helvetica, arial, sans-serif">El
+                                                                                    cliente debe realizar el abono a las cuentas
+                                                                                    corrientes de Jet Peru como máximo 45 min 
+                                                                                    después de la fecha de envío del
+                                                                                    presente email.<br />
+                                                                                    
+                                                                                    <br />Nota:</span>
+                                                                                <br />
+                                                                            </p>
+                                                                            <ul>
+                                                                                <li
+                                                                                    style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;Margin-bottom:15px;color:#333333">
+                                                                                    Luego del Tiempo Señalado la cotización será
+                                                                                    anulada.<br /></li>
+                                                                                <li
+                                                                                    style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:16px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:24px;Margin-bottom:15px;color:#333333">
+                                                                                    Este documento no es un comprobante de
+                                                                                    pago.<span
+                                                                                        style="font-family:'merriweather sans', 'helvetica neue', helvetica, arial, sans-serif"></span>
+                                                                                    <br />
+                                                                                </li>
+                                                                            </ul>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="es-footer" cellspacing="0" cellpadding="0" align="center" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;table-layout:fixed !important;width:100%;background-color:transparent;background-repeat:repeat;background-position:center top">
+                                <tr style="border-collapse:collapse">
+                                    <td align="center" style="padding:0;Margin:0">
+                                        <table class="es-footer-body" cellspacing="0" cellpadding="0" align="center"
+                                            style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-color:#df1e36;width:600px">
+                                            <tr style="border-collapse:collapse">
+                                                <td align="left" style="padding:0;Margin:0">
+                                                    <table width="100%" cellspacing="0" cellpadding="0"
+                                                        style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                        <tr style="border-collapse:collapse">
+                                                            <td valign="top" align="center"
+                                                                style="padding:0;Margin:0;width:600px">
+                                                                <table width="100%" cellspacing="0" cellpadding="0"
+                                                                    role="presentation"
+                                                                    style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
+                                                                    <tr style="border-collapse:collapse">
+                                                                        <td esdev-links-color="#777777" class="es-m-txt-c"
+                                                                            bgcolor="#df1e36" align="center"
+                                                                            style="padding:0;Margin:0">
+                                                                            <p
+                                                                                style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-size:20px;font-family:'open sans', 'helvetica neue', helvetica, arial, sans-serif;line-height:30px;color:#FFFFFF">
+                                                                                <strong>
+                                                                                    <span
+                                                                                        style="font-family:helvetica, 'helvetica neue', arial, verdana, sans-serif">¡GRACIAS
+                                                                                        POR SU CONFIANZA!</span>
+                                                                                </strong>
+                                                                            </p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </t>
+            </t>
+        </t>
+    </template>
+    
+    <record id="auto_size_newsletter_quote_moex" model="report.paperformat">
+        <field name="name">Money Exchange Letter</field>
+        <field name="default" eval="True"/>
+        <field name="format">custom</field>
+        <field name="page_height">250</field>
+        <field name="page_width">100</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">2</field>
+        <field name="margin_bottom">0</field>
+        <field name="margin_left">0</field>
+        <field name="margin_right">2</field>
+        <field name="header_line" eval="False"/>
+        <field name="header_spacing">0</field>
+        <field name="dpi">90</field>
+    </record>
+
+    <report
+        string="Boletín de Cotización Action"
+        id="report_quote_newsletter"
+        model="sale.order"
+        report_type="qweb-pdf"
+        name="sale_money_exchange.quote_newsletter"
+        file="sale_money_exchange.quote_newsletter"
+        paperformat="auto_size_newsletter_quote_moex"/>
+        <!-- print_report_name="'Registration Event - %s' % (object.name or 'Attendee').replace('/','')" -->
+</odoo>

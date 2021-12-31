@@ -1,0 +1,37 @@
+id,name,foreign_code,executive,employee,worker,selectable,risklevel_id:id,company_id:id,active
+position_pst001,"Alcalde",pst001,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst002,"Analista",pst002,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst003,"Apoderado",pst003,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst004,"Asesor / Consultor",pst004,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst005,"Asistente",pst005,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst006,"Auditor",pst006,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst007,"Auxiliar / Ayudante",pst007,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst008,"Congresista",pst008,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst009,"Contralor General",pst009,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst010,"Decano",pst010,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst011,"Diplomático",pst011,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst012,"Directivo De Asociación Deportiva",pst012,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst013,"Director, Subdirector, Gerente, Jefe Del Sector Privado",pst013,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst014,"Docente",pst014,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst015,"Inspector",pst015,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst016,"Intendente, Director, Gerente, Jefe De La Administración Publica",pst016,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst017,"Interventor General De Economía De La Administración Publica",pst017,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst018,"Juez",pst018,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst019,"Notario Público",pst019,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst020,"Practicante",pst020,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst021,"Prefecto",pst021,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst022,"Presidente De Gobierno Regional",pst022,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst023,"Presidente De La Corte Suprema",pst023,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst024,"Presidente De La Republica",pst024,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst025,"Presidente, Tribunal De Justicia",pst025,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst026,"Ministro / Viceministro",pst026,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst027,"Procurador",pst027,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst028,"Procurador General",pst028,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst029,"Rector",pst029,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst030,"Regidores De Municipalidades",pst030,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst031,"Sub-Prefecto",pst031,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst032,"Superintendente De La Administración Pública",pst032,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst033,"Vice-Presidente De La Republica",pst033,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst034,"Vocal De La Corte Superior O Suprema",pst034,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst035,"No Declara",pst035,0,0,0,1,plaft_risk_001,base.main_company,1
+position_pst036,"Otros (Señalar)",pst036,0,0,0,1,plaft_risk_001,base.main_company,1

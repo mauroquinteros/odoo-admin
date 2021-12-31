@@ -1,0 +1,35 @@
+id,name,active,company_id:id,parent_id:id,color
+depart_001,Directorio,1,base.main_company,,2
+depart_002,Comité,1,base.main_company,depart_001,2
+depart_003,Gerencia General,1,base.main_company,depart_001,2
+depart_004,Gerencia Financiera,1,base.main_company,depart_003,2
+depart_005,Gerencia Adjunta,1,base.main_company,,2
+depart_006,Auditoría Interna,1,base.main_company,depart_003,3
+depart_007,Cumplimiento Legal,1,base.main_company,depart_001,3
+depart_008,Riesgos,1,base.main_company,depart_003,3
+depart_009,Cumplimiento Normativo,1,base.main_company,depart_001,3
+depart_010,Asesoria Legal,1,base.main_company,depart_003,3
+depart_011,Tesorería,1,base.main_company,depart_004,4
+depart_012,Contabilidad,1,base.main_company,depart_004,4
+depart_013,Corresponsales y Agentes,1,base.main_company,depart_004,4
+depart_014,CORPORACIÓN JET PERÚ S.A,1,base.main_company,,5
+depart_015,EDPYME CREDIJET DEL PERÚ S.A,1,base.main_company,,5
+depart_016,Administración,1,base.main_company,depart_003,6
+depart_017,Unidad de Negocios y Marketing,1,base.main_company,,7
+depart_018,Sistemas,1,base.main_company,depart_003,8
+depart_019,Marketing y Ventas,1,base.main_company,depart_003,7
+depart_020,Logistica y Soporte infraestructural,1,base.main_company,depart_016,9
+depart_021,Gestión y Capital Humano,1,base.main_company,depart_003,10
+depart_022,Asistencia Social,1,base.main_company,depart_003,10
+depart_023,Convenios y Contrataciones,1,base.main_company,depart_009,4
+depart_024,Planillas,1,base.main_company,depart_003,10
+depart_025,Infraestructura y Seguridad,1,base.main_company,depart_017,11
+depart_026,Mantenimiento y Redes,1,base.main_company,depart_017,11
+depart_027,Soporte y Mantenimiento,1,base.main_company,depart_017,11
+depart_028,Operaciones Generales de Servicios y Productos,1,base.main_company,depart_004,12
+depart_029,Operaciones,1,base.main_company,depart_028,12
+depart_030,Call Center,1,base.main_company,depart_028,12
+depart_031,Incidencias,1,base.main_company,,12
+depart_032,Almacen General,1,base.main_company,,12
+depart_033,Jet SAFE,1,base.main_company,,12
+depart_034,Oficinas Administrativas,1,base.main_company,,6

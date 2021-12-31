@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="assistant_api_exchange_rate_view_form" model="ir.ui.view">
+        <field name="name">assistant.api_exchange.rate.view.form</field>
+        <field name="model">assistant.api_exchange.rate</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="mode" widget="statusbar"/>
+                </header>
+                <div>
+                    <group string="Fecha de Consulta">
+                        <field name="api_date" force_save="1" attrs="{'readonly': [('mode', '=', 'auto')]}"/>
+                        <field name="currency_id" invisible="1"/>
+                    </group>
+                    <group>
+                        <group string="Compra">
+                            <field name="name_orp" readonly="1" force_save="1"/>
+                            <field name="value_orp" readonly="1" force_save="1"/>
+                            <field name="period_orp" readonly="1" force_save="1"/>
+                        </group>
+                        <group string="Venta">
+                            <field name="name_drs" readonly="1" force_save="1"/>
+                            <field name="value_drs" readonly="1" force_save="1"/>
+                            <field name="period_drs" readonly="1" force_save="1"/>
+                        </group>
+                    </group>
+                    
+                    <group string="Acceso URL">
+                        <div class="table-responsive-lg">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>URL</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Enlace de T.C. Oficial Compra</td>
+                                        <td>
+                                            <code class="highlighter-rouge"><field name="url_orp" readonly="1" force_save="1"/></code>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Enlace de T.C. Oficial Venta</td>
+                                        <td>
+                                            <code class="highlighter-rouge"><field name="url_drs" readonly="1" force_save="1"/></code>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </group>
+                </div>
+                <footer>
+                    <button string="Cerrar Asistente" icon="fa-lg fa-ban" class="btn-danger" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

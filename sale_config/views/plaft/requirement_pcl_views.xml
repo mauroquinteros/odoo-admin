@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="requirement_pcl_view_tree" model="ir.ui.view">
+        <field name="name">requirement.pcl.sale.order.moex.view.tree</field>
+        <field name="model">requirement.pcl</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="cat_document_id"/>
+                <field name="document_id"/>
+                <field name="create_date" string="Fecha"/>
+                <field name="state" optional="hide" readonly="1" options="{ 'no_open': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="requirement_pcl_view_form" model="ir.ui.view">
+        <field name="name">requirement.pcl.sale.order.moex.view.form</field>
+        <field name="model">requirement.pcl</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <group>
+                    <field name="cat_document_id"/>
+                    <field name="document_id"/>
+                </group>
+                <notebook>
+                    <page name="attach" string="Adjuntar Archivos">
+                        <field name="attachment_ids" attrs="{'invisible': [('document_id','=',False)]}" widget="many2many_binary"/>
+                    </page>
+                    <page name="image" string="Adjuntar Imagen">
+                        <field name="image" widget="image"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+</odoo>

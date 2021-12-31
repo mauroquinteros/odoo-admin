@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record model="ir.ui.view" id="res_bank_treasury_view_id_tree">
+    <field name="name">res.bank.inherit.view.tree</field>
+    <field name="model">res.bank</field>
+    <field name="inherit_id" ref="base.view_res_bank_tree"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='bic']" position="after">
+        <field name="name_complete"/>
+        <field name="owner"/>
+      </xpath>
+    </field>
+  </record>
+
+  <record model="ir.ui.view" id="res_bank_treasury_view_id_form">
+    <field name="name">res.bank.inherit.view.form</field>
+    <field name="model">res.bank</field>
+    <field name="inherit_id" ref="base.view_res_bank_form"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='name']" position="after">
+        <field name="name_complete"/>
+        <field name="owner"/>
+        <field name="paymethod_id"/>
+      </xpath>
+      <xpath expr="//form//group//group//div" position="after">
+        <field name="presence_in_ids" widget="many2many_tags"/>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="res_bank_treasury_action" model="ir.actions.act_window">
+    <field name="name">Bancos</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">res.bank</field>
+    <field name="view_mode">tree,form</field>
+    <!-- <field name="search_view_id" ref="payment_order_view_search"/> -->
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">
+                Crear un nuevo banco
+      </p>
+      <p>Gestionar los registros bancarios que quiere usar en el sistema.</p>
+    </field>
+    <field name="context">
+        {
+            'tree_view_ref':'res_bank_treasury_view_id_tree',
+            'form_view_ref':'res_bank_treasury_view_id_form'
+        }
+    </field>
+    <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('res_bank_treasury_view_id_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('res_bank_treasury_view_id_form')}),
+            ]"/>
+  </record>
+
+  <record id="res_partner_bank_treasury_view_id_tree" model="ir.ui.view">
+    <field name="name">custom.customer.res.partner.bank.view.tree</field>
+    <field name="model">res.partner.bank</field>
+    <!-- <field name="inherit_id" ref="base.view_partner_bank_tree"/>
+        <field name="mode">primary</field> -->
+    <field name="arch" type="xml">
+      <tree>
+        <field name="acc_number"/>
+        <field name="currency_id"/>
+        <field name="account_type"/>
+        <field name="acc_type"/>
+        <field name="create_date" widget="date"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="res_partner_bank_treasury_view_id_form" model="ir.ui.view">
+    <field name="name">custom.customer.res.partner.bank.view.form</field>
+    <field name="model">res.partner.bank</field>
+    <field name="inherit_id" ref="base.view_partner_bank_form"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+      <xpath expr="//form//sheet//group" position="replace">
+        <group>
+          <group string="Datos Generales">
+            <field name="sequence" invisible="1"/>
+            <field name="acc_number"/>
+            <field name="cci_acc_number"/>
+            <field name="acc_type" readonly="0"/>
+            <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+            <field name="partner_id"/>
+            <field name="bank_id" required="1"/>
+            <field name="currency_id" groups="base.group_multi_currency" options="{'no_create': True}"/>
+            <field name="acc_holder_name"/>
+          </group>
+          <group string="Datos Administrativos">
+            <field name="country_id"/>
+            <field name="account_type"/>
+            <field name="account_type_bank"/>
+            <field name="pool_account"/>
+            <field name="acc_holders_name" attrs="{'invisible': [('pool_account','=',False)], 'required': [('pool_account','!=',False)]}"/>
+          </group>
+        </group>
+      </xpath>
+    </field>
+  </record>
+
+  <record id="res_partner_bank_treasury_action" model="ir.actions.act_window">
+    <field name="name">Cuentas Bancarias</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">res.partner.bank</field>
+    <field name="view_mode">tree,form</field>
+    <!-- <field name="search_view_id" ref="payment_order_view_search"/> -->
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">
+                Crear una cuenta bancaria
+      </p>
+    </field>
+    <field name="context">
+        {
+            'tree_view_ref':'res_partner_bank_treasury_view_id_tree',
+            'form_view_ref':'res_partner_bank_treasury_view_id_form'
+        }
+    </field>
+    <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('res_partner_bank_treasury_view_id_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('res_partner_bank_treasury_view_id_form')}),
+            ]"/>
+  </record>
+
+  <menuitem id="treasury_root_menu" name="Tesorería" sequence="10" groups="group_financial_treasury_assistant,group_financial_treasury_supervisor,group_financial_treasury_payer,group_financial_treasury_manager" web_icon="account_treasury,static/description/icon.png"/>
+
+  <menuitem id="treasury_bank_menu" name="Bancos y Ctas" parent="treasury_root_menu" sequence="2"/>
+
+  <menuitem id="res_currency_menu_action_res_bank_form" name="Registro de Bancos" action="base.action_res_bank_form" parent="treasury_bank_menu" groups="account_treasury.group_financial_treasury_payer" sequence="2"/>
+
+  <menuitem id="res_currency_menu_action_res_partner_bank_form" name="Cuentas Bancarias" action="res_partner_bank_treasury_action" parent="treasury_bank_menu" groups="account_treasury.group_financial_treasury_payer" sequence="3"/>
+</odoo>

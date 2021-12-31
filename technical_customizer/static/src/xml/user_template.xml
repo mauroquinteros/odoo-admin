@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template xml:space="preserve">
+    <t t-extend="UserMenu.Actions">
+        <t t-jquery="a[data-menu='settings']" t-operation='after'>
+            <a role="menuitem" href="#" data-menu="agency" class="dropdown-item">Cambiar de Agencia</a>
+        </t>
+    </t>
+</template>

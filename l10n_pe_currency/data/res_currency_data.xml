@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Currencies -->
+        <record id="base.PEN" model="res.currency">
+            <field name="name">PEN</field>
+            <field name="symbol">S/</field>
+            <field name="position">before</field>
+            <field name="currency_unit_label">Soles</field>
+            <field name="currency_subunit_label">Céntimos</field>
+        </record>
+
+        <record id="base.USD" model="res.currency">
+            <field name="parameter_drs_id" ref="l10n_pe_currency.peruvian_per_usd_drs"/>
+            <field name="parameter_orp_id" ref="l10n_pe_currency.peruvian_per_usd_orp"/>
+        </record>
+
+        <record id="base.EUR" model="res.currency">
+            <field name="parameter_drs_id" ref="l10n_pe_currency.peruvian_per_eur_drs"/>
+            <field name="parameter_orp_id" ref="l10n_pe_currency.peruvian_per_eur_orp"/>
+        </record>
+
+    </data>
+</odoo>

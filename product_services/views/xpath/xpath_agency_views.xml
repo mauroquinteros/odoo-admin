@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_agency_view_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.agency.view.form.inherit</field>
+            <field name="model">res.partner.agency</field>
+            <field name="inherit_id" ref="base_company.res_partner_agency_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//sheet//notebook/page[@name='contacts_page']" position="before">
+                    <page string="Tipo de cambio" name="exchange_rate_page" attrs="{'invisible': ['|', ('id', '=', False), ('accept_local_currency', '=', False)]}">
+                        <field name="exchange_rate_ids" nolabel="1" context="{'default_correspondent_id': correspondent_id, 'default_country_id': country_id, 'default_agency_id': id, 'form_view_ref': 'product_services.remittance_exchange_rate_custom_view_form'}"/>
+                    </page>
+                </xpath>
+                <xpath expr="//form//sheet//field[@name='pay_currency_ids']" position="after">
+                    <field name="pricelist_id" context="{'default_correspondent_id': correspondent_id, 'default_country_id': country_id, 'form_view_ref': 'product_services.service_pricelist_detail_custom_view_form'}"/>
+                    <field name="current_exchange_rate" attrs="{'invisible': ['|', ('current_exchange_rate','=',0), ('accept_local_currency', '=', False)]}" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="res_partner_agency_custom_view_form_inherit" model="ir.ui.view">
+            <field name="name">res.partner.agency.custom.view.form.inherit</field>
+            <field name="model">res.partner.agency</field>
+            <field name="inherit_id" ref="base_company.res_partner_agency_custom_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//form//sheet//field[@name='pay_currency_ids']" position="after">
+                    <field name="current_exchange_rate" attrs="{'invisible': [('current_exchange_rate','=',0)]}" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

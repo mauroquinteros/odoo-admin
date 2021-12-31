@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <record model="ir.ui.view" id="pos_config_fields_view_id_form_xpath">
+    <field name="name">point.of.sale.add.more.fields</field>
+    <field name="model">pos.config</field>
+    <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//div[@id='accounting_section']" position="after">
+        <h2>Entorno de PdV</h2>
+        <div class="row mt16 o_settings_container" id="posbox_enviroment">
+          <div class="col-12 col-lg-6 o_setting_box" id="other_devices">
+            <div class="o_setting_right_pane">
+              <span class="o_form_label">Variable de Negocio</span>
+              <div class="text-muted">
+                                    Define la agencia, perfil, usuario encargado o si es bóveda
+              </div>
+              <div class="content-group">
+                <div class="row mt16" title="Definición de Agencia">
+                  <label string="Agencia PdV" for="agency_id" class="col-lg-3 o_light_label" widget="selection"/>
+                  <field name="agency_id" required="1"/>
+                </div>
+                <div class="row mt16" title="Definición de Perfil">
+                  <label string="Perfil Asignado" for="profile_id" class="col-lg-3 o_light_label" widget="selection"/>
+                  <field name="profile_id" required="1"/>
+                </div>
+                <div class="row mt16" title="Definición de Usuario">
+                  <label string="Usuario Encargado" for="aperture_user_id" class="col-lg-3 o_light_label" widget="selection"/>
+                  <field name="aperture_user_id" required="0"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </xpath>
+      <xpath expr="//div[@id='posbox_enviroment']" position="after">
+        <notebook>
+          <page string="Correlativos">
+            <field name="correlative_ids"/>
+          </page>
+        </notebook>
+      </xpath>
+    </field>
+  </record>
+</odoo>

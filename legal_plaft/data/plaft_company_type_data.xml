@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Data to load plaft.company.type-->
+        <record id="rec_companytype_1" model="plaft.company.type">
+            <field name="name">Sociedad Anónima</field>
+            <field name="company_type_code">0000</field>
+            <field name="plaftrisk_id" ref="plaft_risk_003"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_companytype_2" model="plaft.company.type">
+            <field name="name">Sociedad Anónima Cerrada</field>
+            <field name="company_type_code">0000</field>
+            <field name="plaftrisk_id" ref="plaft_risk_003"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_companytype_3" model="plaft.company.type">
+            <field name="name">Empresa Individual de Responsabilidad Limitada EIRL</field>
+            <field name="company_type_code">0000</field>
+            <field name="plaftrisk_id" ref="plaft_risk_003"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_companytype_4" model="plaft.company.type">
+            <field name="name">Sociedad de Responsabilidad Limitada SRL</field>
+            <field name="company_type_code">0000</field>
+            <field name="plaftrisk_id" ref="plaft_risk_003"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_companytype_5" model="plaft.company.type">
+            <field name="name">Sociedad Anónima Ordinaria S.A.O.</field>
+            <field name="company_type_code">0000</field>
+            <field name="plaftrisk_id" ref="plaft_risk_002"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_companytype_6" model="plaft.company.type">
+            <field name="name">Sociedad Anónima Abierta S.A.A</field>
+            <field name="company_type_code">0000</field>
+            <field name="plaftrisk_id" ref="plaft_risk_002"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

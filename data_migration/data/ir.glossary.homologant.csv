@@ -1,0 +1,49 @@
+id,subglossary_id:id,init_key,field_key,final_key,model_id:id,company_id:id,active
+homologant_001,data_migration.glossary_employee,001,marital,married,hr.model_hr_employee,base.main_company,1
+homologant_002,data_migration.glossary_employee,002,marital,single,hr.model_hr_employee,base.main_company,1
+homologant_003,data_migration.glossary_employee,003,marital,divorced,hr.model_hr_employee,base.main_company,1
+homologant_004,data_migration.glossary_employee,004,marital,widower,hr.model_hr_employee,base.main_company,1
+homologant_005,data_migration.glossary_employee,005,marital,cohabitant,hr.model_hr_employee,base.main_company,1
+
+homologant_006,data_migration.glossary_employee,001,l10n_latam_identification_type_id,l10n_pe.it_DNI,l10n_latam_base.model_l10n_latam_identification_type,base.main_company,1
+homologant_007,data_migration.glossary_employee,002,l10n_latam_identification_type_id,legal_plaft.it_cext,l10n_latam_base.model_l10n_latam_identification_type,base.main_company,1
+homologant_008,data_migration.glossary_employee,003,l10n_latam_identification_type_id,l10n_pe.it_RUC,l10n_latam_base.model_l10n_latam_identification_type,base.main_company,1
+homologant_009,data_migration.glossary_employee,004,l10n_latam_identification_type_id,l10n_latam_base.it_pass,l10n_latam_base.model_l10n_latam_identification_type,base.main_company,1
+homologant_010,data_migration.glossary_employee,005,l10n_latam_identification_type_id,legal_plaft.it_other,l10n_latam_base.model_l10n_latam_identification_type,base.main_company,1
+homologant_011,data_migration.glossary_employee,006,l10n_latam_identification_type_id,legal_plaft.it_trib,l10n_latam_base.model_l10n_latam_identification_type,base.main_company,1
+
+homologant_012,data_migration.glossary_employee,M,,male,,base.main_company,1
+homologant_013,data_migration.glossary_employee,F,,female,,base.main_company,1
+homologant_014,data_migration.glossary_employee,A,active,,,base.main_company,1
+homologant_015,data_migration.glossary_employee,,active,True,,base.main_company,1
+homologant_016,data_migration.glossary_employee,JETPERU,,base.main_partner,base.main_company,base.main_company,1
+
+homologant_101,data_migration.glossary_country,PERU,,base.pe,base.model_res_country,base.main_company,1
+homologant_102,data_migration.glossary_country,ARGENTINA,,base.ar,base.model_res_country,base.main_company,1
+homologant_103,data_migration.glossary_country,CHILE,,base.cl,base.model_res_country,base.main_company,1
+homologant_104,data_migration.glossary_country,ECUADOR,,base.ec,base.model_res_country,base.main_company,1
+homologant_104,data_migration.glossary_country,COLOMBIA,,base.co,base.model_res_country,base.main_company,1
+
+homologant_200,data_migration.glossary_state,LIMA,,base.state_pe_15,base.model_res_country_state,base.main_company,1
+
+homologant_300,data_migration.glossary_city,LIMA,,l10n_pe.city_pe_1501,l10n_pe.model_res_city,base.main_company,1
+
+homologant_400,data_migration.glossary_district,CALLAO,,l10n_pe.district_pe_070101,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+homologant_401,data_migration.glossary_district,COMAS,,l10n_pe.district_pe_150110,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+homologant_402,data_migration.glossary_district,JESUS MARIA,,l10n_pe.district_pe_150113,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+homologant_403,data_migration.glossary_district,LIMA,,l10n_pe.district_pe_150101,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+homologant_404,data_migration.glossary_district,LINCE,,l10n_pe.district_pe_150116,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+homologant_405,data_migration.glossary_district,LOS OLIVOS,,l10n_pe.district_pe_150117,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+homologant_406,data_migration.glossary_district,MIRAFLORES,,l10n_pe.district_pe_150122,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+homologant_407,data_migration.glossary_district,RIMAC,,l10n_pe.district_pe_150128,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+homologant_408,data_migration.glossary_district,RIMAC,,l10n_pe.district_pe_150128,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+homologant_409,data_migration.glossary_district,SAN ISIDRO,,l10n_pe.district_pe_150131,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+homologant_410,data_migration.glossary_district,SAN MIGUEL,,l10n_pe.district_pe_150136,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+
+homologant_500,data_migration.glossary_currency,USD,,base.USD,base.model_res_currency,base.main_company,1
+homologant_501,data_migration.glossary_currency,EUR,,base.EUR,base.model_res_currency,base.main_company,1
+homologant_502,data_migration.glossary_currency,PEN,,base.PEN,base.model_res_currency,base.main_company,1
+homologant_503,data_migration.glossary_currency,COP,,base.COP,base.model_res_currency,base.main_company,1
+homologant_504,data_migration.glossary_currency,ARS,,base.ARS,base.model_res_currency,base.main_company,1
+
+homologant_600,data_migration.glossary_correspondent,Agencia,agency_type,agency,base_company.model_res_partner_correspondent,base.main_company,1

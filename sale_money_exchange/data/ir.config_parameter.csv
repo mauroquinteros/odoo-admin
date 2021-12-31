@@ -1,0 +1,3 @@
+id,key,value
+scheme_terms_o2m_content,scheme.terms.o2m.content,"Usted Solicita (%s %s - %s) para ser convertidos a (%s %s - %s)"
+scheme_terms_content,scheme.terms.content,"Tiene 45 min para concretar el depósito de lo contrario la cotización se cancelará y deberá crear una nueva."

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="treasury_bank_wizard_view_form" model="ir.ui.view">
+    <field name="name">treasury.bank.wizard.view.form</field>
+    <field name="model">treasury.bank.wizard</field>
+    <field name="arch" type="xml">
+      <form>
+        <group>
+          <group>
+            <field name="start_date" required="1"/>
+          </group>
+          <group>
+            <field name="end_date" required="1"/>
+          </group>
+        </group>
+        <group>
+          <group>
+            <field name="options" widget="radio"/>
+          </group>
+          <group>
+            <field name="currency_ids" widget="many2many_tags" attrs="{'invisible': [('options','not in',('report1'))]}" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+          </group>
+        </group>
+        <footer>
+          <button string="Previsualizar PDF" icon="fa-lg fa-file-pdf-o" type="object" class="btn-primary" name="get_action_report" context="{'type_pdf': 'qweb-html'}"/>
+          <button string="Descargar PDF" icon="fa-lg fa-download" type="object" class="btn-primary" name="get_action_report" context="{'type_pdf': 'qweb-pdf'}"/>
+          <button string="Cancelar" icon="fa-lg fa-times-circle" class="btn-danger pull-right" special="cancel" />
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_treasury_bank_wizard" model="ir.actions.act_window">
+    <field name="name">Asistente de Reportes</field>
+    <field name="res_model">treasury.bank.wizard</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+  </record>
+
+  <menuitem id="menu_treasury_report" name="Informes" parent="treasury_root_menu" sequence="5"/>
+
+  <menuitem id="menu_report_order_details" name="Reportes de Bancos" action="action_treasury_bank_wizard" parent="menu_treasury_report" sequence="1"/>
+</odoo>

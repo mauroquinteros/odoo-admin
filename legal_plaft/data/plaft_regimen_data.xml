@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="rec_regimen_1" model="plaft.regimen">
+            <field name="name">General</field>
+            <field name="remark"></field>
+            <field name="plaftrisk_id" ref="plaft_risk_002"/>
+            <field name="active" eval="True"/>
+        </record>
+        <record id="rec_regimen_2" model="plaft.regimen">
+            <field name="name">Reforzado</field>
+            <field name="remark"></field>
+            <field name="plaftrisk_id" ref="plaft_risk_003"/>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

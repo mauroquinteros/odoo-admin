@@ -1,0 +1,8 @@
+id,name,state,model_id:id,company_id:id,active
+glossary_employee,"Glosario Empleados",simple,hr.model_hr_employee,base.main_company,1
+glossary_country,"Glosario País",simple,base.model_res_country,base.main_company,1
+glossary_state,"Glosario Departamento",simple,base.model_res_country_state,base.main_company,1
+glossary_city,"Glosario Provincia",simple,l10n_pe.model_res_city,base.main_company,1
+glossary_district,"Glosario Distrito",simple,l10n_pe.model_l10n_pe_res_city_district,base.main_company,1
+glossary_currency,"Glosario Monedas",simple,base.model_res_currency,base.main_company,1
+glossary_correspondent,"Glosario Corresponsal",simple,base_company.model_res_partner_correspondent,base.main_company,1

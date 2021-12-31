@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_title_engineer" model="res.partner.title">
+            <field name="name">Ingeniero</field>
+            <field name="shortcut">Ing.</field>
+        </record>
+        <record id="res_partner_title_magister" model="res.partner.title">
+            <field name="name">Magister</field>
+            <field name="shortcut">Mag.</field>
+        </record>
+    </data>
+</odoo>

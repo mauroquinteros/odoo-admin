@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="l10n_latam_base.it_pass" model="l10n_latam.identification.type">
+            <field name="sunat_code">07</field>
+            <field name="sbs_code">07</field>
+            <field name="documentcategory_ids" eval="[(4, ref('legal_plaft.plaft_documentcatalog_cat_1'))]"/>
+        </record>
+        <record id="l10n_latam_base.it_fid" model="l10n_latam.identification.type">
+            <field name="description">Cédula de su país de asociados al pacto andino</field>
+            <field name="remark">Nacionales de los países del Pacto Andino con cédula de sus país.</field>
+            <field name="documentcategory_ids" eval="[(4, ref('legal_plaft.plaft_documentcatalog_cat_1')),(4, ref('legal_plaft.plaft_documentcatalog_cat_9'))]"/>
+        </record>
+        <record id="l10n_pe.it_DNI" model="l10n_latam.identification.type">
+            <field name="sunat_code">1</field>
+            <field name="sbs_code">1</field>
+            <field name="documentcategory_ids" eval="[(4, ref('legal_plaft.plaft_documentcatalog_cat_1')),(4, ref('legal_plaft.plaft_documentcatalog_cat_9'))]"/>
+        </record>
+        <record id="it_cext" model="l10n_latam.identification.type">
+            <field name="name">Carnet de extranjería</field>
+            <field name="sunat_code">4</field>
+            <field name="sbs_code">2</field>
+        </record>
+        <record id="l10n_pe.it_RUC" model="l10n_latam.identification.type">
+            <field name="remark">RUC - Registro Unico del Contribuyente</field>
+            <field name="sunat_code">06</field>
+            <field name="sbs_code">06</field>
+            <field name="documentcategory_ids" eval="[(4, ref('legal_plaft.plaft_documentcatalog_cat_1')),(4, ref('legal_plaft.plaft_documentcatalog_cat_9'))]"/>
+        </record>
+        <record id="it_other" model="l10n_latam.identification.type">
+            <field name="name">Otros Tipos de Documentos</field>
+            <field name="nomenclature">Otros</field>
+            <field name="documentcategory_ids" eval="[(4, ref('legal_plaft.plaft_documentcatalog_cat_9'))]"/>
+        </record>
+        <record id="it_trib" model="l10n_latam.identification.type">
+            <field name="name">Documento Tributario</field>
+            <field name="remark">NO DOM.SIN.RUC</field>
+            <field name="nomenclature">DTDSR</field>
+            <field name="documentcategory_ids" eval="[(4, ref('legal_plaft.plaft_documentcatalog_cat_11'))]"/>
+        </record>
+    </data>
+</odoo>

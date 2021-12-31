@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>        
+        <!-- plaft.risk tree view -->
+        <record id="plaft_risk_view_tree" model="ir.ui.view">
+            <field name="name">plaft.risk.view.tree</field>
+            <field name="model">plaft.risk</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="risk_value"/>
+                    <field name="remark"/>
+                    <field name="write_date" widget="date"/>
+                    <field name="active" widget="toggle_button"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- plaft.risk action window -->
+        <record id="risk_plaft_action" model="ir.actions.act_window">
+            <field name="name">Parámetros Riesgos PLAFT</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">plaft.risk</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Cree su primer Parámetros Riesgos PLAFT.
+                </p>
+                <p>
+                    Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                    en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+                </p>
+            </field>
+        </record>
+
+
+        <menuitem id="plaft_settings_menu" name="Riesgos" parent="root_plaft" sequence="10"/>
+        <menuitem id="plaft_risk_menu" name="Niveles de Riesgos" parent="plaft_settings_menu" action="risk_plaft_action" sequence="1"/>
+        <menuitem id="parameter_menu" name="Parámetro de Riesgos" parent="plaft_settings_menu" sequence="1"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="moex_sale_order_view_tree" model="ir.ui.view">
+        <field name="name">sale.order.moex.view.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_quotation_tree_with_onboarding"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+            </xpath>
+        </field>
+    </record>
+
+    <record id="moex_sale_order_view_search" model="ir.ui.view">
+        <field name="name">sale.order.moex.view.search.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_create_date']" position="after">
+                <filter name="state_group" string="Estado" context="{'group_by': 'state'}"/>
+                <filter name="group_origin_currency" string="Moneda para Cambiar" context="{'group_by': 'origin_currency_id'}"/>
+                <filter name="group_origin_currency" string="Moneda Cambiada" context="{'group_by': 'destination_currency_id'}"/>
+                <filter name="group_business_channel" string="Canal de Atención" context="{'group_by': 'business_channel_id'}" groups="sale_money_exchange.group_ope_moex_online"/>
+                <searchpanel groups="sale_money_exchange.group_ope_moex_online">
+                    <field name="state" icon="fa-bookmark-o" string="Estado de Ordenes"/>
+                    <field name="team_id" icon="fa-users" string="Equipos"/>
+                </searchpanel>
+            </xpath>
+        </field>
+    </record>
+    <record id="moex_sale_order_view_form" model="ir.ui.view">
+        <field name="name">sale.order.moex.view.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//form//header" position="replace">
+                <header>
+                    <button name="%(sale.action_view_sale_advance_payment_inv)d" string="Crear Facturar" type="action" class="btn-primary" attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}"/>
+
+                    <button name="action_moex_quotation_send" string="Enviar por Email"
+                            type="object" states="draft,valid"
+                            class="btn-primary oe_read_only" context="{'mail': 'moex', }"/>
+
+                    <button name="action_check_deposit" string="Solicitar Revisión de Depósito" type="object" states="draft,sent" class="btn-primary oe_read_only"/>
+
+                    <button name="action_moex_quotation_send" string="Enviar por Email"
+                            type="object" states="sent,sale"
+                            class="oe_read_only" context="{'mail': 'moex', }"/>
+
+                    <button name="action_confirm" id="action_confirm" string="Confirmar" class="btn-primary oe_read_only"
+                            type="object" states="deposit" groups="sale_config.group_ope_sale_total"/>
+
+                    <button name="action_cancel" states="draft,valid,sent,sale,deposit" type="object" string="Cancelar" class="btn-danger oe_read_only"/>
+                    <button name="action_draft" states="cancel" type="object" string="Set to Quotation" groups="sale_config.group_ope_sale_total"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,sent,sale"/>
+                </header>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="after">
+                <div class="alert alert-warning" role="alert" states="auth">
+                    <h4 align="center">
+                        ⚠️  Este documento necesita de aprobación en el tipo de cambio.
+                    </h4>
+                </div>
+            </xpath>
+            <xpath expr="//div[@name='button_box']" position="attributes">
+                <attribute name="groups">sale_config.group_ope_sale_total</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_invoice_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_shipping_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute name="attrs">{'readonly': [('id','!=',False)]}</attribute>
+                <attribute name="domain">[('customer_rank','&gt;', 0)]</attribute>
+                <attribute name="context">{'default_customer_rank':1 ,'form_view_ref':'sale_money_exchange.moex_customer_view_form'}</attribute>
+                <attribute name="options">{'no_create': True, 'no_open': True, 'no_create_edit': True}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='validity_date']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='validity_date']" position="after">
+                <field name="validity_time" readonly="1"/>
+            </xpath>
+            <field name="partner_id" position="after">
+                <field name="business_channel_id" required="1"
+                        attrs="{'readonly': [('id','!=',False)]}"
+                        options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+            </field>
+            <xpath expr="//field[@name='order_line']" position="attributes">
+                <attribute name="readonly">True</attribute>
+            </xpath>
+            <xpath expr="//page[@name='order_lines']" position="before">
+                <page string="Currency trading" default_focus="1" autofocus="autofocus">
+                    <group col="6" colspan="3" style="font-size: large;">
+                        <field name="origin_currency_id" widget="radio" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" attrs="{'readonly': [('state','!=','draft')]}" force_save="1" required="1"/>
+                        <field name="destination_currency_id"  widget="radio" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" attrs="{'readonly': [('state','!=','draft')]}" force_save="1" required="1"/>
+                        <field name="operator" widget="radio" string="Operación de" attrs="{'readonly': [('id','!=',False)]}"/>
+                    </group>
+
+                    <group style="font-size: large;">
+                        <group>
+                            <field name="origin_import" string="Recibido del Cliente" style="font-size: large;" widget='monetary'
+                                    options="{'currency_field': 'origin_currency_id'}"  force_save="1" required="1"
+                                    attrs="{'readonly': ['|',('id','!=',False),('operator','!=','*')]}"/>
+                            <field name="destination_import" string="Entregar al Cliente" style="font-size: large;" widget='monetary' options="{'currency_field': 'destination_currency_id'}"  force_save="1" required="1" attrs="{'readonly': [('operator','!=','/')]}"/>
+                        </group>
+                        <group>
+                            <field name="operative_rate" readonly="1" force_save="1"/>
+                            <field name="proposed_rate" readonly="1" force_save="1"/>
+                            <field name="approved_rate" attrs="{'readonly': ['|',('id','!=',False),('origin_import','&lt;=',0)]}" required="1" force_save="1"/>
+                        </group>
+                    </group>
+                    <p class="text-muted" attrs="{'invisible': [('state','not in',('draft'))]}">
+                        * Si el tipo de cambio aprobado es diferente al propuesto, el documento requerirá autorización en las Tasas.
+                    </p>
+                </page>
+                <page name="pcl" string="Cumplimiento Legal">
+                    <group>
+                        <field name="pcl_requirement_ids" nolabel="1" context="{'tree_view_ref':'sale_config.requirement_pcl_view_tree','form_view_ref':'sale_config.requirement_pcl_view_form'}"/>
+                    </group>
+                </page>
+                <page name="pcl" string="Cumplimiento Legal">
+                    <group>
+                        <field name="pcl_requirement_ids" nolabel="1" context="{'tree_view_ref':'sale_config.requirement_pcl_view_tree','form_view_ref':'sale_config.requirement_pcl_view_form'}"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//page[@name='order_lines']" position="after">
+                <page name="deposit_page" string="Depósito del Cliente">
+                    <group>
+                        <field name="deposit_ids" nolabel="1"
+                                context="{
+                                    'tree_view_ref': 'account_treasury.sale_deposit_order_view_tree',
+                                    'form_view_ref': 'account_treasury.sale_deposit_order_view_form',
+                                    'default_type': 'A-I',
+                                    'default_partner_id': partner_id,
+                                    'origin_import': origin_import,
+                                    'total_deposit': total_deposit,
+                                    'default_currency_id': origin_currency_id}"
+                                attrs="{'readonly': [('state', 'in', ['auth','deposit','sale','done','cancel',])]}"/>
+                    </group>
+                    <group>
+                        <group class="oe_subtotal_footer oe_right" style="font-size: large;">
+                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                <label for="total_deposit" string="Depósito Total"/>
+                            </div>
+                            <field name="total_deposit"  widget='monetary' options="{'currency_field': 'origin_currency_id'}" readonly="1" force_save="1" nolabel="1" class="oe_subtotal_footer_separator"/>
+                        </group>
+                    </group>
+                </page>
+                <page name="acredit_page" string="Abono al Cliente">
+                    <group>
+                        <field name="acredit_ids" nolabel="1"
+                                context="{
+                                    'tree_view_ref':'account_treasury.sale_acredit_order_view_tree',
+                                    'form_view_ref':'account_treasury.sale_acredit_order_view_form',
+                                    'default_type': 'B-E',
+                                    'default_partner_id': partner_id,
+                                    'destination_import': destination_import,
+                                    'total_acredit': total_acredit,
+                                    'default_currency_id': destination_currency_id}"
+                                attrs="{'readonly': [('state', 'in', ['auth','deposit','sale','done','cancel',])]}">
+                        </field>
+                    </group>
+                    <group>
+                        <group class="oe_subtotal_footer oe_right" style="font-size: large;">
+                            <div class="oe_subtotal_footer_separator oe_inline o_td_label">
+                                <label for="total_acredit" string="Depósito Total"/>
+                            </div>
+                            <field name="total_acredit"  widget='monetary' options="{'currency_field': 'destination_currency_id'}" readonly="1" force_save="1" nolabel="1" class="oe_subtotal_footer_separator"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//page[@name='order_lines']" position="attributes">
+                <attribute name="groups">sale_config.group_ope_sale_total</attribute>
+            </xpath>
+            <xpath expr="//page[@name='optional_products']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//page[@name='customer_signature']" position="attributes">
+                <attribute name="groups">sale_money_exchange.group_ope_moex_online</attribute>
+            </xpath>
+            <xpath expr="//field[@name='signed_by']" position="attributes">
+                <attribute name="readonly">True</attribute>
+                <attribute name="force_save">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='signed_on']" position="attributes">
+                <attribute name="readonly">True</attribute>
+                <attribute name="force_save">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='signature']" position="attributes">
+                <attribute name="readonly">True</attribute>
+                <attribute name="force_save">True</attribute>
+            </xpath>
+            <xpath expr="//page[@name='other_information']" position="attributes">
+                <attribute name="groups">sale_config.group_ope_sale_total</attribute>
+            </xpath>
+            <xpath expr="//field[@name='validity_date']" position="attributes">
+                <attribute name="readonly">True</attribute>
+                <attribute name="force_save">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='date_order']" position="attributes">
+                <attribute name="readonly">True</attribute>
+                <attribute name="force_save">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='pricelist_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//group[@name='sale_total']" position="attributes">
+                <attribute name="style">font-size: large;</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="moex_sale_order_action" model="ir.actions.act_window">
+        <field name="name">Cotización Divisas</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sale.order</field>
+        <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+        <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Crea un nuevo presupuesto, ¡el primer paso de una nueva venta!
+              </p><p>
+                Una vez que el presupuesto esta confirmado por el cliente, este se transforma en una Orden de venta.<br/> Podrás crear una factura y cobrar el pago.
+              </p>
+        </field>
+        <field name="context">{'cancel_with_deposits': True,'super_in_confirm': True,'payment_term_key': 'account.account_payment_term_immediate','require_payment_key': True, 'business_line_key': 'bsln001', 'type_acc_company': 'ctamoex', 'search_default_state_group': True}</field>
+        <field name="search_view_id" ref="moex_sale_order_view_search"/>
+        <field name="view_ids" eval="[(5, 0, 0),(0, 0, {'view_mode': 'tree', 'view_id': ref('moex_sale_order_view_tree')}),(0, 0, {'view_mode': 'form', 'view_id': ref('moex_sale_order_view_form')})]"/>
+    </record>
+
+    <menuitem id="op_moex_online_menu" name="Cotización - Divisas Online"
+            parent="sale.sale_order_menu" action="moex_sale_order_action"
+            sequence="0" groups="group_ope_moex_online"/>
+
+    <menuitem id="sale.res_partner_menu" parent="sale.sale_menu_root"
+        action="sale_config.sale_order_customer_action" groups="sales_team.group_sale_salesman,group_ope_moex_online"/>
+</odoo>

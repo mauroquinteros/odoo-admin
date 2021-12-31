@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="account assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/l10n_pe_currency/static/src/js/top_button.js"></script>
+            </xpath>
+        </template>
+
+        <record id="money_exchange_query" model="ir.ui.view">
+            <field name="name">money.exchange.query.preferences.form</field>
+            <field name="model">money.exchange.query</field>
+            <field eval="18" name="priority"/>
+            <field name="arch" type="xml">
+                <form string="Users">
+                    <group>
+                        <group>
+                            <field name="agency_id"/>
+                            <field name="currency_id"/>
+                        </group>
+                        <group>
+                            <field name="date_query"/>
+                            <field name="exchange_import" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                        </group>
+                    </group>
+                    <div class="row" attrs="{'invisible': [('currency_id','=',False)]}">
+                        <!-- <div class="col-sm-6 col-md-6">
+                            <div class="card shadow mb-6 border-primary mb-3">
+                                <div class="card-header py-3">
+                                    <h3 class="m-0 font-weight-bold text-dark text-center"><span class="fa fa-balance-scale"/>    Tipo de Cambio Oficial</h3>
+                                </div>
+                                <div class="card-body">
+                                    <field name="result_official" readonly="1" nolabel="1"/>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="col-sm-6 col-md-6">
+                            <div class="card shadow mb-6 border-primary mb-3">
+                                <div class="card-header py-3">
+                                    <h3 class="m-0 font-weight-bold text-dark text-center"><span class="fa fa-cogs"/>    Tipo de Cambio Operativo</h3>
+                                </div>
+                                <div class="card-body">
+                                    <field name="result_operative" readonly="1" nolabel="1"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer>
+                        <button name="preference_cancel" string="Descartar" special="cancel" icon="fa-lg fa-window-close" class="btn-danger oe_right"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="service_pricelist_tar01_multi" model="service.pricelist.detail">
+            <field name="service_pricelist_id" ref="product_services.service_pricelist_tar01_ar"/>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_multienvios"/>
+            <field name="opening_date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="deadline_date">2024-06-24</field>
+        </record>
+        <record id="service_pricelist_tar01_magui" model="service.pricelist.detail">
+            <field name="service_pricelist_id" ref="product_services.service_pricelist_tar02_ar"/>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_maguiexpress"/>
+            <field name="opening_date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="deadline_date">2024-06-24</field>
+        </record>
+        <record id="service_pricelist_tar02_magui" model="service.pricelist.detail">
+            <field name="service_pricelist_id" ref="product_services.service_pricelist_tar03_ar"/>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_maguiexpress"/>
+            <field name="opening_date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="deadline_date">2024-06-24</field>
+        </record>
+        <record id="service_pricelist_tar01_jetperu" model="service.pricelist.detail">
+            <field name="service_pricelist_id" ref="product_services.service_pricelist_tar01_pe"/>
+            <field name="correspondent_id" ref="base_company.res_partner_correspondent_jp"/>
+            <field name="opening_date" eval="time.strftime('%Y-%m-%d')"/>
+            <field name="deadline_date">2024-06-24</field>
+        </record>
+    </data>
+</odoo>

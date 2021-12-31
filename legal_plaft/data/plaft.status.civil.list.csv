@@ -1,0 +1,6 @@
+id,sequence,name,t_description,risklevel_id:id,company_id:id,active
+civ_stat_001,,CASADO(A),,plaft_risk_001,base.main_company,1
+civ_stat_002,,SOLTERO(A),,plaft_risk_001,base.main_company,1
+civ_stat_003,,DIVORCIADO(A),,plaft_risk_001,base.main_company,1
+civ_stat_004,,VIUDO(A),,plaft_risk_001,base.main_company,1
+civ_stat_005,,CONVIVIENTE,,plaft_risk_001,base.main_company,1

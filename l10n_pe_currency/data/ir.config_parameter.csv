@@ -1,0 +1,10 @@
+id,key,value
+peruvian_per_usd_drs,code.drs.per.usd,PD04640PD
+peruvian_per_usd_orp,code.orp.per.usd,PD04639PD
+peruvian_per_eur_drs,code.drs.per.eur,PD04648PD
+peruvian_per_eur_orp,code.orp.per.eur,PD04647PD
+sbs_api_url,url.api.sbs.query,"https://estadisticas.bcrp.gob.pe/estadisticas/series/api/%s/json/%s/%s/ing"
+scheme_html_header,scheme.html.header,"<div class="container"><div class="row">"
+scheme_html_tc,scheme.html.tc,"<div class="col-xs-12 col-md-6"><div class="well well-sm"><div class="row"><div class="col-xs-12 col-md-4 text-center"><h1 class="rating-num">%s</h1><div><h3>Importe</h3></div></div><div class="col-xs-12 col-md-4 text-center"><h1 class="rating-num">%s</h1><div><h3>💱  %s</h3></div></div><div class="col-xs-12 col-md-4 text-center"><h1>%s</h1><div><h3>%s</h3></div></div></div></div></div>"
+scheme_html_footer,scheme.html.footer,"</div></div>"
+404_not_found,not.found.404,"<div class="d-flex justify-content-center align-items-center" id="main"><h1 class="mr-3 pr-3 align-top border-right inline-block align-content-center">404</h1><div class="inline-block align-middle"><h2 class="font-weight-normal lead" id="desc">Tipo de Cambio no encontrado... intente con otro criterio de búsqueda.</h2></div></div>"

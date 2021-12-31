@@ -1,0 +1,6 @@
+id,name,company_id:id,active
+condition_labor_001,Empleado Estable,base.main_company,1
+condition_labor_002,Empleado Contratado,base.main_company,1
+condition_labor_003,Profesional Independiente,base.main_company,1
+condition_labor_004,Practicante,base.main_company,1
+condition_labor_005,Accionista,base.main_company,1

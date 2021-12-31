@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- res.currency plaft tree view -->
+        <record id="plaft_res_currency_view_tree" model="ir.ui.view">
+            <field name="name">res.currency.view.tree</field>
+            <field name="model">res.currency</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="symbol"/>
+                    <field name="rate_ids" invisible="1"/>
+                    <field name="date"/>
+                    <field name="rate" digits="[12,6]"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- res.currency plaft form view -->
+        <record id="plaft_res_currency_view_form" model="ir.ui.view">
+            <field name="name">res.currency.view.form</field>
+            <field name="model">res.currency</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button class="oe_stat_button" string="Rates" type="action" name="69" icon="fa-money" widget="statinfo" attrs="{'invisible': [('active', '=', False)]}"/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="rate" digits="[12,12]"/>
+                                <field name="active"/>
+                            </group>
+                            <group>
+                                <field name="currency_unit_label"/>
+                                <field name="currency_subunit_label"/>
+                            </group>
+                        </group>
+
+                        <group groups="base.group_no_one">
+                            <group string="Price Accuracy">
+                                <field name="rounding"/>
+                                <field name="decimal_places"/>
+                            </group>
+
+                            <group string="Display">
+                                <field name="symbol"/>
+                                <field name="position"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- res.currency plaft action window -->
+        <record id="plaft_res_currency_action" model="ir.actions.act_window">
+            <field name="name">Niveles de Riesgos Países</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.currency</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">
+            {
+                'tree_view_ref':'plaft_res_currency_view_tree',
+                'form_view_ref':'plaft_res_currency_view_form',
+            }
+            </field>
+            <!-- <field name="search_view_id" ref="plaft_res_currency_view_search"/> -->
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('plaft_res_currency_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('plaft_res_currency_view_form')}),
+                ]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                ¡No se ha encontrado registros coincidentes!
+                </p>
+                <p>
+                Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="plaft_res_currency_menu" name="Riesgos de Monedas" parent="parameter_menu" action="plaft_res_currency_action" sequence="8"/>
+    </data>
+</odoo>

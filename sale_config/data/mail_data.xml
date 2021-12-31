@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="treasury_email_template_edi_acredit" model="mail.template">
+            <field name="name">Orden de Pago: Notificación de Abono</field>
+            <field name="model_id" ref="account_treasury.model_pay_order"/>
+            <field name="subject">${object.operation_ref.company_id.name} 'Orden de Pago' (Ref ${object.sequence or 'n/a' } - ${object.operation_ref.name or 'n/a' })</field>
+            <field name="email_from">${(object.operation_ref.user_id.email_formatted or user.email_formatted) | safe}</field>
+            <field name="partner_to">${object.operation_ref.partner_id.id}</field>
+            <field name="body_html" type="html">
+                <div style="margin: 0px; padding: 0px;">
+                    <p style="margin: 0px; padding: 0px; font-size: 15px;">
+                        Estimado ${object.operation_ref.partner_id.title.name or ''}, <strong>${object.operation_ref.partner_id.name}</strong>
+                        <br/><br/>
+                        La operación de orden de venta <strong>${object.operation_ref.name}</strong>
+                            % if object.operation_ref.origin:
+                                (con referencia: ${object.operation_ref.origin} )
+                            % endif
+                            por el importe <strong>${format_amount(object.origin_amount, object.origin_currency_id)} ${object.origin_currency_id.currency_unit_label}</strong>, 
+                            ha sido convertido exitosamente a <strong>${format_amount(object.destination_amount, object.destination_currency_id)} ${object.destination_currency_id.currency_unit_label}</strong>
+                            <br/>
+                            - A continuación se le detalla por línea el abono a su(s) cuenta(s):
+                            <br/><br/>
+                            <ul>
+                                % for acredit in object.operation_ref.acredit_ids:
+                                    <li>Banco : <strong>${acredit.destination_account_bank_id.bank_id.name}</strong></li>
+                                    <li>Cuenta: <strong>${acredit.destination_account_bank_id.acc_number}</strong></li>
+                                    <li>Por la Cantidad de: <strong>${format_amount(acredit.amount_payable, acredit.currency_id)}</strong> - ${acredit.currency_id.currency_unit_label}</li>
+                                    <br/><br/>
+                                % endfor
+                            </ul>
+                        No dude en ponerse en contacto con nosotros si tiene alguna pregunta.
+                        <br/>
+                    </p>
+                </div>
+            </field>
+            <!-- <field name="report_template" ref="sale.action_report_saleorder"/> -->
+            <!-- <field name="report_name">${(object.name or '').replace('/','_')}</field> -->
+            <field name="lang">${object.operation_ref.partner_id.lang}</field>
+            <field name="user_signature" eval="True"/>
+            <field name="auto_delete" eval="True"/>
+        </record>
+    </data>
+</odoo>

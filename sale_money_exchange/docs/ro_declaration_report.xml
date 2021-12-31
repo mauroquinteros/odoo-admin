@@ -1,0 +1,251 @@
+<odoo>
+    <template id="ro_declaration_plaft">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.basic_layout">
+                    <div class="page">
+                        <h4 align="center">FORMULARIO DE REGISTRO DE OPERACIONES</h4>
+                        <p align="center"><span t-field="o.business_line_id.name"/></p>
+
+                        <p align="left"><b>FORMULARIO N°:</b> <span t-field="o.sequence"/></p>
+                        <p align="left"><b>EMPRESA DEL SISTEMA FINANCIERO :</b> JET PERU S.A</p>
+                        <p align="left"><b>Fecha:</b> <span t-field="o.create_date"/></p>
+
+                        <hr/>
+
+                        <p><b>A. PERSONA QUE FISICAMENTE REALIZA LA OPERACION(ejecutante)</b></p>
+                        <div class="col-md-12">
+                            <table style="text-align: left;width:1000px;border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" padding="0" margin="0">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Apellidos y Nombres</th>
+                                        <td>
+                                            <span t-field="o.performer_name_paternal"/>
+                                            <span t-field="o.performer_name_maternal"/>
+                                            <span t-field="o.performer_name_client"/>
+                                        </td>
+                                        <th scope="row">Tipo Persona</th>
+                                        <td>
+                                            <span t-field="o.performer_type_person"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Documento de Identidad</th>
+                                        <td>
+                                            <span t-field="o.performer_document"/>
+                                        </td>
+                                        <th scope="row">Número de Teléfono</th>
+                                        <td>
+                                            <span t-field="o.performer_movil_client"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Nacionalidad</th>
+                                        <td></td>
+                                        <th scope="row">Residencia</th>
+                                        <td>
+                                            <span t-field="o.performer_residence_condition"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Domicilio</th>
+                                        <td colspan="3">
+                                            <span t-field="o.performer_legal_address"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Trabaja en Empresa</th>
+                                        <td></td>
+                                        <th scope="row">Relación</th>
+                                        <td>Cliente</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Cargo que desempeña</th>
+                                        <td>
+                                            <span t-field="o.performer_position_id.name"/>
+                                        </td>
+                                        <th scope="row">Sector</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Origen del Dinero</th>
+                                        <td></td>
+                                        <th scope="row">Ingreso Total</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Finalidad Dinero</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Relación Remitente</th>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Profesión</th>
+                                        <td>
+                                            <span t-field="o.performer_occupation_id.name"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p><b>B. PERSONA EN CUYO NOMBRE SE REALIZA LA OPERACIÓN(ordenante)</b></p>
+                        <div class="col-md-12">
+                            <table style="text-align: left;width:1000px;border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" padding="0" margin="0">
+                                <tbody>
+                                    <tr>
+                                        <th>Apellidos y Nombres</th>
+                                        <td>
+                                            <span t-field="o.payer_name_paternal"/>
+                                            <span t-field="o.payer_name_maternal"/>
+                                            <span t-field="o.payer_name_client"/>
+                                        </td>
+                                        <th>Documento de Identidad</th>
+                                        <td>
+                                            <span t-field="o.payer_document"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Domicilio</th>
+                                        <td colspan="2">
+                                            <span t-field="o.payer_legal_address"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Nacionalidad</th>
+                                        <td></td>
+                                        <th>Residencia</th>
+                                        <td>
+                                            <span t-field="o.payer_residence_condition"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tipo Persona</th>
+                                        <td>
+                                            <span t-field="o.performer_type_person"/>
+                                        </td>
+                                        <th>Número de Teléfono</th>
+                                        <td>
+                                            <span t-field="o.payer_movil_client"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Profesión</th>
+                                        <td>
+                                            <span t-field="o.payer_occupation_id.name"/>
+                                        </td>
+                                        <th>Relación</th>
+                                        <td>Cliente</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p><b>C. PERSONA A FAVOR DE QUIEN SE REALIZA LA OPERACIÓN(beneficiario)</b></p>
+                        <div class="col-md-12">
+                            <table style="text-align: left;width:1000px;border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" padding="0" margin="0">
+                                <tbody>
+                                    <tr>
+                                        <th>Apellidos y Nombres</th>
+                                        <td>
+                                            <span t-field="o.beneficiary_name_paternal"/>
+                                            <span t-field="o.beneficiary_name_maternal"/>
+                                            <span t-field="o.beneficiary_name_client"/>
+                                        </td>
+                                        <th>Documento de Identidad</th>
+                                        <td>
+                                            <span t-field="o.beneficiary_document"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Domicilio</th>
+                                        <td colspan="2">
+                                            <span t-field="o.beneficiary_legal_address"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Número de Teléfono</th>
+                                        <td>
+                                            <span t-field="o.beneficiary_movil_client"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Profesión</th>
+                                        <td>
+                                            <span t-field="o.beneficiary_occupation_id"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <p><b>D. DATOS DE LA OPERACION</b></p>
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <th>Tipo de Servicio</th>
+                                    <td><span t-field="o.business_line_id.name"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Documento</th>
+                                    <td><span t-field="o.reference_number"/></td>
+                                </tr>
+                                <tr>
+                                    <th>Monto</th>
+                                    <!-- <t t-field="o.original_currency_id" invisible="1"/>
+                                    <td><t t-field="o.original_amount" t-field-options='{"widget": "monetary", "display_currency": "o.original_currency_id"}'/></td> -->
+                                </tr>
+                                <tr>
+                                    <th>Monto actual</th>
+                                    <!-- <td><t t-field="o.original_amount" t-field-options='{"widget": "monetary", "display_currency": "o.original_currency_id"}'/></td> -->
+                                </tr>
+                                <tr>
+                                    <td colspan='2'> Declaro que los recursos utilizados en la
+                                                            presente transacción
+                                                            provienen de ninguna actividad ilicita de las
+                                                            contempladas en el
+                                                            código
+                                                            penal Peruano o en cualquier norma que lo
+                                                            modifique o adicione</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <div class="col-md-12 text-center">
+                        <table class="text-center" style="width:1000px;border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" padding="0" margin="0">
+                            <tbody>
+                                <tr>
+                                    <td>----------------------</td>
+                                    <td>----------------------</td>
+                                </tr>
+                                <tr class="text-center">
+                                    <td>Firma</td>
+                                    <td>Huella Digital</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report
+        string="Declaración de Registro de Operaciones"
+        id="report_ro_declaration_plaft"
+        model="plaft.ro.declaration"
+        report_type="qweb-pdf"
+        name="sale_money_exchange.ro_declaration_plaft"
+        file="sale_money_exchange.ro_declaration_plaft"
+        paperformat="base_config.paperformat_generic_latin_lowmargin_portrait"/>
+        <!-- print_report_name="'RO - %s' % (object.sequence or '0000').replace('/','')"  -->
+</odoo>

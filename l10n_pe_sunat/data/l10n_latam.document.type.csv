@@ -1,0 +1,52 @@
+id,sequence,code,name,report_name,internal_type,doc_code_prefix,country_id/id,active
+pe_dc_a_f_dte,1,,Factura Electrónica,FACTURA,invoice,FAC,base.pe,False
+pe_dc_c_f_dte,1,06,Factura Electrónica Remitente,FACTURA-e REMITENTE,invoice,FRAC-e,base.pe,False
+pe_dc_y_f_dte,2,,Factura no Afecta o Exenta Electrónica,F-EXENTA,invoice,FNA-e,base.pe,False
+pe_dc_nc_f_dte,3,,Nota de Crédito Electrónica,NOTA DE CREDITO,credit_note,N/C-e,base.pe,False
+pe_dc_nd_f_dte,4,,Nota de Débito Electrónica,NOTA DE DEBITO,debit_note,N/D-e,base.pe,False
+pe_dc_b_f_dte,5,,Boleta Electrónica,BEL,invoice,BEL-e,base.pe,False
+pe_dc_m_d_dtn,6,,Boleta de Honorarios Electrónica,BHE,invoice,BHE-e,base.pe,False
+pe_dc_b_e_dtn,7,,Boleta exenta,BEX,invoice,BEX,base.pe,False
+pe_dc_I_f_dtn,10,,Factura de Inicio,FAI,invoice,FAI,base.pe,False
+pe_dc_a_f_dtn,10,01,Factura,FACTURA,invoice,FAC,base.pe,True
+pe_dc_y_f_dtn,10,,Factura de Ventas y Servicios no Afectos o Exentos de IVA,F-EXENTA,invoice,FNA,base.pe,False
+pe_dc_l_f_dtn,10,,Liquidación Factura,L-FACTURAM,invoice,FAL,base.pe,False
+pe_dc_l_f_dte,10,, Factura Electrónica,L-FACTURAE,invoice,FAL-e,base.pe,False
+pe_dc_fc_f_dtn,10,,Factura de Compra,FACTURA,invoice_in,FAC,base.pe,False
+pe_dc_fc_f_dte,10,,Factura de Compra Electrónica,FACTURA,invoice_in,FAC-e,base.pe,False
+pe_dc_nd_f_dtn,10,07,Nota de Débito,NOTA DE DEBITO,debit_note,N/D,base.pe,True
+pe_dc_nc_f_dtn,10,08,Nota de Crédito,NOTA DE CREDITO,credit_note,N/C,base.pe,True
+pe_dc_s_f_dtn,10,,SRF Solicitud de Registro de Factura,SOL REGISTRO,,REG,base.pe,False
+pe_dc_ftf_f_dtn,10,,Factura de ventas a empresas del territorio preferencial ( Res. Ex. N° 1057,FACTURA,invoice,FAC,base.pe,False
+pe_dc_din_f_dtn,10,,Declaración de Ingreso (DIN),DEC ING,invoice_in,DIN,base.pe,False
+pe_dc_dizf_f_dtn,10,,Declaración de Ingreso a Zona Franca Primaria,DEC ING,invoice_in,DIN,base.pe,False
+pe_dc_ftt_f_dtn,10,,Factura de Traspaso,FACT TR,invoice,FTR,base.pe,False
+pe_dc_frr_f_dtn,10,,Factura de Reexpedición,FACT RX,invoice,FRX,base.pe,False
+pe_dc_bzf_f_dtn,10,,Boletas Venta Módulos ZF (todas),BOLETA ZF,invoice,BZF,base.pe,False
+pe_dc_fzf_f_dtn,10,,Facturas Venta Módulo ZF (todas),FACTURA ZF,invoice,FZF,base.pe,False
+pe_dc_tca_f_dtn,10,,Ajuste aumento Tipo de Cambio (código 500),TC-A,,TCA,base.pe,False
+pe_dc_tcd_f_dtn,10,,Ajuste disminución Tipo de Cambio (código 501),TC-D,,TCD,base.pe,False
+pe_dc_b_f_dtn,10,03,Boleta de Venta,BOL,invoice,BOL,base.pe,True
+pe_dc_b_e_dte,10,,Boleta Exenta Electrónica,BXE,invoice,BXE,base.pe,False
+pe_dc_m_f_dtn,10,,Boleta de Honorarios,BHO,invoice,BHO,base.pe,False
+pe_dc_hes,10,,Hoja de Entrada de Servicio (HES),HES,,HES,base.pe,False
+pe_dc_hem,10,,Hoja de Entrada de Materiales (HEM),HEM,,HEM,base.pe,False
+pe_dc_migo,10,,Movimiento de Mercancías (MIGO),MIGO,,MIGO,base.pe,False
+pe_dc_li,10,,Liquidación,LIQ,,LIQ,base.pe,False
+pe_dc_fe_dte,10,,Factura de Exportación Electrónica,FCXE,invoice,FCXE,base.pe,False
+pe_dc_ndex_dte,10,,Nota de Débito de Exportación Electrónica,NDXE,debit_note,NDXE,base.pe,False
+pe_dc_ncex_dte,10,,Nota de Crédito de Exportación Electrónica,NCXE,credit_note,NCXE,base.pe,False
+pe_dc_odc,10,,Orden de Compra,OC,,OC,base.pe,False
+pe_dc_ndp,10,,Nota de pedido,NP,,NP,base.pe,True
+pe_dc_cont,10,,Contrato,CONT,,CONT,base.pe,False
+pe_dc_resol,10,,Resolución,RES,,RES,base.pe,False
+pe_dc_dus,10,,DUS,DUS,,DUS,base.pe,False
+pe_dc_bl_cemb,10,,B/L (Conocimiento de embarque),B/L,,B/L,base.pe,False
+pe_dc_awb,10,,AWB Airway Bill,AWB,,AWB,base.pe,False
+pe_dc_mic_dta,10,,MIC/DTA,MDT,,MDT,base.pe,False
+pe_dc_cpor,10,,Carta de Porte,CPR,,CPR,base.pe,False
+pe_dc_res_sna,10,,Resolución del SNA donde califica Servicios de Exportación,RSN,,RSN,base.pe,False
+pe_dc_a_f_cot,1,,Cotización,COTIZACION,quoation,COT,base.pe,True
+pe_dc_a_f_odp,1,,Orden de Pago,OP,,OP,base.pe,True
+pe_dc_a_f_pgr,1,,Documento Pagaré,PAGARE,credit_note,PAGRE,base.pe,True
+pe_dc_ndv,10,,Nota de Venta,NV,,NV,base.pe,True

@@ -1,0 +1,238 @@
+<odoo>
+  <!-- pay.order tree view -->
+  <record id="payment_order_view_tree" model="ir.ui.view">
+    <field name="name">pay.order.view.tree</field>
+    <field name="model">pay.order</field>
+    <field name="arch" type="xml">
+      <tree create="false" decoration-muted="state=='cancel'" import="false" export_xlsx="false">
+        <field name="operation_ref"/>
+        <field name="business_line_id"/>
+        <field name="channel_id"/>
+        <field name="res_partner_id"/>
+        <field name="order_date" optional="hide"/>
+        <field name="payment_date" optional="hide"/>
+        <field name="origin_currency_id" invisible="1"/>
+        <field name="origin_amount" widget='monetary' options="{'currency_field': 'origin_currency_id'}"/>
+        <field name="approved_rate"/>
+        <field name="destination_currency_id" invisible="1"/>
+        <field name="destination_amount" widget='monetary' options="{'currency_field': 'destination_currency_id'}"/>
+        <field name="operative_agency_id" optional="hide"/>
+        <field name="channel_type" optional="hide"/>
+        <field name="state"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="payment_order_view_search" model="ir.ui.view">
+    <field name="name">pay.order.view.search</field>
+    <field name="model">pay.order</field>
+    <field name="arch" type="xml">
+      <search>
+        <filter name="state_pending" string="Por Pagar" domain="[('state', '=', 'searched')]"/>
+        <searchpanel>
+          <field name="state" icon="fa fa-bookmark-o" string="Etapa"/>
+        </searchpanel>
+
+        <separator/>
+
+        <separator/>
+        <filter string="F. Operación" name="order_date" date="order_date"/>
+        <filter string="F. Pago" name="payment_date" date="payment_date"/>
+        <separator/>
+        <group expand="0" string="Agrupar Por">
+          <filter string="Tipo Canal" name="by_channel_type" domain="[]" context="{'group_by': 'channel_type'}" help="Agrupa por Canales"/>
+          <filter string="Estados" name="by_state" domain="[]" context="{'group_by': 'state'}" help="Agrupa por Estados"/>
+          <filter string="Fecha Op." name="by_order_date" domain="[]" context="{'group_by': 'order_date'}" help="Agrupa por F. Operaciones"/>
+          <filter string="F. Pago" name="by_payment_date" domain="[]" context="{'group_by': 'payment_date'}" help="Agrupa por F. Pago"/>
+          <filter string="Compañía" name="by_company" domain="[]" context="{'group_by': 'company_id'}" groups="base.group_multi_company"/>
+        </group>
+        <separator/>
+      </search>
+    </field>
+  </record>
+
+  <record id="payment_order_view_form" model="ir.ui.view">
+    <field name="name">pay.order.view.form</field>
+    <field name="model">pay.order</field>
+    <field name="arch" type="xml">
+      <form create="false" delete="false" edit="false">
+        <header>
+          <button name="action_search_pay" type="object" string="🔍 Buscar Pagos" class="btn-primary oe_read_only" attrs="{'invisible': [('deposit_order_ids','!=',[])]}"/>
+          <button name="action_record_pay" type="object" string="🏴󠁦󠁲󠁰󠁤󠁬󠁿 Registrar los Pagos" class="btn-primary oe_read_only" context="{'state_key': ['pre-acredit','acredit'] }" attrs="{'invisible': ['|',('state','!=','searched'),('deposit_order_ids','=',[])]}"/>
+          <button name="action_cancel" states="draft,searched" type="object" string="✖️ Cancelar" class="btn-danger oe_read_only" confirm='❓¿Está seguro(a) de cancelar la orden?, ☝️ Esta acción no se podrá deshacer.'/>
+          <field name="state" widget="statusbar" statusbar_visible="searched,payed,cancel"/>
+        </header>
+        <sheet>
+          <div class="oe_button_box oe_read_only" name="button_box">
+            <button class="oe_stat_button" icon="fa-external-link icon">
+              <div class="o_field_widget o_stat_info">
+                <span class="o_stat_text">Operación</span>
+                <span class="o_stat_text">
+                  <field name="operation_ref" readonly="1"/>
+                </span>
+              </div>
+            </button>
+            <field name="parent_id" invisible="1"/>
+            <button name="preview_mix_payment_orders" type="object" class="oe_stat_button" icon="fa-files-o icon" attrs="{'invisible': [('parent_id', '=', False)]}">
+              <div class="o_field_widget o_stat_info">
+                <span class="o_stat_text">Operación</span>
+                <span class="o_stat_text">Doble</span>
+              </div>
+            </button>
+          </div>
+
+          <div class="panel panel-primary">
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-sm-4 text-center">
+                  <label for="order_date" style="font-weight: bold;"/>
+                  <p style="font-size: 1.2em">
+                    <field name="order_date" readonly="1"/>
+                  </p>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <label for="res_partner_id" style="font-weight: bold;"/>
+                  <p style="font-size: 1.2em">
+                    <field name="res_partner_id" readonly="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+                  </p>
+                </div>
+                <div class="col-sm-4 text-center">
+                  <label for="payment_date" style="font-weight: bold;"/>
+                  <p style="font-size: 1.2em">
+                    <field name="payment_date" readonly="1"/>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-sm-6 text-center">
+                    <label for="origin_amount" style="font-weight: bold;"/>
+                    <p style="font-weight: bolder;color:#7c7bad; font-size: 1.2em">
+                      <field name="origin_amount" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'origin_currency_id'}" readonly="1"/>
+                      <span>  -  </span>
+                      <field name="origin_currency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" readonly="1"/>
+                    </p>
+                  </div>
+                  <div class="col-sm-6 text-center">
+                    <label for="destination_amount" style="font-weight: bold;"/>
+                    <p style="font-weight: bolder;color:#7c7bad; font-size: 1.2em">
+                      <field name="destination_amount" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'destination_currency_id'}" readonly="1"/>
+                      <span>  -  </span>
+                      <field name="destination_currency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" readonly="1"/>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <!-- <div class="col-sm-3 text-center">
+                                        <label for="official_rate" style="font-weight: bold;"/>
+                                        <p style="font-weight: bolder;color:#7c7bad; font-size: 1.2em">
+                                            <field name="official_rate" nolabel="1" class="oe_subtotal_footer_separator" readonly="1"/>
+                                        </p>
+                                    </div> -->
+                  <div class="col-sm-4 text-center">
+                    <label for="operative_rate" style="font-weight: bold;"/>
+                    <p style="font-weight: bolder;color:#7c7bad; font-size: 1.2em">
+                      <field name="operative_rate" nolabel="1" class="oe_subtotal_footer_separator" readonly="1"/>
+                    </p>
+                  </div>
+                  <div class="col-sm-4 text-center">
+                    <label for="proposed_rate" style="font-weight: bold;"/>
+                    <p style="font-weight: bolder;color:#7c7bad; font-size: 1.2em">
+                      <field name="proposed_rate" nolabel="1" class="oe_subtotal_footer_separator" readonly="1"/>
+                    </p>
+                  </div>
+                  <div class="col-sm-4 text-center">
+                    <label for="approved_rate" style="font-weight: bold;"/>
+                    <p style="font-weight: bolder;color:#7c7bad; font-size: 1.2em">
+                      <field name="approved_rate" nolabel="1" class="oe_subtotal_footer_separator" readonly="1"/>
+                    </p>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="row">
+                  <div class="col-sm-3 text-center">
+                    <label for="business_line_id" style="font-weight: bold;"/>
+                    <p style="font-size: 1.1em">
+                      <field name="business_line_id" options="{ 'no_open': True}" readonly="1"/>
+                    </p>
+                  </div>
+                  <div class="col-sm-3 text-center">
+                    <label for="channel_id" string="Canal"/>
+                    <p style="font-size: 1.1em">
+                      <field name="channel_id" options="{ 'no_open': True}" readonly="1"/>
+                    </p>
+                  </div>
+                  <div class="col-sm-3 text-center">
+                    <label for="channel_type" style="font-weight: bold;"/>
+                    <p style="font-size: 1.1em">
+                      <field name="channel_type" options="{ 'no_open': True}" readonly="1"/>
+                    </p>
+                  </div>
+                  <div class="col-sm-3 text-center">
+                    <label for="operative_agency_id" style="font-weight: bold;"/>
+                    <p style="font-size: 1.1em">
+                      <field name="operative_agency_id" options="{ 'no_open': True}" readonly="1"/>
+                    </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <notebook>
+            <page name="for_pay" string="Línea de Pagos">
+              <group>
+                <field name="deposit_order_ids" nolabel="1" context="{
+                                    'tree_view_ref':'account_treasury.treasury_acredit_order_view_tree',
+                                    'form_view_ref':'account_treasury.treasury_acredit_order_view_form'}"/>
+              </group>
+            </page>
+          </notebook>
+        </sheet>
+        <div class="oe_chatter">
+          <field name="message_follower_ids" widget="mail_followers"/>
+          <field name="activity_ids" widget="mail_activity"/>
+          <field name="message_ids" widget="mail_thread"/>
+        </div>
+      </form>
+    </field>
+  </record>
+
+  <!-- pay.order action window -->
+  <record id="payment_order_action" model="ir.actions.act_window">
+    <field name="name">Ordenes de Pago</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">pay.order</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="payment_order_view_search"/>
+    <field name="help" type="html">
+      <p class="o_view_nocontent_smiling_face">
+                Ordenes para realizar pagos
+      </p>
+      <p>
+                En este apartado puede atender o visualizar los pagos para ser realizados
+      </p>
+    </field>
+    <field name="context">
+        {
+            'search_default_state_pending':1,
+            'tree_view_ref':'payment_order_view_tree',
+            'form_view_ref':'payment_order_view_form'
+        }
+    </field>
+    <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('payment_order_view_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('payment_order_view_form')}),
+            ]"/>
+  </record>
+
+  <menuitem id="order_payment_menu" name="Ordenes de Pago" parent="treasury_root_menu" action="payment_order_action" groups="group_financial_treasury_payer" sequence="1"/>
+  <menuitem id="auth_section_menu" name="Aprobaciones" parent="treasury_root_menu" sequence="2"/>
+
+</odoo>

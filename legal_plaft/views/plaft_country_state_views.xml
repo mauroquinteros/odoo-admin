@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- res.country.state plaft tree view -->
+        <record id="plaft_res_country_state_view_tree" model="ir.ui.view">
+            <field name="name">res.country.state.view.tree</field>
+            <field name="model">res.country.state</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="country_id" options="{'no_create': True}"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- res.country.state plaft search view -->
+        <record id="plaft_res_country_state_view_search" model="ir.ui.view">
+            <field name="name">res.country.state.view.search</field>
+            <field name="model">res.country.state</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <separator/>
+                    <filter name="group_country" 
+                        string="Paises" 
+                        context="{'group_by':'country_id'}"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- res.country.state plaft form view -->
+        <!-- <record id="plaft_res_country_state_view_form" model="ir.ui.view">
+            <field name="name">res.country.state.view.form</field>
+            <field name="model">res.country.state</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"/>
+                        <group name="main_group">
+                            <group name="country_details">
+                                <field name="name"/>
+                                <field name="currency_id"/>
+                                <field name="code"/>
+                            </group>
+                            <group name="phone_vat_settings">
+                                <field name="phone_code"/>
+                                <field name="vat_label"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record> -->
+
+        <!-- res.country.state plaft action window -->
+        <record id="plaft_res_country_state_action" model="ir.actions.act_window">
+            <field name="name">Niveles de Riesgos Departamentos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.country.state</field>
+            <field name="view_mode">tree</field>
+            <field name="context">
+            {
+                'tree_view_ref':'plaft_res_country_state_view_tree'
+            }
+            </field>
+            <field name="search_view_id" ref="plaft_res_country_state_view_search"/>
+            <field name="view_ids" eval="[
+                (5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('plaft_res_country_state_view_tree')})
+                ]"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                Create the first state
+                </p>
+                <p>
+                Para Crear un registro nuevo debe darle click al boton de crear, <br/>
+                en caso de querer editar darle click al registro creado y luego de entrar ver el boton de editar.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="plaft_country_state_menu" name="Riesgos de Estados" parent="parameter_menu" action="plaft_res_country_state_action" sequence="5"/>
+    </data>
+</odoo>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="sale_order_customer_view_tree" model="ir.ui.view">
+        <field name="name">custom.sale.res.partner.view.tree</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="attributes">
+                <attribute name="string">Teléfono fijo</attribute>
+            </xpath>
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="mobile" string="Teléfono móvil"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_order_customer_view_kanban" model="ir.ui.view">
+        <field name="name">custom.sale.res.partner.view.kanban</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="attributes">
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_order_customer_view_form" model="ir.ui.view">
+        <field name="name">custom.sale.res.partner.view.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_type']" position="attributes">
+                <attribute name="attrs">{'invisible': [('id','!=',False)]}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_type']" position="before">
+                <field name="regime_type" invisible="1"/>
+                <field name="customer_rank" invisible="1"/>
+                <field name="type" groups="base.group_no_one" invisible="1"/>
+                <field name="active_lang_count" invisible="1"/>
+                <field name="lang" invisible="1"/>
+                <field name="street2" invisible="1"/>
+                <field name="city" invisible="1"/>
+                <field name="zip" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='parent_id']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//form//sheet//group" position="replace">
+                <group>
+                    <group>
+                        <label for="" name="last_name">
+                            <b attrs="{'invisible': [('company_type', '=', 'person')]}">Razón Social</b>
+                            <b attrs="{'invisible': [('company_type', '=', 'company')]}">Apellido Paterno</b>
+                        </label>
+                        <field name="lastname" style="text-transform: capitalize;" nolabel="1" attrs="{'required': [('customer_rank', '>', 0)]}"/>
+                        <field name="motherlastname" style="text-transform: capitalize;" attrs="{'invisible': [('company_type', '=', 'company')], 'required': [('company_type', '=', 'person')]}"/>
+                        <field name="firstname" style="text-transform: capitalize;" attrs="{'invisible': [('company_type', '=', 'company')], 'required': [('company_type', '=', 'person')]}"/>
+                        <label for="l10n_latam_identification_type_id" string="N° Identificación"/>
+                        <div id="full-width">
+                            <field name="l10n_latam_identification_type_id" attrs="{'required': [('id','=',False)], 'readonly': ['|',('company_type','=',('company')),('id','!=',False)]}" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" class="oe_inline" force_save="1" domain="[('documentcategory_ids.acronym', '=', 'DI')]"/>
+                            <span attrs="{'invisible': [('id', '=', False)]}" style="display: block; width:100%; height: 1px;"></span>
+                            <field name="vat" placeholder="Número DNI/RUC etc ..." force_save="1" attrs="{'required': [('id','=',False)], 'readonly': [('id','!=',False)]}"/>
+                        </div>
+                        <field name="date_expiration" attrs="{'required': [('company_type','=','person'), ('id','=',False)],'readonly': [('id','!=',False)]}"/>
+                        <field name="email" widget="email" context="{'gravatar_image': True}"/>
+                        <field name="phone" widget="phone" attrs="{'invisible' : [('company_type', '=', 'person')]}" string="Teléfono fijo"/>
+                        <field name="mobile" widget="phone" string="Teléfono móvil"/>
+                    </group>
+                    <group attrs="{'invisible': ['&amp;',('regime_type','=','simplified'),('company_type','=','person')]}">
+                        <field name="gender_id" attrs="{'invisible' : [('company_type', '=', 'company')], 'required': [('company_type', '=', 'person')]}"/>
+                        <field name="civil_status_id" attrs="{'invisible' : [('company_type', '=', 'company')], 'required': ['&amp;',('regime_type','=','general'),('company_type','=','person')]}" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}"/>
+                        <field name="date_birth" attrs="{'invisible' : [('company_type', '=', 'company')], 'required': ['&amp;',('regime_type','=','general'),('company_type','=','person')]}"/>
+                        <field name="website" string="Página web" widget="url" placeholder="e.j. http://www.jetperu.com" attrs="{'invisible' : [('company_type','=','person')]}"/>
+                        <field name="street" string="Domicilio"/>
+                        <field name="country_id" string="País" class="o_address_country" options='{"no_open": True, "no_create": True}' attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                        <field name="state_id" string="Departamento" domain="[('country_id', '=', country_id)]" options='{"no_open": True}' attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" />
+                        <field name="city_id" string="Provincia" domain="[('state_id', '=', state_id)]" attrs="{'invisible': [('country_id', '!=', %(base.pe)d)]}"/>
+                        <field name="l10n_pe_district" string="Distrito" domain="[('city_id', '=', city_id)]" attrs="{'invisible': [('country_id', '!=', %(base.pe)d)]}"/>
+                        <field name="residence_country_id" placeholder="Residencia" class="o_address_country" attrs="{'invisible' : [('company_type','=','company')], 'required': ['&amp;',('regime_type','=','general'),('company_type','=','person')]}"/>
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//notebook/page[@name='sales_purchases']" position="before">
+                <page name="complementary_data" string="Datos Complementarios" autofocus="autofocus" attrs="{'invisible': ['&amp;',('regime_type','=','simplified'),('company_type','=','person')]}">
+                    <group name="group_top_ro">
+                        <group name="group_left_ro">
+                            <!-- fields for the both types -->
+                            <label for="" name="contrib_type_name">
+                                <b attrs="{'invisible': [('company_type','=','person')]}">Tipo de Contribuyente</b>
+                                <b attrs="{'invisible': [('company_type','=','company')]}">Tipo Negocio</b>
+                            </label>
+                            <field name="contrib_type_id" attrs="{'required': ['&amp;',('regime_type','=','general'),('company_type','=','person')]}" nolabel="1" domain="[('type', '=', company_type)]" options="{'no_quick_create': True,'no_create_edit' : True,'no_open': True}"/>
+                            <!-- fields for the person type -->
+                            <field name="occupation_id" options="{'no_quick_create': True,'no_create_edit' : True,'no_open': True}" attrs="{'invisible' : [('company_type', '=', 'company')], 'required': ['&amp;',('regime_type','=','general'),('company_type','=','person')]}"/>
+                            <field name="is_pep" attrs="{'invisible' : [('company_type','!=','person')]}" readonly="1"/>
+                            <!-- fields for the company type -->
+                            <field name="date_sunat_registration" attrs="{'invisible': [('company_type', '=', 'person')]}"/>
+                            <field name="corporation_purpose" attrs="{'invisible' : [('company_type','=','person')]}"/>
+                        </group>
+                        <group name="group_right_ro">
+                            <!-- fields for the person type -->
+                            <field name="work_company_customer" attrs="{'invisible' : [('company_type', '=', 'company')], 'required': ['&amp;',('regime_type','=','general'),('company_type','=','person')]}"/>
+                            <field name="stat_company_type" attrs="{'invisible' : [('company_type', '=', 'company')]}"/>
+                            <field name="position_id" attrs="{'invisible' : ['|', ('stat_company_type','!=','pub'), ('company_type', '=', 'company')]}" options="{'no_quick_create': True,'no_create_edit' : True,'no_open': True}"/>
+                            <!-- fields for the company type -->
+                            <field name="code_ciiu_id" attrs="{'invisible' : [('company_type','=','person')]}" options="{'no_quick_create': True,'no_create_edit' : True,'no_open': True}"/>
+                            <field name="contrib_state" string="Est. Contribuyente" attrs="{'invisible': [('company_type', '=', 'person')]}"/>
+                            <field name="contrib_condition" string="Cond. Contribuyente" attrs="{'invisible': [('company_type', '=', 'person')]}"/>
+                            <field name="regime_id" invisible="1" options="{'no_quick_create':True,'no_create_edit':True,'no_open': True}"/>
+                            <!-- fields for the both types -->
+                            <field name="plaft_documentation_id" readonly="1" invisible="1"/>
+                        </group>
+                    </group>
+                </page>
+                <page name="documents_page" string="Documentos" attrs="{'invisible': [('id','=',False)]}">
+                    <group>
+                        <field name="di_document_ids" nolabel="1">
+                            <tree>
+                                <field name="type_doc_id"/>
+                                <field name="number_document"/>
+                                <field name="date_expiration"/>
+                                <field name="remark"/>
+                                <field name="doc_main"/>
+                                <field name="active" invisible="1"/>
+                            </tree>
+                            <form>
+                                <sheet>
+                                    <group name="group_top" string="Documentos del Cliente">
+                                        <group name="group_left">
+                                            <field name="type_doc_id" attrs="{'readonly': [('id', '!=', False)]}" required="1"/>
+                                            <field name="number_document" attrs="{'readonly': [('id', '!=', False)]}" required="1"/>
+                                        </group>
+                                        <group>
+                                            <field name="date_expiration"/>
+                                            <field name="doc_main" widget="boolean_toggle" class="oe_edit_only"/>
+                                            <field name="active" invisible="1"/>
+                                        </group>
+                                    </group>
+                                    <notebook>
+                                        <page name="image_binary" string="Imágenes">
+                                            <field name="image_document" widget="image"/>
+                                        </page>
+                                        <page name="file_attachment" string="Otros Archivos">
+                                            <group>
+                                                <field name="attachment_ids" widget="many2many_binary"/>
+                                            </group>
+                                        </page>
+                                        <page name="name" string="Notas">
+                                            <field name="remark"/>
+                                        </page>
+                                    </notebook>
+                                </sheet>
+                            </form>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//page[@name='accounting']" position="replace">
+                <page name="banks" string="Cuentas Bancarias" groups="account.group_account_invoice,sale_money_exchange.group_ope_moex_online">
+                    <group>
+                        <field name="bank_ids" nolabel="1">
+                            <tree>
+                                <field name="sequence" widget="handle"/>
+                                <field name="bank_id"/>
+                                <field name="acc_number"/>
+                                <field name="currency_id"/>
+                                <field name="acc_type" />
+                                <field name="account_type_bank"/>
+                                <field name="pool_account" optional="hide"/>
+                                <field name="acc_holders_name" optional="hide"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <field name="bank_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" required="1"/>
+                                    <field name="acc_number" required="1"/>
+                                    <field name="currency_id" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}" domain="[('name','in',['USD', 'EUR', 'PEN'])]" required="1"/>
+                                    <field name="acc_type" readonly="0"/>
+                                </group>
+                                <group>
+                                    <field name="account_type_bank"/>
+                                    <field name="pool_account"/>
+                                    <field name="acc_holders_name" attrs="{'invisible': [('pool_account','=',False)]}"/>
+                                </group>
+                            </form>
+                        </field>
+                    </group>
+                </page>
+                 <page name="historic" string="Históricos" attrs="{'invisible': [('id','=',False)]}">
+                    <field name="beneficiary_ids" nolabel="1"/>
+                </page>
+            </xpath>
+            <xpath expr="//form//sheet//notebook//page[1]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//notebook/page[@name='sales_purchases']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="sale_order_customer_action" model="ir.actions.act_window">
+        <field name="name">Clientes</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">['|',('customer_rank','>', 0),('supplier_rank','>', 0)]</field>
+        <field name="context">
+        {
+            'search_default_customer': 1,
+            'default_is_company': False,
+            'default_customer_rank': 1,
+            'tree_view_ref':'sale_order_customer_view_tree',
+            'form_view_ref':'sale_order_customer_view_form',
+            'kanban_view_ref':'sale_order_customer_view_kanban',
+        }
+        </field>
+        <field name="search_view_id" ref="base_company.management_res_partner_view_search"/>
+        <field name="view_ids" eval="[
+            (5, 0, 0),
+            (0, 0, {'view_mode': 'tree', 'view_id': ref('sale_order_customer_view_tree')}),
+            (0, 0, {'view_mode': 'form', 'view_id': ref('sale_order_customer_view_form')}),
+            (0, 0, {'view_mode': 'kanban', 'view_id': ref('sale_order_customer_view_kanban')}),
+            ]"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_empty_folder">
+                Cree un nuevo cliente en su libro de direcciones
+            </p>
+            <p>El ERP le ayuda a rastrear fácilmente todas las actividades relacionadas con un cliente.</p>
+        </field>
+    </record>
+
+    <menuitem id="sale.res_partner_menu"
+        parent="sale.sale_menu_root"
+        action="sale_order_customer_action"
+        sequence="4" groups="sales_team.group_sale_salesman"/>
+</odoo>

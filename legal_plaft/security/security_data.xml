@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_plaft_read" model="res.groups">
+            <field name="name">Lectura de PCL</field>
+            <field name="category_id" ref="category_plaft"/>
+        </record>
+        <record id="group_plaft_create" model="res.groups">
+            <field name="name">Creación de PCL</field>
+            <field name="category_id" ref="category_plaft"/>
+            <field name="implied_ids" eval="[(4, ref('group_plaft_read'))]"/>
+        </record>
+        <record id="group_plaft_write" model="res.groups">
+            <field name="name">Escritura de PCL</field>
+            <field name="category_id" ref="category_plaft"/>
+            <field name="implied_ids" eval="[(4, ref('group_plaft_create'))]"/>
+        </record>
+        <record id="group_plaft_manager" model="res.groups">
+            <field name="name">Administrar PCL</field>
+            <field name="category_id" ref="category_plaft"/>
+            <field name="implied_ids" eval="[(4, ref('group_plaft_write'))]"/>
+            <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        </record>
+    </data>
+</odoo>

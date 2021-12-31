@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_correspondent_jp" model="res.partner.correspondent">
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="short_name">JET PERU S.A.</field>
+            <field name="correspondent_type">pagador</field>
+            <field name="internal_code">0007</field>
+            <field name="state">activo</field>
+            <field name="business_type">propio</field>
+            <field name="related_business">vin</field>
+            <field name="opening_date">2014-01-01</field>
+            <field name='country_id' ref='base.pe'/>
+            <field name="state_id" ref="base.state_pe_15"/>
+        </record>
+        <record id="res_partner_correspondent_choice" model="res.partner.correspondent">
+            <field name="partner_id" ref="partner_enterprise_choice_money_transfer"/>
+            <field name="short_name">CHOICE</field>
+            <field name="correspondent_type">pagador</field>
+            <field name="internal_code">0494</field>
+            <field name="state">activo</field>
+            <field name="business_type">corresponsal</field>
+            <field name="related_business">novin</field>
+            <field name="opening_date">2014-01-01</field>
+            <field name="country_id" ref="base.co"/>
+            <field name="state_id" ref="base.state_co_06"/>
+        </record>
+        <record id="res_partner_correspondent_multienvios" model="res.partner.correspondent">
+            <field name="partner_id" ref="partner_enterprise_correspondent_multienvios"/>
+            <field name="short_name">MULTIENVIOS</field>
+            <field name="correspondent_type">pagador</field>
+            <field name="internal_code">0605</field>
+            <field name="state">activo</field>
+            <field name="business_type">corresponsal</field>
+            <field name="related_business">novin</field>
+            <field name="opening_date">2014-01-01</field>
+            <field name="country_id" ref="base.ar"/>
+            <field name="state_id" ref="base.state_ar_b"/>
+        </record>
+        <record id="res_partner_correspondent_maguiexpress" model="res.partner.correspondent">
+            <field name="partner_id" ref="partner_enterprise_correspondent_maguiexpress"/>
+            <field name="short_name">MAGUIEXPRESS</field>
+            <field name="correspondent_type">pagador</field>
+            <field name="internal_code">0496</field>
+            <field name="state">activo</field>
+            <field name="business_type">corresponsal</field>
+            <field name="related_business">novin</field>
+            <field name="opening_date">2014-01-01</field>
+            <field name="country_id" ref="base.ar"/>
+            <field name="state_id" ref="base.state_ar_x"/>
+        </record>
+        <record id="res_partner_correspondent_connectplus" model="res.partner.correspondent">
+            <field name="partner_id" ref="partner_enterprise_correspondent_connectplus"/>
+            <field name="short_name">CONNECT PLUS</field>
+            <field name="correspondent_type">recpag</field>
+            <field name="internal_code">0511</field>
+            <field name="state">activo</field>
+            <field name="business_type">corresponsal</field>
+            <field name="related_business">novin</field>
+            <field name="opening_date">2017-04-11</field>
+            <field name="country_id" ref="base.uk"/>
+            <field name="state_id" ref="base.state_uk117"/>
+        </record>
+        <record id="res_partner_correspondent_continentalexchange" model="res.partner.correspondent">
+            <field name="partner_id" ref="partner_enterprise_correspondent_continentalexchange"/>
+            <field name="short_name">CONTINENTAL EXCHANGE</field>
+            <field name="correspondent_type">recpag</field>
+            <field name="internal_code">0431</field>
+            <field name="state">activo</field>
+            <field name="business_type">corresponsal</field>
+            <field name="related_business">novin</field>
+            <field name="opening_date">2014-01-01</field>
+            <field name="country_id" ref="base.us"/>
+            <field name="state_id" ref="base.state_us_5"/>
+        </record>
+    </data>
+</odoo>

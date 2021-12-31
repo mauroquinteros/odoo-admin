@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>        
+        <!-- plaft.control.category tree view -->
+        <record id="plaft_controllist_category_view_tree" model="ir.ui.view">
+            <field name="name">plaft.control.category.view.tree</field>
+            <field name="model">plaft.control.category</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="risklevel_id"/>
+                    <field name="t_description"/>
+                    <field name="controllist_ids"/>
+                    <field name="company_id"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- plaft.control.category form view -->
+        <record id="plaft_controllist_category_view_form" model="ir.ui.view">
+            <field name="name">plaft.control.category.view.form</field>
+            <field name="model">plaft.control.category</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="t_description" placeholder="Descripción para fines didácticos"/>
+                            <field name="risklevel_id" widget="selection"/>
+                        </group>
+                        <notebook>
+                            <page string="Miembros de la Lista" name="miembros">
+                                <field name="controllist_ids" nolabel="1">
+                                    <tree create="false" delete="false">
+                                        <field name="name"/>
+                                        <field name="documentcatalog_id"/>
+                                        <field name="id_number"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- plaf.controllist.category action window -->
+        <record id="plaft_controllist_category_action" model="ir.actions.act_window">
+            <field name="name">PLAFT Listas de Control - Categorías</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">plaft.control.category</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crea la primera categoría para las Listas de Control.
+                </p>
+                <p>
+                    Las categorías pueden ser OFAC, PEPS u otras relacionadas.
+                </p>
+            </field>
+        </record>
+    </data>
+    
+    <menuitem id="control_menu" name="Control" parent="root_plaft" sequence="30"/>
+    <menuitem id="controllist_category_menu" name="Categoria de Listas de Control" parent="control_menu" action="plaft_controllist_category_action" sequence="2"/>
+</odoo>

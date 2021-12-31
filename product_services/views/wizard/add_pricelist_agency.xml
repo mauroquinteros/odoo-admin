@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="wizard_add_pricelist_agency_form_view" model="ir.ui.view">
+    <field name="name">wizard.add.pricelist.agency.form.view</field>
+    <field name="model">add.pricelist.agency</field>
+    <field name="arch" type="xml">
+      <form>
+        <group>
+          <group>
+            <field name="country_id"/>
+            <field name="pricelist_id" context="{'default_correspondent_id': correspondent_id, 'default_country_id': country_id , 'form_view_ref': 'product_services.service_pricelist_detail_custom_view_form'}"/>
+            <field name="correspondent_id" invisible="1" readonly="1"/>
+          </group>
+          <group style="width:100%;">
+            <label colspan="2" for="agency_ids" class="o_form_label" style="margin-bottom: 1rem;">Agencias</label>
+            <field name="agency_ids" nolabel="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}">
+              <tree>
+                <field name="internal_code"/>
+                <field name="name"/>
+                <field name="street" string="Dirección"/>
+                <field name="office_hour"/>
+              </tree>
+            </field>
+          </group>
+          <group style="width:100%;">
+            <label colspan="2" for="pricelist_item_ids" class="o_form_label" style="margin-bottom: 1rem;">Tarifas</label>
+            <field name="pricelist_item_ids" nolabel="1" readonly="1" options="{'no_create': True, 'no_open': True, 'no_create_edit': True}">
+              <tree>
+                <field name="service_type"/>
+                <field name="deposit_currency_id"/>
+                <field name="payment_currency_id"/>
+                <field name="initial_range"/>
+                <field name="final_range"/>
+                <field name="price_amount"/>
+                <field name="price_currency_id"/>
+                <field name="price_expression"/>
+              </tree>
+            </field>
+          </group>
+        </group>
+        <footer>
+          <button string="Agregar Tarifario" type="object" name="add_pricelist_to_agencies" class="btn-primary"/>
+          <button string="Cancelar" special="cancel" class="btn-danger"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+</odoo>

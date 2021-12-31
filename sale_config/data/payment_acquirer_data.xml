@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="payment_acquirer_deposit_PEN" model="payment.acquirer">
+            <field name="name">Depósito bancario Soles</field>
+            <field name="color" eval="7"/>
+            <field name="provider">transfer</field>
+            <field name="state">enabled</field>
+        </record>
+        <record id="payment_acquirer_deposit_USD" model="payment.acquirer">
+            <field name="name">Depósito bancario Dólares</field>
+            <field name="color" eval="7"/>
+            <field name="provider">transfer</field>
+            <field name="state">enabled</field>
+        </record>
+        <record id="payment_acquirer_deposit_EUR" model="payment.acquirer">
+            <field name="name">Depósito bancario Euros</field>
+            <field name="color" eval="7"/>
+            <field name="provider">transfer</field>
+            <field name="state">disabled</field>
+        </record>
+    </data>
+</odoo>
